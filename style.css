@@ -5,6 +5,19 @@ body {
   min-height: 100vh;
 }
 
+/* 手機版隱藏navigation rail */
+@media (max-width: 768px) {
+  mdui-navigation-rail {
+    display: none;
+  }
+  
+  /* 手機版主內容區域調整 */
+  .main-content {
+    margin: 16px;
+    border-radius: 16px;
+  }
+}
+
 .content-section {
   padding: 2rem;
   margin-bottom: 4rem;
