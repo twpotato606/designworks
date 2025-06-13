@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.content-section {
+  padding: 2rem;
+  margin-bottom: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.content-section h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* 手機版一個row顯示一個作品 */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 桌面版一個row顯示兩個作品 */
+@media (min-width: 769px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+/* 確保一頁式顯示更加流暢 */
+.main-content {
+  flex: 1;
+  overflow: auto;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  border-radius: 16px 16px 16px 16px;
+  margin: 16px 16px 16px 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 整合其他內嵌樣式 */
+.card-profile {
+  width: 100%;
+}
+
+.card-padding {
+  padding: 1rem;
+}
+
+.card-padding-lg {
+  padding: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-1-5 {
+  margin-top: 1.5rem;
+}
+
+.full-width-img {
+  width: 100%;
+}
+
+.contact-info-card {
+  margin-top: 2rem;
+  width: 100%;
+} 
