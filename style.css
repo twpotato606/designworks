@@ -5,21 +5,74 @@ body {
   min-height: 100vh;
 }
 
-/* 手機版隱藏navigation rail */
-@media (max-width: 768px) {
-  mdui-navigation-rail {
-    display: none;
-  }
-  
-  /* 手機版主內容區域調整 */
-  .main-content {
-    margin: 16px;
-    border-radius: 16px;
-  }
+/* Menu按鈕樣式 */
+.menu-button {
+  position: fixed;
+  top: 22px;
+  left: 20px;
+  z-index: 1000;
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  min-width: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.menu-button mdui-icon {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 關閉按鈕樣式 */
+.close-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  min-width: 40px;
+  margin: 16px auto;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.close-button mdui-icon {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 確保一頁式顯示更加流暢 */
+.main-content {
+  flex: 1;
+  overflow: auto;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin: 16px 16px 16px 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .content-section {
-  padding: 2rem;
+  padding: 1.5rem;
   margin-bottom: 4rem;
   scroll-margin-top: 2rem;
 }
@@ -51,33 +104,8 @@ body {
   margin-top: 2rem;
 }
 
-/* 手機版一個row顯示一個作品 */
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 桌面版一個row顯示兩個作品 */
-@media (min-width: 769px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .contact-form {
   max-width: 600px;
-}
-
-/* 確保一頁式顯示更加流暢 */
-.main-content {
-  flex: 1;
-  overflow: auto;
-  scroll-behavior: smooth;
-  background-color: #ffffff;
-  border-radius: 16px 16px 16px 16px;
-  margin: 16px 16px 16px 0px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 整合其他內嵌樣式 */
@@ -119,4 +147,44 @@ body {
 .contact-info-card {
   margin-top: 2rem;
   width: 100%;
+}
+
+/* 手機版樣式 */
+@media (max-width: 768px) {
+  mdui-navigation-rail {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+  }
+
+  mdui-navigation-rail.open {
+    display: block;
+  }
+  
+  .menu-button {
+    display: flex;
+  }
+
+  .close-button {
+    display: flex;
+  }
+  
+  .main-content {
+    margin: 12px;
+    border-radius: 16px;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 桌面版樣式 */
+@media (min-width: 769px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 } 

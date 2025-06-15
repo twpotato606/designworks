@@ -15,9 +15,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Menu按鈕 (手機版) -->
+  <mdui-button class="menu-button" id="menuButton" variant="filled">
+    <mdui-icon slot="icon" name="menu"></mdui-icon>
+  </mdui-button>
+
   <!-- Navigation Rail (左側導覽列) -->
-  <mdui-navigation-rail>
-    <!-- 導覽項目 - 移除了menu按鈕 -->
+  <mdui-navigation-rail id="navigationRail">
+    <!-- 關閉按鈕 (手機版) -->
+    <mdui-button class="close-button" id="closeButton" variant="filled">
+      <mdui-icon slot="icon" name="menu"></mdui-icon>
+    </mdui-button>
+    <!-- 導覽項目 -->
     <mdui-navigation-rail-item icon="person" value="about" id="aboutNav">關於我</mdui-navigation-rail-item>
     <mdui-navigation-rail-item icon="palette" value="portfolio" id="portfolioNav">我的設計</mdui-navigation-rail-item>
     <mdui-navigation-rail-item icon="mail" value="contact" id="contactNav">聯絡我</mdui-navigation-rail-item>

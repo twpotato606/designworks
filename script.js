@@ -4,25 +4,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const aboutNav = document.getElementById('aboutNav');
   const portfolioNav = document.getElementById('portfolioNav');
   const contactNav = document.getElementById('contactNav');
+  const menuButton = document.getElementById('menuButton');
+  const closeButton = document.getElementById('closeButton');
+  const navigationRail = document.getElementById('navigationRail');
   
   const aboutSection = document.getElementById('aboutSection');
   const portfolioSection = document.getElementById('portfolioSection');
   const contactSection = document.getElementById('contactSection');
   
-  // 導覽列點擊事件處理 - 滾動到指定區域(不再設置active狀態)
+  // 關閉選單的函數
+  const closeMenu = () => {
+    navigationRail.classList.remove('open');
+    menuButton.style.display = 'block';
+  };
+
+  // 開啟選單的函數
+  const openMenu = () => {
+    navigationRail.classList.add('open');
+    menuButton.style.display = 'none';
+  };
+  
+  // Menu按鈕點擊事件
+  menuButton.addEventListener('click', openMenu);
+
+  // 關閉按鈕點擊事件
+  closeButton.addEventListener('click', closeMenu);
+  
+  // 導覽列點擊事件處理 - 滾動到指定區域
   aboutNav.addEventListener('click', () => {
     aboutSection.scrollIntoView({ behavior: 'smooth' });
+    closeMenu();
   });
   
   portfolioNav.addEventListener('click', () => {
     portfolioSection.scrollIntoView({ behavior: 'smooth' });
+    closeMenu();
   });
   
   contactNav.addEventListener('click', () => {
     contactSection.scrollIntoView({ behavior: 'smooth' });
+    closeMenu();
   });
   
-  // 監聽滾動事件，但不再更新導航欄選中狀態
+  // 監聽滾動事件
   const mainContent = document.querySelector('.main-content');
   mainContent.addEventListener('scroll', () => {
     // 移除了根據滾動位置更新導航欄選中狀態的代碼
