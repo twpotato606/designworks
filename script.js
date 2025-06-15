@@ -15,13 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // 關閉選單的函數
   const closeMenu = () => {
     navigationRail.classList.remove('open');
-    menuButton.style.display = 'block';
+    // 不需要再顯示menu按鈕，因為它一直都是顯示的
   };
 
   // 開啟選單的函數
   const openMenu = () => {
+    // 先顯示導航欄，但保持在-100%位置
+    navigationRail.style.display = 'block';
+    // 強制重繪
+    navigationRail.offsetHeight;
+    // 添加open類，觸發動畫
     navigationRail.classList.add('open');
-    menuButton.style.display = 'none';
+    // 不再隱藏menu按鈕
   };
   
   // Menu按鈕點擊事件
