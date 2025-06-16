@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+  <meta name="renderer" content="webkit"/>
+  <title>校園疫苗接種數位轉型 - 作品集</title>
+  
+  <!-- 引入MDUI CSS和JS -->
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <!-- 引入Material圖標 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- 引入自訂CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu按鈕 (手機版) -->
+  <mdui-button class="menu-button" id="menuButton" variant="filled">
+    <mdui-icon slot="icon" name="menu"></mdui-icon>
+  </mdui-button>
+
+  <!-- Navigation Rail (左側導覽列) -->
+  <mdui-navigation-rail id="navigationRail">
+    <!-- 關閉按鈕 (手機版) -->
+    <mdui-button class="close-button" id="closeButton" variant="text">
+      <mdui-icon slot="icon" name="close" style="color: rgb(73, 69, 78);"></mdui-icon>
+    </mdui-button>
+    <!-- 導覽項目 -->
+    <mdui-navigation-rail-item icon="arrow_back" value="home" id="homeNav">返回首頁</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="info" value="situation" id="situationNav">情境</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="assignment" value="task" id="taskNav">任務</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="build" value="action" id="actionNav">行動</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="analytics" value="result" id="resultNav">結果</mdui-navigation-rail-item>
+  </mdui-navigation-rail>
+
+  <!-- 主要內容區域 -->
+  <div class="main-content">
+    <!-- 專案標題 -->
+    <div class="project-header">
+      <h1>校園疫苗接種數位轉型</h1>
+      <h3>從紙本到雲端，打造智慧校園健康管理</h3>
+      <div class="project-meta">
+        <mdui-chip>CIVS Project</mdui-chip>
+        <mdui-chip>疾管署</mdui-chip>
+        <mdui-chip>主設計師</mdui-chip>
+      </div>
+    </div>
+
+    <!-- 1. 情境 (Situation) -->
+    <div id="situationSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>情境 (Situation)</h2>
+          <p>在傳統的校園疫苗接種作業流程中，學校健康中心面臨著繁瑣且容易出錯的行政作業。校護需要經過以下流程：</p>
+          
+          <div class="workflow-container">
+            <div class="workflow-step">
+              <mdui-button variant="outlined" class="workflow-button">
+                <mdui-icon slot="icon" name="assignment"></mdui-icon>
+                手動造冊並統計學生名單
+              </mdui-button>
+            </div>
+            
+            <div class="workflow-arrow">
+              <mdui-icon name="arrow_downward"></mdui-icon>
+            </div>
+            
+            <div class="workflow-step">
+              <mdui-button variant="outlined" class="workflow-button">
+                <mdui-icon slot="icon" name="phone"></mdui-icon>
+                聯繫醫事機構安排接種場次
+              </mdui-button>
+            </div>
+            
+            <div class="workflow-arrow">
+              <mdui-icon name="arrow_downward"></mdui-icon>
+            </div>
+            
+            <div class="workflow-step">
+              <mdui-button variant="outlined" class="workflow-button">
+                <mdui-icon slot="icon" name="print"></mdui-icon>
+                印出紙本意願書發給各班級
+              </mdui-button>
+            </div>
+            
+            <div class="workflow-arrow">
+              <mdui-icon name="arrow_downward"></mdui-icon>
+            </div>
+            
+            <div class="workflow-step">
+              <mdui-button variant="outlined" class="workflow-button">
+                <mdui-icon slot="icon" name="schedule"></mdui-icon>
+                等待班級導師發放並回收意願書
+              </mdui-button>
+            </div>
+            
+            <div class="workflow-arrow">
+              <mdui-icon name="arrow_downward"></mdui-icon>
+            </div>
+            
+            <div class="workflow-step">
+              <mdui-button variant="outlined" class="workflow-button">
+                <mdui-icon slot="icon" name="edit"></mdui-icon>
+                處理學生轉入轉出的名單變更
+              </mdui-button>
+            </div>
+            
+            <div class="workflow-arrow">
+              <mdui-icon name="arrow_downward"></mdui-icon>
+            </div>
+            
+            <div class="workflow-step">
+              <mdui-button variant="outlined" class="workflow-button">
+                <mdui-icon slot="icon" name="calculate"></mdui-icon>
+                人工統計意願填寫結果
+              </mdui-button>
+            </div>
+          </div>
+          
+          <div class="workflow-problems">
+            <h4>傳統流程的問題</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="schedule"></mdui-icon>
+                <mdui-list-item-content>耗時費力，整個流程需要數週完成</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="error"></mdui-icon>
+                <mdui-list-item-content>容易出現統計錯誤，影響疫苗採購數量</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="description"></mdui-icon>
+                <mdui-list-item-content>紙本文件容易遺失，需要重複處理</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="sync_problem"></mdui-icon>
+                <mdui-list-item-content>資料更新不及時，難以處理緊急狀況</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+          
+          <p>因此，疾管署決定開發一個電子化的系統，來簡化整個作業流程，提高校園疫苗接種的效率和準確性。</p>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 2. 任務 (Task) -->
+    <div id="taskSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>任務 (Task)</h2>
+          <p>作為主設計師，我負責協助疾管署開發一個全國性的校園疫苗接種管理系統，從縣市試辦開始，逐步推廣到全台灣各級學校使用。</p>
+          
+          <div class="project-goals">
+            <h4>專案目標</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>建立全國性的校園疫苗接種管理系統</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>簡化家長意願填寫流程</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>優化學校健康中心的作業流程</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>提供疾管署即時數據與決策支援</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+          
+          <h4>我的角色與職責</h4>
+          <mdui-list>
+            <mdui-list-item>
+              <mdui-icon slot="icon" name="person"></mdui-icon>
+              <mdui-list-item-content>
+                <mdui-list-item-title>主設計師</mdui-list-item-title>
+                <mdui-list-item-subtitle>負責系統整體使用者體驗與介面設計</mdui-list-item-subtitle>
+              </mdui-list-item-content>
+            </mdui-list-item>
+            <mdui-list-item>
+              <mdui-icon slot="icon" name="psychology"></mdui-icon>
+              <mdui-list-item-content>
+                <mdui-list-item-title>使用者研究</mdui-list-item-title>
+                <mdui-list-item-subtitle>進行需求分析與使用者訪談</mdui-list-item-subtitle>
+              </mdui-list-item-content>
+            </mdui-list-item>
+            <mdui-list-item>
+              <mdui-icon slot="icon" name="design_services"></mdui-icon>
+              <mdui-list-item-content>
+                <mdui-list-item-title>介面優化</mdui-list-item-title>
+                <mdui-list-item-subtitle>設計並改善系統關鍵功能的使用者介面</mdui-list-item-subtitle>
+              </mdui-list-item-content>
+            </mdui-list-item>
+          </mdui-list>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 3. 行動 (Action) -->
+    <div id="actionSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>行動 (Action)</h2>
+          
+          <div class="process-step">
+            <h4>1. 需求收集與分析</h4>
+            <p>採用多元化的需求收集方式，確保系統設計符合實際使用需求：</p>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="groups"></mdui-icon>
+                <mdui-list-item-content>實地訪談：安排拜訪指標性學校，直接與校護溝通，了解實際業務執行方式</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="school"></mdui-icon>
+                <mdui-list-item-content>教育訓練回饋：透過北中南多場系統操作說明會，收集校護使用反饋</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+          
+          <div class="process-step">
+            <h4>2. 系統設計優化</h4>
+            
+            <div class="design-improvement">
+              <h5>學生名冊造冊功能</h5>
+              <div class="before-after">
+                <div class="before">
+                  <h6>Before</h6>
+                  <div class="image-placeholder">
+                    <mdui-icon name="image"></mdui-icon>
+                    <p>學生名冊功能改版前</p>
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>僅支援單筆新增學生資料</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>缺乏資料備份與還原機制</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+                <div class="after">
+                  <h6>After</h6>
+                  <div class="image-placeholder">
+                    <mdui-icon name="image"></mdui-icon>
+                    <p>學生名冊功能改版後</p>
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>提供匯入範例與詳細說明文件</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>支援多人批次編輯與修改</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>新增資料還原功能，避免誤刪</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>優化資料管理流程，確保資料完整性</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+              </div>
+            </div>
+            
+            <div class="design-improvement">
+              <h5>接種場次安排功能</h5>
+              <div class="before-after">
+                <div class="before">
+                  <h6>Before</h6>
+                  <div class="image-placeholder">
+                    <mdui-icon name="image"></mdui-icon>
+                    <p>接種場次功能改版前</p>
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>僅能安排單一場次</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>不支援大量學生批次指派</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+                <div class="after">
+                  <h6>After</h6>
+                  <div class="image-placeholder">
+                    <mdui-icon name="image"></mdui-icon>
+                    <p>接種場次功能改版後</p>
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>支援多場次同時安排</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>提供批次勾選與指派功能</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>優化場次管理介面，提升操作效率</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+              </div>
+            </div>
+            
+            <div class="design-improvement">
+              <h5>意願書簽署介面</h5>
+              <div class="before-after">
+                <div class="before">
+                  <h6>Before</h6>
+                  <div class="image-placeholder">
+                    <mdui-icon name="image"></mdui-icon>
+                    <p>意願書介面改版前</p>
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>資訊分散，不易閱讀</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>缺乏資訊分組與層級</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+                <div class="after">
+                  <h6>After</h6>
+                  <div class="image-placeholder">
+                    <mdui-icon name="image"></mdui-icon>
+                    <p>意願書介面改版後</p>
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>將相關資訊群組化呈現</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>簡化資訊架構，提升可讀性</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>優化行動裝置操作體驗</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="process-step">
+            <h4>3. 持續優化與支援</h4>
+            <p>建立完整的支援體系：</p>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="support_agent"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>客服系統</mdui-list-item-title>
+                  <mdui-list-item-subtitle>建立專線服務，2023年收集超過3600條使用意見，並建立優先處理機制</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="bug_report"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>問題追蹤</mdui-list-item-title>
+                  <mdui-list-item-subtitle>建立issue追蹤機制，定期檢視並排定優先處理順序</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="update"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>定期更新</mdui-list-item-title>
+                  <mdui-list-item-subtitle>根據使用者反饋，持續優化系統功能</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 4. 結果 (Result) -->
+    <div id="resultSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>結果 (Result)</h2>
+          
+          <div class="result-highlight">
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="school"></mdui-icon>
+                </div>
+                <h4>全台推廣</h4>
+                <p>從縣市試辦推廣到全台灣校園皆使用</p>
+              </div>
+            </mdui-card>
+            
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="people"></mdui-icon>
+                </div>
+                <h4>300萬+</h4>
+                <p>協助超過300萬家長完成意願填寫</p>
+              </div>
+            </mdui-card>
+            
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="thumb_up"></mdui-icon>
+                </div>
+                <h4>90%</h4>
+                <p>全台灣學校健康中心高達9成的滿意度</p>
+              </div>
+            </mdui-card>
+          </div>
+          
+          <div class="result-details">
+            <h4>校護工作效率提升</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="timer"></mdui-icon>
+                <mdui-list-item-content>意願書發送時間從2週縮短至2天</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="auto_awesome"></mdui-icon>
+                <mdui-list-item-content>意願統計作業自動化，免除人工計算</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="trending_up"></mdui-icon>
+                <mdui-list-item-content>學生名冊管理效率提升80%</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="schedule"></mdui-icon>
+                <mdui-list-item-content>接種記錄管理時間減少70%</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+            
+            <h4>家長使用體驗改善</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="computer"></mdui-icon>
+                <mdui-list-item-content>線上填寫意願書，免除紙本遺失問題</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="edit"></mdui-icon>
+                <mdui-list-item-content>隨時可修改意願，無需重新簽署紙本</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="qr_code_scanner"></mdui-icon>
+                <mdui-list-item-content>手機掃碼即可完成填寫，操作便利</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="visibility"></mdui-icon>
+                <mdui-list-item-content>即時查看接種進度與記錄</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+            
+            <h4>疾管署決策支援</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="insights"></mdui-icon>
+                <mdui-list-item-content>精準掌握疫苗需求，優化採購分配</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="monitoring"></mdui-icon>
+                <mdui-list-item-content>即時監控各校接種率，快速發現異常</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="campaign"></mdui-icon>
+                <mdui-list-item-content>有效規劃接種推廣活動</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="savings"></mdui-icon>
+                <mdui-list-item-content>節省政府疫苗採購經費</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+  </div>
+
+  <!-- 引入自訂JS -->
+  <script src="script.js"></script>
+  <script>
+    // 專案頁面特定的JavaScript
+    document.addEventListener('DOMContentLoaded', () => {
+      // 導覽列項目點擊事件
+      const homeNav = document.getElementById('homeNav');
+      homeNav.addEventListener('click', () => {
+        window.location.href = 'index.html';
+      });
+      
+      // STAR導覽功能
+      const situationNav = document.getElementById('situationNav');
+      const taskNav = document.getElementById('taskNav');
+      const actionNav = document.getElementById('actionNav');
+      const resultNav = document.getElementById('resultNav');
+      
+      situationNav.addEventListener('click', () => {
+        document.getElementById('situationSection').scrollIntoView({ behavior: 'smooth' });
+        closeMenu();
+      });
+      
+      taskNav.addEventListener('click', () => {
+        document.getElementById('taskSection').scrollIntoView({ behavior: 'smooth' });
+        closeMenu();
+      });
+      
+      actionNav.addEventListener('click', () => {
+        document.getElementById('actionSection').scrollIntoView({ behavior: 'smooth' });
+        closeMenu();
+      });
+      
+      resultNav.addEventListener('click', () => {
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        closeMenu();
+      });
+      
+      // 關閉選單函數 (移動版)
+      function closeMenu() {
+        const navigationRail = document.getElementById('navigationRail');
+        if (window.innerWidth <= 768) {
+          navigationRail.classList.remove('open');
+        }
+      }
+    });
+  </script>
+</body>
+</html> 

@@ -145,6 +145,147 @@ body {
   width: 100%;
 }
 
+/* 作品頁面樣式 */
+.project-header {
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.project-header h1 {
+  margin-bottom: 0.5rem;
+  color: #1976d2;
+}
+
+.project-header h3 {
+  font-weight: normal;
+  margin-top: 0;
+  color: #616161;
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.project-card {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.process-step {
+  margin-bottom: 2rem;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.image-placeholder {
+  background-color: #f5f5f5;
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.image-placeholder mdui-icon {
+  font-size: 48px;
+  color: #bdbdbd;
+}
+
+.image-placeholder p {
+  margin-top: 0.5rem;
+  color: #757575;
+}
+
+.result-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.highlight-card {
+  text-align: center;
+}
+
+.highlight-icon {
+  margin-bottom: 1rem;
+}
+
+.highlight-icon mdui-icon {
+  font-size: 48px;
+  color: #1976d2;
+}
+
+.result-details h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1976d2;
+}
+
+/* 流程圖樣式 */
+.workflow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.workflow-step {
+  width: 100%;
+  max-width: 500px;
+}
+
+.workflow-button {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 0;
+  text-align: left;
+  height: auto;
+  min-height: 48px;
+}
+
+.workflow-button mdui-icon {
+  margin-right: 12px;
+  color: #1976d2;
+}
+
+.workflow-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.workflow-arrow mdui-icon {
+  color: #1976d2;
+  font-size: 24px;
+}
+
+.workflow-problems {
+  margin-top: 2rem;
+}
+
+.workflow-problems h4 {
+  margin-bottom: 1rem;
+  color: #1976d2;
+}
+
 /* 手機版樣式 */
 @media (max-width: 768px) {
   mdui-navigation-rail {
@@ -177,6 +318,22 @@ body {
   
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-highlight {
+    grid-template-columns: 1fr;
+  }
+  
+  .highlight-card {
+    margin-bottom: 1rem;
+  }
+  
+  .workflow-step {
+    max-width: 100%;
   }
 }
 
