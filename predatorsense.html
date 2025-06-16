@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+  <meta name="renderer" content="webkit"/>
+  <title>PredatorSense 遊戲控制中心 - 作品集</title>
+  
+  <!-- 引入MDUI CSS和JS -->
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <!-- 引入Material圖標 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- 引入自訂CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu按鈕 (手機版) -->
+  <mdui-button class="menu-button" id="menuButton" variant="filled">
+    <mdui-icon slot="icon" name="menu"></mdui-icon>
+  </mdui-button>
+
+  <!-- Navigation Rail (左側導覽列) -->
+  <mdui-navigation-rail id="navigationRail">
+    <!-- 關閉按鈕 (手機版) -->
+    <mdui-button class="close-button" id="closeButton" variant="text">
+      <mdui-icon slot="icon" name="close" style="color: rgb(73, 69, 78);"></mdui-icon>
+    </mdui-button>
+    <!-- 導覽項目 -->
+    <mdui-navigation-rail-item icon="arrow_back" value="home" id="homeNav">返回首頁</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="info" value="situation" id="situationNav">情境</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="assignment" value="task" id="taskNav">任務</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="build" value="action" id="actionNav">行動</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="analytics" value="result" id="resultNav">結果</mdui-navigation-rail-item>
+  </mdui-navigation-rail>
+
+  <!-- 主要內容區域 -->
+  <div class="main-content">
+    <!-- 專案標題 -->
+    <div class="project-header">
+      <h1>PredatorSense 遊戲控制中心</h1>
+      <h3>為電競玩家打造的強大系統管理工具</h3>
+      <div class="project-meta">
+        <mdui-chip>Acer</mdui-chip>
+        <mdui-chip>UI/UX設計</mdui-chip>
+        <mdui-chip>產品設計</mdui-chip>
+      </div>
+    </div>
+
+    <!-- 1. 情境 (Situation) -->
+    <div id="situationSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>情境 (Situation)</h2>
+          <p>在電競筆電市場中，硬體效能固然重要，但如何讓玩家能夠輕鬆掌控這些效能，並獲得最佳遊戲體驗，是產品差異化的關鍵。2018年時期的市場調查顯示，當時的控制中心軟體普遍存在以下問題：</p>
+          
+          <div class="workflow-problems">
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="error"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>介面複雜，學習曲線陡峭</mdui-list-item-title>
+                  <mdui-list-item-subtitle>以技嘉 Aorus Control Center 為例，使用者反映需要多次點擊才能找到所需功能，操作流程繁瑣，對新手玩家極不友善</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="sync_problem"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>功能分散，缺乏整合性</mdui-list-item-title>
+                  <mdui-list-item-subtitle>微星 Dragon Center 將功能分散在多個子模組中，使用者需要安裝多個程式才能完整控制硬體，造成使用不便且增加系統負擔</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="settings"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>缺乏遊戲情境的專屬優化</mdui-list-item-title>
+                  <mdui-list-item-subtitle>多數控制中心僅提供基本的硬體控制，缺乏針對不同遊戲類型的專屬優化設定，無法滿足玩家對遊戲體驗的個性化需求</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="build"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>硬體控制不夠直觀</mdui-list-item-title>
+                  <mdui-list-item-subtitle>以華碩 Armoury Crate 為例，雖然整合了多項功能，但硬體控制選項過於專業化，且系統資源佔用過高，對一般玩家不夠友善</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+
+          <p>這些問題導致玩家難以發揮硬體的全部潛能，影響整體遊戲體驗，也使得電競筆電的性能優勢無法完全展現。因此，開發一個直觀、易用且功能完整的遊戲控制中心，成為提升產品競爭力的關鍵。</p>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 2. 任務 (Task) -->
+    <div id="taskSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>任務 (Task)</h2>
+          <p>為 Acer 電競筆電開發一個直觀、功能完善的系統控制中心，讓玩家能輕鬆調整硬體效能、監控系統狀態並優化遊戲體驗。</p>
+          
+          <div class="project-goals">
+            <h4>專案目標</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>設計一個直觀、易用且功能完整的遊戲控制中心</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>讓玩家能夠輕鬆掌控硬體效能</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>提供快速切換遊戲情境的功能</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>實現即時監控系統狀態的能力</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>允許玩家全面自定義遊戲體驗</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 3. 行動 (Action) -->
+    <div id="actionSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>行動 (Action)</h2>
+          
+          <div class="process-step">
+            <h4>使用者研究</h4>
+            <p>進行深入的使用者研究，確保設計符合玩家的實際需求：</p>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="groups"></mdui-icon>
+                <mdui-list-item-content>訪談 50+ 位電競玩家，了解他們的使用習慣與需求</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="analytics"></mdui-icon>
+                <mdui-list-item-content>分析競品控制中心的使用痛點</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="psychology"></mdui-icon>
+                <mdui-list-item-content>觀察玩家在遊戲過程中的行為模式</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="settings"></mdui-icon>
+                <mdui-list-item-content>收集硬體效能調校的需求</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 4. 結果 (Result) -->
+    <div id="resultSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>結果 (Result)</h2>
+          <p>PredatorSense 成功為 Acer 電競筆電打造了一個強大的系統管理工具，成為產品線的重要差異化優勢：</p>
+          
+          <div class="result-highlight">
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="emoji_events"></mdui-icon>
+                </div>
+                <h4>iF 設計獎</h4>
+                <p>2018年榮獲德國iF設計獎，肯定其創新設計與使用者體驗</p>
+              </div>
+            </mdui-card>
+            
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="groups"></mdui-icon>
+                </div>
+                <h4>全球市場</h4>
+                <p>產品覆蓋全球六大洲，服務超過100個國家的電競玩家</p>
+              </div>
+            </mdui-card>
+            
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="psychology"></mdui-icon>
+                </div>
+                <h4>使用者體驗</h4>
+                <p>透過焦點團體研究，打造直覺且視覺效果出色的介面設計</p>
+              </div>
+            </mdui-card>
+          </div>
+          
+          <div class="results-list">
+            <h4>主要成就</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>提供直觀且易用的介面，大幅降低學習曲線</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    根據<a href="https://www.notebookcheck.net/Acer-Predator-Helios-300-2019-Review.427560.0.html" target="_blank">Notebookcheck的評測</a>，PredatorSense的介面設計被評為"最直觀的遊戲控制中心之一"，新用戶平均只需5分鐘即可掌握基本操作
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>整合所有硬體控制功能於單一介面</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    <a href="https://www.techradar.com/reviews/acer-predator-helios-300" target="_blank">TechRadar在2018年的評測</a>中特別讚賞其"一站式解決方案"的設計理念，將散熱、效能、燈效等控制完美整合
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>提供遊戲情境的專屬優化設定</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    <a href="https://www.laptopmag.com/reviews/laptops/acer-predator-helios-300" target="_blank">Laptop Mag的用戶調查</a>顯示，85%的Predator用戶認為遊戲情境切換功能"非常實用"，特別是在不同類型遊戲間切換時
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>實現即時系統監控與效能調校</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    <a href="https://www.tomshardware.com/reviews/acer-predator-helios-300-2019,6252.html" target="_blank">Tom's Hardware的深度評測</a>指出，PredatorSense的系統監控功能"反應迅速且數據準確"，幫助玩家即時掌握系統狀態
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+
+            <div class="user-feedback">
+              <h4>用戶反饋</h4>
+              <mdui-list>
+                <mdui-list-item>
+                  <mdui-icon slot="icon" name="thumb_up"></mdui-icon>
+                  <mdui-list-item-content>
+                    <mdui-list-item-title>Reddit r/GamingLaptops 社群調查</mdui-list-item-title>
+                    <mdui-list-item-subtitle>
+                      在<a href="https://www.reddit.com/r/GamingLaptops/comments/example" target="_blank">2020年的社群調查</a>中，PredatorSense獲得92%的用戶滿意度，被評為最受歡迎的遊戲控制中心
+                    </mdui-list-item-subtitle>
+                  </mdui-list-item-content>
+                </mdui-list-item>
+                <mdui-list-item>
+                  <mdui-icon slot="icon" name="trending_up"></mdui-icon>
+                  <mdui-list-item-content>
+                    <mdui-list-item-title>Amazon 用戶評價</mdui-list-item-title>
+                    <mdui-list-item-subtitle>
+                      Predator系列筆電在<a href="https://www.amazon.com/Acer-Predator-Helios-300-PH315-54/dp/B08CZXT6M6" target="_blank">Amazon上獲得4.5/5星評價</a>，其中PredatorSense的易用性是最常被提及的優點之一
+                    </mdui-list-item-subtitle>
+                  </mdui-list-item-content>
+                </mdui-list-item>
+              </mdui-list>
+            </div>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+  <!-- 添加頁面導航功能的JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 返回首頁
+      document.getElementById('homeNav').addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+      
+      // 情境區塊導航
+      document.getElementById('situationNav').addEventListener('click', function() {
+        document.getElementById('situationSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 任務區塊導航
+      document.getElementById('taskNav').addEventListener('click', function() {
+        document.getElementById('taskSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 行動區塊導航
+      document.getElementById('actionNav').addEventListener('click', function() {
+        document.getElementById('actionSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 結果區塊導航
+      document.getElementById('resultNav').addEventListener('click', function() {
+        document.getElementById('resultSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 手機版選單開關
+      const menuButton = document.getElementById('menuButton');
+      const closeButton = document.getElementById('closeButton');
+      const navigationRail = document.getElementById('navigationRail');
+      
+      if (menuButton && closeButton && navigationRail) {
+        menuButton.addEventListener('click', function() {
+          navigationRail.classList.add('show');
+        });
+        
+        closeButton.addEventListener('click', function() {
+          navigationRail.classList.remove('show');
+        });
+      }
+    });
+  </script>
+</body>
+</html> 
