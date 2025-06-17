@@ -42,19 +42,87 @@
       </div>
       <mdui-card class="card-profile">
         <div class="card-padding">
-          <h3>王小明 - 產品設計師</h3>
-          <p>我是一名擁有5年經驗的產品設計師，專注於用戶體驗與介面設計。我相信優秀的設計能夠解決真實的問題，並為用戶創造價值。</p>
-          <p>我擅長設計思維、使用者研究、介面設計與原型製作。我熱愛將複雜的問題簡化，創造既美觀又實用的數位產品。</p>
+          <h3>王昱翔 - 產品設計師</h3>
+          <p>專注於解決複雜醫療與科技領域的使用者體驗挑戰。我以設計思維驅動創新，成功將校園疫苗接種系統從紙本轉型為數位平台，並為智慧醫療個案管理打造直覺化介面，顯著提升工作效率。</p>
+          <p>在Acer期間，我主導開發榮獲德國iF設計獎的PredatorSense遊戲控制中心，證明我能將複雜技術轉化為簡潔易用的產品體驗。我擅長進行深入的使用者研究，並將洞察轉化為實際解決方案，為組織創造實質價值。</p>
           
           <h4>技能專長</h4>
           <div class="skills-container">
-            <mdui-chip>UI 設計</mdui-chip>
-            <mdui-chip>UX 研究</mdui-chip>
-            <mdui-chip>使用者測試</mdui-chip>
-            <mdui-chip>原型設計</mdui-chip>
+            <mdui-chip>客戶需求分析</mdui-chip>
+            <mdui-chip>系統性設計規劃</mdui-chip>
+            <mdui-chip>使用者研究</mdui-chip>
+            <mdui-chip>工作流程分析</mdui-chip>
+            <mdui-chip>介面優化</mdui-chip>
             <mdui-chip>Figma</mdui-chip>
             <mdui-chip>Sketch</mdui-chip>
-            <mdui-chip>Adobe XD</mdui-chip>
+          </div>
+          
+          <h4>個人特質</h4>
+          <div class="traits-container">
+            <div class="traits-chips">
+              <mdui-chip onclick="toggleTrait('observation')">
+                <span>敏銳觀察力</span>
+                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
+              </mdui-chip>
+              <mdui-chip onclick="toggleTrait('systematic')">
+                <span>系統性思維</span>
+                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
+              </mdui-chip>
+              <mdui-chip onclick="toggleTrait('communication')">
+                <span>有效溝通</span>
+                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
+              </mdui-chip>
+              <mdui-chip onclick="toggleTrait('teamwork')">
+                <span>團隊導向</span>
+                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
+              </mdui-chip>
+              <mdui-chip onclick="toggleTrait('learning')">
+                <span>持續學習</span>
+                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
+              </mdui-chip>
+            </div>
+            
+            <div id="traitDetails" class="trait-details" style="width: 100%;">
+              <div id="observation" class="trait-detail" style="display: none; width: 100%;">
+                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
+                  <div class="card-padding">
+                    <p>善於洞察用戶真實需求，從細微處發現問題本質。在專案中，能夠透過深入觀察用戶行為，發掘潛在需求，並轉化為有效的設計解決方案。</p>
+                  </div>
+                </mdui-card>
+              </div>
+              
+              <div id="systematic" class="trait-detail" style="display: none; width: 100%;">
+                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
+                  <div class="card-padding">
+                    <p>注重整體架構，平衡用戶體驗與系統可維護性。在設計過程中，不僅考慮當下的使用體驗，更著重於系統的長期發展與維護。</p>
+                  </div>
+                </mdui-card>
+              </div>
+              
+              <div id="communication" class="trait-detail" style="display: none; width: 100%;">
+                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
+                  <div class="card-padding">
+                    <p>善於傾聽與表達，能與各利益相關者建立共識。在專案中，能夠清楚傳達設計理念，並有效整合各方意見，推動專案順利進行。</p>
+                  </div>
+                </mdui-card>
+              </div>
+              
+              <div id="teamwork" class="trait-detail" style="display: none; width: 100%;">
+                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
+                  <div class="card-padding">
+                    <p>以團隊整體利益為考量，尋求多方共贏的解決方案。在合作過程中，注重團隊協作，共同創造最佳成果。</p>
+                  </div>
+                </mdui-card>
+              </div>
+              
+              <div id="learning" class="trait-detail" style="display: none; width: 100%;">
+                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
+                  <div class="card-padding">
+                    <p>主動追求進步，善於分析問題並制定改善計劃。面對挑戰時，能夠快速學習新技能，持續提升專業能力。</p>
+                  </div>
+                </mdui-card>
+              </div>
+            </div>
           </div>
           
           <h4>工作經歷</h4>
@@ -164,5 +232,36 @@
 
   <!-- 引入自訂JS -->
   <script src="script.js"></script>
+  <script>
+    function toggleTrait(traitId) {
+      // 獲取被點擊的 chip 和對應的圖示
+      const clickedChip = document.querySelector(`mdui-chip[onclick="toggleTrait('${traitId}')"]`);
+      const icon = clickedChip.querySelector('.trait-icon');
+      const selectedDetail = document.getElementById(traitId);
+      
+      // 如果當前特質已經顯示（圖示是減號），則收合它
+      if (icon.textContent === 'remove') {
+        selectedDetail.style.display = 'none';
+        icon.textContent = 'add';
+        return;
+      }
+      
+      // 隱藏所有特質說明
+      const allDetails = document.querySelectorAll('.trait-detail');
+      allDetails.forEach(detail => {
+        detail.style.display = 'none';
+      });
+      
+      // 重置所有圖示為加號
+      const allIcons = document.querySelectorAll('.trait-icon');
+      allIcons.forEach(icon => {
+        icon.textContent = 'add';
+      });
+      
+      // 顯示選中的特質說明並將圖示改為減號
+      selectedDetail.style.display = 'block';
+      icon.textContent = 'remove';
+    }
+  </script>
 </body>
 </html> 
