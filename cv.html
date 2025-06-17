@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+  <meta name="renderer" content="webkit"/>
+  <title>王昱翔 - 產品設計師履歷</title>
+  
+  <!-- 引入MDUI CSS和JS -->
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <!-- 引入Material圖標 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- 引入自訂CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 引入列印專用CSS -->
+  <style>
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .cv-container {
+        padding: 20px;
+        box-shadow: none;
+      }
+      .cv-section {
+        break-inside: avoid;
+      }
+    }
+    
+    .cv-container {
+      max-width: 850px;
+      margin: 30px auto;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 40px;
+    }
+    
+    .cv-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      gap: 30px;
+    }
+    
+    .cv-header-info {
+      flex: 1;
+    }
+    
+    .cv-header-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .cv-name {
+      margin: 0;
+      color: var(--md-primary);
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+    
+    .cv-title {
+      color: var(--md-secondary);
+      font-size: 1.4rem;
+      margin: 8px 0 15px;
+    }
+    
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .cv-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--md-on-surface-variant);
+    }
+    
+    .cv-contact-item mdui-icon {
+      font-size: 18px;
+      color: var(--md-primary);
+    }
+    
+    .cv-divider {
+      margin: 25px 0;
+      border: none;
+      height: 1px;
+      background-color: var(--md-outline-variant);
+    }
+    
+    .cv-section {
+      margin-bottom: 30px;
+    }
+    
+    .cv-section-title {
+      color: var(--md-primary);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--md-primary-container);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .cv-section-title mdui-icon {
+      color: var(--md-primary);
+      font-size: 22px;
+    }
+    
+    .cv-work-item, .cv-education-item {
+      margin-bottom: 20px;
+    }
+    
+    .cv-work-header, .cv-education-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    
+    .cv-work-company, .cv-education-school {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--md-on-surface);
+    }
+    
+    .cv-work-duration, .cv-education-duration {
+      color: var(--md-on-surface-variant);
+    }
+    
+    .cv-work-title {
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--md-secondary);
+      margin-bottom: 8px;
+    }
+    
+    .cv-work-description {
+      margin-top: 5px;
+      color: var(--md-on-surface);
+    }
+    
+    .cv-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .cv-skills mdui-chip {
+      margin-bottom: 8px;
+    }
+    
+    .cv-projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+    
+    .cv-project-item {
+      break-inside: avoid;
+      margin-bottom: 15px;
+    }
+    
+    .cv-project-title {
+      font-weight: 600;
+      color: var(--md-on-surface);
+      margin-bottom: 5px;
+    }
+    
+    .cv-project-subtitle {
+      font-weight: 500;
+      color: var(--md-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+    
+    .cv-project-description {
+      color: var(--md-on-surface);
+      margin-bottom: 8px;
+    }
+    
+    .cv-summary {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--md-on-surface);
+      margin-bottom: 25px;
+    }
+    
+    .cv-awards {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .cv-award-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    
+    .cv-award-item mdui-icon {
+      color: #FFD700;
+      font-size: 24px;
+    }
+    
+    .cv-award-content {
+      flex: 1;
+    }
+    
+    .cv-award-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .cv-traits-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+    
+    .cv-trait-item {
+      break-inside: avoid;
+    }
+    
+    .cv-trait-title {
+      font-weight: 600;
+      color: var(--md-primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .cv-trait-title mdui-icon {
+      font-size: 18px;
+    }
+    
+    .print-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+    }
+    
+    @media (max-width: 768px) {
+      .cv-container {
+        padding: 20px;
+        margin: 15px;
+      }
+      
+      .cv-header {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .cv-contact {
+        justify-content: center;
+      }
+      
+      .cv-header-photo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 列印按鈕 -->
+  <mdui-button class="print-button no-print" id="printButton" variant="filled">
+    <mdui-icon slot="icon" name="print"></mdui-icon>
+    列印履歷
+  </mdui-button>
+
+  <div class="cv-container">
+    <!-- 個人資料區 -->
+    <div class="cv-header">
+      <div class="cv-header-info">
+        <h1 class="cv-name">王昱翔</h1>
+        <h2 class="cv-title">資深產品設計師</h2>
+        <p class="cv-summary">專注於解決複雜醫療與科技領域的使用者體驗挑戰，擅長將設計思維轉化為創新解決方案。具備深入使用者研究、系統性設計規劃及團隊協作能力，致力於打造符合用戶需求的直覺化產品體驗。</p>
+        <div class="cv-contact">
+          <div class="cv-contact-item">
+            <mdui-icon name="email"></mdui-icon>
+            <span>twpotato606@gmail.com</span>
+          </div>
+          <div class="cv-contact-item">
+            <mdui-icon name="phone"></mdui-icon>
+            <span>0978089505</span>
+          </div>
+          <div class="cv-contact-item">
+            <mdui-icon name="link"></mdui-icon>
+            <span><a href="https://www.linkedin.com/in/yu-xiang-wang/" target="_blank">linkedin.com/in/yu-xiang-wang</a></span>
+          </div>
+        </div>
+      </div>
+      <img src="images/大頭照.png" alt="王昱翔照片" class="cv-header-photo">
+    </div>
+    
+    <hr class="cv-divider">
+    
+    <!-- 工作經驗區 -->
+    <div class="cv-section">
+      <h3 class="cv-section-title">
+        <mdui-icon name="work"></mdui-icon>
+        工作經驗
+      </h3>
+      
+      <div class="cv-work-item">
+        <div class="cv-work-header">
+          <div class="cv-work-company">DeepQ</div>
+          <div class="cv-work-duration">2020年6月 - 至今</div>
+        </div>
+        <div class="cv-work-title">資深產品設計師 / Assistant Manager</div>
+        <div class="cv-work-description">
+          <ul>
+            <li>負責智慧醫療個案管理平台的整體使用者體驗與介面設計，簡化長輩註冊流程，提升使用意願。</li>
+            <li>優化個案管理師工作分配機制，建立系統化的衛教內容管理，提高醫療照護效率。</li>
+            <li>成功將校園疫苗接種系統從紙本轉型為數位平台，打造全國性接種管理系統，縮短意願書發送時間從2週至2天。</li>
+            <li>建立完整的使用者支援體系，透過客服系統收集超過3600條使用意見，持續優化系統功能。</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="cv-work-item">
+        <div class="cv-work-header">
+          <div class="cv-work-company">Acer</div>
+          <div class="cv-work-duration">2014年9月 - 2020年6月</div>
+        </div>
+        <div class="cv-work-title">資深設計師</div>
+        <div class="cv-work-description">
+          <ul>
+            <li>主導開發 PredatorSense 遊戲控制中心，提供直觀且功能完善的系統控制中心，榮獲2018年德國iF設計獎。</li>
+            <li>設計 Vision360 雲端行車紀錄器，整合360度全景攝影、雲端備份與智能防盜功能，改善行車安全體驗。</li>
+            <li>訪談50+位電競玩家，深入分析用戶需求，優化產品使用體驗，顯著提升產品競爭力。</li>
+            <li>參與多項產品設計專案，負責介面優化、使用者研究及互動設計，推動產品創新。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 專業技能區 -->
+    <div class="cv-section">
+      <h3 class="cv-section-title">
+        <mdui-icon name="auto_awesome"></mdui-icon>
+        專業技能
+      </h3>
+      
+      <div class="cv-skills">
+        <mdui-chip>客戶需求分析</mdui-chip>
+        <mdui-chip>系統性設計規劃</mdui-chip>
+        <mdui-chip>使用者研究</mdui-chip>
+        <mdui-chip>工作流程分析</mdui-chip>
+        <mdui-chip>介面優化</mdui-chip>
+        <mdui-chip>產品設計</mdui-chip>
+        <mdui-chip>UI/UX 設計</mdui-chip>
+        <mdui-chip>使用者測試</mdui-chip>
+        <mdui-chip>設計思維</mdui-chip>
+        <mdui-chip>競品分析</mdui-chip>
+        <mdui-chip>Figma</mdui-chip>
+        <mdui-chip>Sketch</mdui-chip>
+      </div>
+    </div>
+    
+    <!-- 個人特質區 -->
+    <div class="cv-section">
+      <h3 class="cv-section-title">
+        <mdui-icon name="psychology"></mdui-icon>
+        個人特質
+      </h3>
+      
+      <div class="cv-traits-section">
+        <div class="cv-trait-item">
+          <div class="cv-trait-title">
+            <mdui-icon name="visibility"></mdui-icon>
+            敏銳觀察力
+          </div>
+          <p>善於洞察用戶真實需求，從細微處發現問題本質。透過深入觀察用戶行為，有效發掘潛在需求，並轉化為實際設計解決方案。</p>
+        </div>
+        
+        <div class="cv-trait-item">
+          <div class="cv-trait-title">
+            <mdui-icon name="account_tree"></mdui-icon>
+            系統性思維
+          </div>
+          <p>注重整體架構，平衡用戶體驗與系統可維護性。在設計過程中，兼顧當下使用體驗與系統的長期發展維護。</p>
+        </div>
+        
+        <div class="cv-trait-item">
+          <div class="cv-trait-title">
+            <mdui-icon name="forum"></mdui-icon>
+            有效溝通
+          </div>
+          <p>善於傾聽與表達，能與各利益相關者建立共識。清楚傳達設計理念，有效整合各方意見，推動專案順利進行。</p>
+        </div>
+        
+        <div class="cv-trait-item">
+          <div class="cv-trait-title">
+            <mdui-icon name="groups"></mdui-icon>
+            團隊導向
+          </div>
+          <p>以團隊整體利益為考量，尋求多方共贏的解決方案。重視團隊協作，共同創造最佳成果。</p>
+        </div>
+        
+        <div class="cv-trait-item">
+          <div class="cv-trait-title">
+            <mdui-icon name="school"></mdui-icon>
+            持續學習
+          </div>
+          <p>主動追求進步，善於分析問題並制定改善計劃。面對挑戰時，能快速學習新技能，持續提升專業能力。</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 主要專案區 -->
+    <div class="cv-section">
+      <h3 class="cv-section-title">
+        <mdui-icon name="assignment"></mdui-icon>
+        主要專案成就
+      </h3>
+      
+      <div class="cv-projects">
+        <div class="cv-project-item">
+          <div class="cv-project-title">校園疫苗接種數位轉型</div>
+          <div class="cv-project-subtitle">疾管署 | 主設計師</div>
+          <div class="cv-project-description">
+            <ul>
+              <li>將紙本疫苗接種流程轉換為全國性數位管理系統</li>
+              <li>協助超過300萬家長完成意願填寫</li>
+              <li>縮短作業時間80%，提高全台學校健康中心工作效率</li>
+              <li>讓疾管署能精準掌握疫苗需求，優化採購分配</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="cv-project-item">
+          <div class="cv-project-title">智慧醫療個案管理平台</div>
+          <div class="cv-project-subtitle">醫療院所 | 主設計師</div>
+          <div class="cv-project-description">
+            <ul>
+              <li>開發智慧化個案管理平台，優化醫療團隊工作流程</li>
+              <li>簡化長輩註冊流程，提升使用意願</li>
+              <li>設計靈活的團隊協作機制，適應不同醫院管理模式</li>
+              <li>整合分散資料，讓個管師能有效追蹤100+個案</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="cv-project-item">
+          <div class="cv-project-title">PredatorSense 遊戲控制中心</div>
+          <div class="cv-project-subtitle">Acer | 榮獲德國iF設計獎</div>
+          <div class="cv-project-description">
+            <ul>
+              <li>為電競筆電開發直觀、功能完善的系統控制中心</li>
+              <li>整合硬體控制功能於單一介面，提升使用體驗</li>
+              <li>訪談50+位電競玩家，深入分析需求與痛點</li>
+              <li>產品覆蓋全球六大洲，服務超過100個國家</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="cv-project-item">
+          <div class="cv-project-title">Vision360 雲端行車紀錄器</div>
+          <div class="cv-project-subtitle">Acer | 榮獲德國iF設計獎</div>
+          <div class="cv-project-description">
+            <ul>
+              <li>設計創新的雲端行車紀錄器，整合360度全景攝影</li>
+              <li>解決傳統行車紀錄器視角有限、無法即時備份等痛點</li>
+              <li>打造直覺化操作介面，提升行車安全體驗</li>
+              <li>整合雲端備份與智能防盜功能，提供全方位保障</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 獲獎成就區 -->
+    <div class="cv-section">
+      <h3 class="cv-section-title">
+        <mdui-icon name="emoji_events"></mdui-icon>
+        獲獎與認可
+      </h3>
+      
+      <div class="cv-awards">
+        <div class="cv-award-item">
+          <mdui-icon name="star"></mdui-icon>
+          <div class="cv-award-content">
+            <div class="cv-award-title">德國iF設計獎 (2018)</div>
+            <div>PredatorSense 遊戲控制中心與 Vision360 雲端行車紀錄器同時獲獎，肯定其創新設計與卓越使用者體驗。</div>
+          </div>
+        </div>
+        <div class="cv-award-item">
+          <mdui-icon name="star"></mdui-icon>
+          <div class="cv-award-content">
+            <div class="cv-award-title">全台校園疫苗接種數位化推廣成就</div>
+            <div>成功將校園疫苗接種系統推廣至全台學校，達成90%的滿意度，顯著提升公衛系統效率。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入自訂JS -->
+  <script src="script.js"></script>
+  <script>
+    // 列印功能
+    document.getElementById('printButton').addEventListener('click', function() {
+      window.print();
+    });
+  </script>
+</body>
+</html>
