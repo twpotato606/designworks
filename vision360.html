@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+  <meta name="renderer" content="webkit"/>
+  <title>Vision360 雲端行車紀錄器 - 作品集</title>
+  
+  <!-- 引入MDUI CSS和JS -->
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <!-- 引入Material圖標 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- 引入自訂CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu按鈕 (手機版) -->
+  <mdui-button class="menu-button" id="menuButton" variant="filled">
+    <mdui-icon slot="icon" name="menu"></mdui-icon>
+  </mdui-button>
+
+  <!-- Navigation Rail (左側導覽列) -->
+  <mdui-navigation-rail id="navigationRail">
+    <!-- 關閉按鈕 (手機版) -->
+    <mdui-button class="close-button" id="closeButton" variant="text">
+      <mdui-icon slot="icon" name="close" style="color: rgb(73, 69, 78);"></mdui-icon>
+    </mdui-button>
+    <!-- 導覽項目 -->
+    <mdui-navigation-rail-item icon="arrow_back" value="home" id="homeNav">返回首頁</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="info" value="situation" id="situationNav">情境</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="assignment" value="task" id="taskNav">任務</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="build" value="action" id="actionNav">行動</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="analytics" value="result" id="resultNav">結果</mdui-navigation-rail-item>
+  </mdui-navigation-rail>
+
+  <!-- 主要內容區域 -->
+  <div class="main-content">
+    <!-- 專案標題 -->
+    <div class="project-header">
+      <h1>Vision360 雲端行車紀錄器</h1>
+      <h3>360度無死角的行車安全守護者</h3>
+      <div class="project-meta">
+        <mdui-chip>Acer</mdui-chip>
+        <mdui-chip>UI/UX設計</mdui-chip>
+        <mdui-chip>產品設計</mdui-chip>
+      </div>
+    </div>
+
+    <!-- 1. 情境 (Situation) -->
+    <div id="situationSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>情境 (Situation)</h2>
+          <p>在2018年的行車紀錄器市場中，我們發現傳統產品存在諸多限制，無法滿足現代駕駛者的需求。透過深入分析市場現況，我們發現了明確的市場痛點，同時也看到了透過新興技術解決這些問題的機會。這促使Acer雲端部門開發了Vision360，一款整合360度全景攝影、雲端儲存與智能防盜功能的創新行車紀錄器。</p>
+          
+          <div class="workflow-problems">
+            <h4>市場現況分析</h4>
+            <p>在2018年，我們對市場上主要的行車紀錄器品牌進行了深入分析，發現以下問題：</p>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="videocam"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>Garmin Dash Cam 55</mdui-list-item-title>
+                  <mdui-list-item-subtitle>雖然提供1440p高畫質錄影，但僅能拍攝前方畫面，且缺乏雲端備份功能。其語音控制功能雖然方便，但在複雜路況下容易誤觸發。</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="videocam"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>Mio MiVue 798</mdui-list-item-title>
+                  <mdui-list-item-subtitle>提供前後雙鏡頭錄影，但需要額外安裝後鏡頭，安裝複雜且增加成本。其碰撞感測功能僅限於本地儲存，無法即時通知車主。</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+
+            <h4>主要市場痛點</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="error"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>視角限制</mdui-list-item-title>
+                  <mdui-list-item-subtitle>多數產品缺乏完整的360度視角，無法全面記錄車輛周圍環境，容易錯過關鍵事件</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="cloud_off"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>雲端整合不足</mdui-list-item-title>
+                  <mdui-list-item-subtitle>雲端備份功能不普及，重要影片可能因儲存空間不足而遺失</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="security"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>防盜功能薄弱</mdui-list-item-title>
+                  <mdui-list-item-subtitle>防盜功能整合度低，無法提供即時追蹤與通知</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="settings"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>使用體驗不佳</mdui-list-item-title>
+                  <mdui-list-item-subtitle>使用者介面複雜，學習曲線高，影響產品使用意願</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+
+            <h4>技術突破機會</h4>
+            <p>透過新興的360度相機技術與雲端服務，我們發現以下改進機會：</p>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="360"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>360度全景技術</mdui-list-item-title>
+                  <mdui-list-item-subtitle>利用最新的360度相機技術，提供無死角的行車記錄，確保不會遺漏任何重要畫面</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="cloud_done"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>雲端整合方案</mdui-list-item-title>
+                  <mdui-list-item-subtitle>整合4G LTE與雲端儲存，提供即時備份與遠端存取功能，解決儲存空間限制</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="gps_fixed"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>智能防盜系統</mdui-list-item-title>
+                  <mdui-list-item-subtitle>結合GPS定位與即時通知功能，提供完整的車輛防盜解決方案</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="touch_app"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>直覺化介面</mdui-list-item-title>
+                  <mdui-list-item-subtitle>重新設計使用者介面，提供更簡單直覺的操作體驗</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 2. 任務 (Task) -->
+    <div id="taskSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>任務 (Task)</h2>
+          <p>設計一款雲端行車紀錄器，解決傳統行車紀錄器的限制，提供全方位的行車安全保障。</p>
+          
+          <div class="project-goals">
+            <h4>專案目標</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
+                <mdui-list-item-content>設計一款雲端行車紀錄器</mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+
+          <div class="my-work">
+            <h4>我的工作</h4>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="analytics"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>競品研究與分析</mdui-list-item-title>
+                  <mdui-list-item-subtitle>深入研究市場上主要行車紀錄器品牌的產品特點、使用者體驗與技術限制，提出具體的改進方案</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="touch_app"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>行車紀錄器互動設計</mdui-list-item-title>
+                  <mdui-list-item-subtitle>設計直覺且易用的操作介面，包含錄影模式切換、即時畫面查看、設定調整等功能，確保駕駛者能在行車過程中安全且方便地操作</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="phone_android"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>App功能與操作設計</mdui-list-item-title>
+                  <mdui-list-item-subtitle>規劃完整的App功能架構，包含影片管理、即時監控、防盜通知、雲端備份等功能，並設計符合使用者習慣的操作流程</mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 3. 行動 (Action) -->
+    <div id="actionSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>行動 (Action)</h2>
+          
+          <div class="process-step">
+            <h4>競品研究結果</h4>
+            <p>透過深入分析市場上主要行車紀錄器品牌，我們發現以下關鍵發現：</p>
+            <mdui-list>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="videocam"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>硬體設計限制</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    <ul>
+                      <li>多數產品採用單一或雙鏡頭設計，無法提供完整視角</li>
+                      <li>儲存空間受限，無法長期保存高畫質影片</li>
+                      <li>缺乏行動網路連接能力，無法即時傳輸資料</li>
+                    </ul>
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="psychology"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>使用者體驗問題</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    <ul>
+                      <li>操作介面複雜，需要多步驟才能完成基本設定</li>
+                      <li>缺乏直覺的觸控操作，影響行車安全</li>
+                      <li>影片管理功能分散，不易查找特定片段</li>
+                    </ul>
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="build"></mdui-icon>
+                <mdui-list-item-content>
+                  <mdui-list-item-title>技術整合不足</mdui-list-item-title>
+                  <mdui-list-item-subtitle>
+                    <ul>
+                      <li>雲端服務整合度低，備份功能不完善</li>
+                      <li>缺乏智能防盜功能，無法提供即時警報</li>
+                      <li>App功能單一，無法滿足現代使用者需求</li>
+                    </ul>
+                  </mdui-list-item-subtitle>
+                </mdui-list-item-content>
+              </mdui-list-item>
+            </mdui-list>
+          </div>
+
+          <div class="process-step">
+            <h4>行車紀錄器互動設計</h4>
+            <div class="design-process">
+              <div class="design-step">
+                <h5>1. 行車模式</h5>
+                <div class="design-content">
+                  <div class="design-image">
+                    <img src="images/vision360-driving-mode.jpg" alt="行車模式介面設計">
+                  </div>
+                  <div class="design-description">
+                    <p>當車輛發動時，系統自動進入行車模式：</p>
+                    <ul>
+                      <li>自動開始360度全景錄影</li>
+                      <li>即時顯示前方畫面，可透過手勢切換視角</li>
+                      <li>左側快速選單提供常用功能</li>
+                      <li>右側模式選單可調整詳細設定</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="design-step">
+                <h5>2. 駐車模式</h5>
+                <div class="design-content">
+                  <div class="design-image">
+                    <img src="images/vision360-parking-mode.jpg" alt="駐車模式介面設計">
+                  </div>
+                  <div class="design-description">
+                    <p>車輛熄火後，系統進入駐車模式：</p>
+                    <ul>
+                      <li>30秒倒數後自動切換至駐車監控</li>
+                      <li>偵測到異常移動或碰撞時自動錄影</li>
+                      <li>即時發送通知至App</li>
+                      <li>啟動GPS追蹤功能</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="design-step">
+                <h5>3. 觸控操作設計</h5>
+                <div class="design-content">
+                  <div class="design-image">
+                    <img src="images/vision360-touch-control.jpg" alt="觸控操作設計">
+                  </div>
+                  <div class="design-description">
+                    <p>簡化觸控操作，提升使用便利性：</p>
+                    <ul>
+                      <li>支援手勢操作切換視角</li>
+                      <li>雙指縮放調整畫面大小</li>
+                      <li>點擊畫面快速切換前後鏡頭</li>
+                      <li>滑動切換不同功能模式</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+
+    <!-- 4. 結果 (Result) -->
+    <div id="resultSection" class="content-section">
+      <mdui-card class="project-card">
+        <div class="card-padding">
+          <h2>結果 (Result)</h2>
+          
+          <div class="result-highlight">
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="emoji_events"></mdui-icon>
+                </div>
+                <h4>iF 設計獎</h4>
+                <p>2018年榮獲德國iF設計獎，肯定其創新設計與使用者體驗</p>
+                <p>評審特別讚賞其整合360度全景攝影、雲端備份與智能防盜功能的創新概念，以及直覺易用的使用者介面設計。</p>
+                <p><a href="https://ifdesign.com/en/winner-ranking/project/vision360/284333" target="_blank">查看iF設計獎頁面</a></p>
+              </div>
+            </mdui-card>
+
+            <mdui-card class="highlight-card">
+              <div class="card-padding">
+                <div class="highlight-icon">
+                  <mdui-icon name="stop_circle"></mdui-icon>
+                </div>
+                <h4>專案終止</h4>
+                <p>由於專案涉及多個複雜系統的整合，包括360度全景攝影、4G LTE通訊、雲端儲存、GPS定位等，開發團隊在短時間內無法有效整合這些技術，導致專案在完成雛形後被迫終止。</p>
+              </div>
+            </mdui-card>
+          </div>
+        </div>
+      </mdui-card>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+  <!-- 添加頁面導航功能的JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 返回首頁
+      document.getElementById('homeNav').addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+      
+      // 情境區塊導航
+      document.getElementById('situationNav').addEventListener('click', function() {
+        document.getElementById('situationSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 任務區塊導航
+      document.getElementById('taskNav').addEventListener('click', function() {
+        document.getElementById('taskSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 行動區塊導航
+      document.getElementById('actionNav').addEventListener('click', function() {
+        document.getElementById('actionSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 結果區塊導航
+      document.getElementById('resultNav').addEventListener('click', function() {
+        document.getElementById('resultSection').scrollIntoView({behavior: 'smooth'});
+      });
+      
+      // 手機版選單開關
+      const menuButton = document.getElementById('menuButton');
+      const closeButton = document.getElementById('closeButton');
+      const navigationRail = document.getElementById('navigationRail');
+      
+      if (menuButton && closeButton && navigationRail) {
+        menuButton.addEventListener('click', function() {
+          navigationRail.classList.add('show');
+        });
+        
+        closeButton.addEventListener('click', function() {
+          navigationRail.classList.remove('show');
+        });
+      }
+    });
+  </script>
+</body>
+</html> 
