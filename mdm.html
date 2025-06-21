@@ -127,7 +127,11 @@
               </mdui-list-item>
               <mdui-list-item>
                 <mdui-icon slot="icon" name="error"></mdui-icon>
-                <mdui-list-item-content>個案管理師工作分配效率低</mdui-list-item-content>
+                <mdui-list-item-content>個案資料散布各系統，個管師不容易查找所需資訊</mdui-list-item-content>
+              </mdui-list-item>
+              <mdui-list-item>
+                <mdui-icon slot="icon" name="error"></mdui-icon>
+                <mdui-list-item-content>需手動記錄個案回報數據，非常花時間</mdui-list-item-content>
               </mdui-list-item>
               <mdui-list-item>
                 <mdui-icon slot="icon" name="description"></mdui-icon>
@@ -161,11 +165,11 @@
               </mdui-list-item>
               <mdui-list-item>
                 <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>優化個案管理師工作分配機制</mdui-list-item-content>
+                <mdui-list-item-content>以病人為中心的資料呈現</mdui-list-item-content>
               </mdui-list-item>
               <mdui-list-item>
                 <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>以病人為中心的資料呈現</mdui-list-item-content>
+                <mdui-list-item-content>有效率的收集個案數據</mdui-list-item-content>
               </mdui-list-item>
               <mdui-list-item>
                 <mdui-icon slot="icon" name="check_circle"></mdui-icon>
@@ -299,6 +303,48 @@
             </div>
 
             <div class="design-improvement">
+              <h5>問卷自動生成</h5>
+              <div class="before-after">
+                <div class="before">
+                  <h5>Before</h5>
+                  <div style="width: 100%; padding-top: 56.25%; position: relative;">
+                    <img src="images/mdm/form/before.png" alt="Before" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>大多數個管都是訊息詢問狀況並手動記錄</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="close"></mdui-icon>
+                      <mdui-list-item-content>有電子問卷系統也需要一份一份建置</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+                <div class="after">
+                  <h5>After</h5>
+                  <div style="width: 100%; padding-top: 56.25%; position: relative;">
+                    <img src="images/mdm/form/after.png" alt="After" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                  </div>
+                  <mdui-list>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>現成圖片或PDF作為參考資料，或是直接描述請AI生成大幅加速建置速度</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>提供手動微調細節功能，確保問卷品質</mdui-list-item-content>
+                    </mdui-list-item>
+                    <mdui-list-item>
+                      <mdui-icon slot="icon" name="check"></mdui-icon>
+                      <mdui-list-item-content>與排程功能搭配，實現完全自動化</mdui-list-item-content>
+                    </mdui-list-item>
+                  </mdui-list>
+                </div>
+              </div>
+            </div>
+
+            <div class="design-improvement">
               <h5>智能追蹤排程</h5>
               <div class="before-after">
                 <div class="before">
@@ -325,11 +371,11 @@
                   <mdui-list>
                     <mdui-list-item>
                       <mdui-icon slot="icon" name="check"></mdui-icon>
-                      <mdui-list-item-content>預先排程未來幾週衛教內容</mdui-list-item-content>
+                      <mdui-list-item-content>預先排程未來幾週衛教或追蹤內容</mdui-list-item-content>
                     </mdui-list-item>
                     <mdui-list-item>
                       <mdui-icon slot="icon" name="check"></mdui-icon>
-                      <mdui-list-item-content>系統自動推送衛教訊息</mdui-list-item-content>
+                      <mdui-list-item-content>系統自動推送訊息</mdui-list-item-content>
                     </mdui-list-item>
                   </mdui-list>
                 </div>
@@ -359,11 +405,11 @@
                   <mdui-list>
                     <mdui-list-item>
                       <mdui-icon slot="icon" name="check"></mdui-icon>
-                      <mdui-list-item-content>下班後可以代個管師回覆訊息</mdui-list-item-content>
+                      <mdui-list-item-content>院方可以輕鬆的提供相關資料，讓機器人代為回覆</mdui-list-item-content>
                     </mdui-list-item>
                     <mdui-list-item>
                       <mdui-icon slot="icon" name="check"></mdui-icon>
-                      <mdui-list-item-content>如遇緊急事件，可直接回覆處置方式</mdui-list-item-content>
+                      <mdui-list-item-content>機器人不會回覆與個管不相干的問題</mdui-list-item-content>
                     </mdui-list-item>
                   </mdui-list>
                 </div>
