@@ -177,107 +177,173 @@
           <h2>行動 (Action)</h2>
           
           <div class="process-step">
-            <h4>競品研究結果</h4>
-            <p>透過深入分析市場上主要行車紀錄器品牌，我們發現以下關鍵發現：</p>
-            <mdui-list>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="videocam"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>硬體設計限制</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    <ul>
-                      <li>多數產品採用單一或雙鏡頭設計，無法提供完整視角</li>
-                      <li>儲存空間受限，無法長期保存高畫質影片</li>
-                      <li>缺乏行動網路連接能力，無法即時傳輸資料</li>
-                    </ul>
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="psychology"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>使用者體驗問題</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    <ul>
-                      <li>操作介面複雜，需要多步驟才能完成基本設定</li>
-                      <li>缺乏直覺的觸控操作，影響行車安全</li>
-                      <li>影片管理功能分散，不易查找特定片段</li>
-                    </ul>
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="build"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>技術整合不足</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    <ul>
-                      <li>雲端服務整合度低，備份功能不完善</li>
-                      <li>缺乏智能防盜功能，無法提供即時警報</li>
-                      <li>App功能單一，無法滿足現代使用者需求</li>
-                    </ul>
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-            </mdui-list>
+            <h4>競品研究結果與設計決策支撐</h4>
+            <p>透過深入分析市場上主要行車紀錄器品牌（包括Garmin、Mio、DOD、Papago等），我們發現關鍵問題：</p>
+            
+            <div class="competitor-analysis">
+              <mdui-list>
+                <mdui-list-item>
+                  <mdui-icon slot="icon" name="warning"></mdui-icon>
+                  <mdui-list-item-content>
+                    <mdui-list-item-title>視角覆蓋範圍分析</mdui-list-item-title>
+                    <mdui-list-item-subtitle>
+                      <ul>
+                        <li><strong>Garmin Dash Cam系列</strong>：單鏡頭設計僅覆蓋前方140°視角，側面與後方完全無法記錄</li>
+                        <li><strong>Mio MiVue系列</strong>：雙鏡頭設計雖有前後錄影，但左右兩側仍有死角，重要的側面碰撞無法記錄</li>
+                        <li><strong>DOD LS系列</strong>：視角範圍僅120°，無法完整記錄十字路口的複雜交通狀況</li>
+                      </ul>
+                    </mdui-list-item-subtitle>
+                  </mdui-list-item-content>
+                </mdui-list-item>
+              </mdui-list>
+            </div>
+
+            <div class="competitor-analysis">
+              <mdui-list>
+                <mdui-list-item>
+                  <mdui-icon slot="icon" name="warning"></mdui-icon>
+                  <mdui-list-item-content>
+                    <mdui-list-item-title>智能功能與連網服務分析</mdui-list-item-title>
+                    <mdui-list-item-subtitle>
+                      <ul>
+                        <li><strong>缺乏即時通訊</strong>：多數產品無4G連網功能，無法提供即時警報或遠端監控</li>
+                        <li><strong>防盜功能單一</strong>：僅提供基本的震動警報，無法追蹤車輛位置或即時通知</li>
+                      </ul>
+                    </mdui-list-item-subtitle>
+                  </mdui-list-item-content>
+                </mdui-list-item>
+              </mdui-list>
+            </div>
+
+            <div class="competitor-analysis">
+              <mdui-list>
+                <mdui-list-item>
+                  <mdui-icon slot="icon" name="warning"></mdui-icon>
+                  <mdui-list-item-content>
+                    <mdui-list-item-title>資料儲存與管理分析</mdui-list-item-title>
+                    <mdui-list-item-subtitle>
+                      <ul>
+                        <li><strong>儲存容量限制</strong>：多數產品依賴SD卡，容量有限且容易遺失重要影片</li>
+                        <li><strong>資料安全性低</strong>：SD卡可能損壞或被竊取，重要證據容易遺失</li>
+                      </ul>
+                    </mdui-list-item-subtitle>
+                  </mdui-list-item-content>
+                </mdui-list-item>
+              </mdui-list>
+            </div>
+
+            <div class="competitor-analysis">
+              <mdui-list>
+                <mdui-list-item>
+                  <mdui-icon slot="icon" name="warning"></mdui-icon>
+                  <mdui-list-item-content>
+                    <mdui-list-item-title>使用者介面與操作體驗分析</mdui-list-item-title>
+                    <mdui-list-item-subtitle>
+                      <ul>
+                        <li><strong>操作複雜度高</strong>：Garmin系列需要4-5個步驟才能調整基本設定，學習曲線陡峭</li>
+                        <li><strong>情境適應性差</strong>：無法根據使用情境自動調整功能配置</li>
+                      </ul>
+                    </mdui-list-item-subtitle>
+                  </mdui-list-item-content>
+                </mdui-list-item>
+              </mdui-list>
+            </div>
           </div>
 
           <div class="process-step">
-            <h4>行車紀錄器互動設計</h4>
+            <h4>解決方案及互動設計</h4>
             <div class="design-process">
               <div class="design-step">
-                <h5>1. 行車模式</h5>
-                <div class="design-content">
-                  <div class="design-image">
-                    <img src="images/vision360-driving-mode.jpg" alt="行車模式介面設計">
+                <h5>1. 360度錄影模式</h5>
+                <p>當車輛發動時，系統自動進入預設模式，全方位紀錄行車過程：</p>
+                <div class="before-after">
+                  <div class="before">
+                    <img src="images/vision360/auto recording.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>車輛啟動後，自動開始360度錄影</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
                   </div>
-                  <div class="design-description">
-                    <p>當車輛發動時，系統自動進入行車模式：</p>
-                    <ul>
-                      <li>自動開始360度全景錄影</li>
-                      <li>即時顯示前方畫面，可透過手勢切換視角</li>
-                      <li>左側快速選單提供常用功能</li>
-                      <li>右側模式選單可調整詳細設定</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="design-step">
-                <h5>2. 駐車模式</h5>
-                <div class="design-content">
-                  <div class="design-image">
-                    <img src="images/vision360-parking-mode.jpg" alt="駐車模式介面設計">
-                  </div>
-                  <div class="design-description">
-                    <p>車輛熄火後，系統進入駐車模式：</p>
-                    <ul>
-                      <li>30秒倒數後自動切換至駐車監控</li>
-                      <li>偵測到異常移動或碰撞時自動錄影</li>
-                      <li>即時發送通知至App</li>
-                      <li>啟動GPS追蹤功能</li>
-                    </ul>
+                  <div class="after">
+                    <img src="images/vision360/cam mode.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>如有需要可以透過選單切換不同視角</mdui-list-item-content>
+                      </mdui-list-item>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>也可以透過double tap手勢快速切換</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
                   </div>
                 </div>
               </div>
 
               <div class="design-step">
-                <h5>3. 觸控操作設計</h5>
-                <div class="design-content">
-                  <div class="design-image">
-                    <img src="images/vision360-touch-control.jpg" alt="觸控操作設計">
+                <h5>2. 連網功能</h5>
+                <p>車機聯網後，可以提供更多智能服務：</p>
+                <div class="before-after">
+                  <div class="before">
+                    <img src="images/vision360/find my car.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>離開車子後，透過App查詢車輛位置</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
                   </div>
-                  <div class="design-description">
-                    <p>簡化觸控操作，提升使用便利性：</p>
-                    <ul>
-                      <li>支援手勢操作切換視角</li>
-                      <li>雙指縮放調整畫面大小</li>
-                      <li>點擊畫面快速切換前後鏡頭</li>
-                      <li>滑動切換不同功能模式</li>
-                    </ul>
+                  <div class="after">
+                    <img src="images/vision360/cloud backup.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>事件發生後自動備份影片至雲端，讓車主可以馬上查看而不用插拔記憶卡</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
+                  </div>
+                </div>
+
+                <div class="before-after">
+                  <div class="before">
+                    <img src="images/vision360/live view.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>如果防盜功能偵測到異常，可以直接查看LiveView</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
                   </div>
                 </div>
               </div>
+
+              <div class="design-step">
+                <h5>3. 情境設計(Contextual Design)</h5>
+                <p>根據使用者的當前情境或任務顯示相關的內容或功能，避免不必要的干擾：</p>
+                <div class="before-after">
+                  <div class="before">
+                    <img src="images/vision360/onboarding.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>第一次使用時提供使用教學</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
+                  </div>
+                  <div class="after">
+                    <img src="images/vision360/monitoring mode.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
+                    <mdui-list>
+                      <mdui-list-item>
+                        <mdui-icon slot="icon" name="check"></mdui-icon>
+                        <mdui-list-item-content>根據使用情境，自訂觸發對應的系統模式(行車模式, 防盜模式)</mdui-list-item-content>
+                      </mdui-list-item>
+                    </mdui-list>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -308,8 +374,9 @@
                 <div class="highlight-icon">
                   <mdui-icon name="stop_circle"></mdui-icon>
                 </div>
-                <h4>專案終止</h4>
+                <h4>專案終止與反思</h4>
                 <p>由於專案涉及多個複雜系統的整合，包括360度全景攝影、4G LTE通訊、雲端儲存、GPS定位等，開發團隊在短時間內無法有效整合這些技術，導致專案在完成雛形後被迫終止。</p>
+                <p>也讓我開始反思是否產品需要這麼多功能，是否需要簡化產品，讓產品更聚焦於重點情境上。</p>
               </div>
             </mdui-card>
           </div>
