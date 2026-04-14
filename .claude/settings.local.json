@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python skills/ui-ux-pro-max/scripts/search.py \"B2B UX designer portfolio enterprise professional credibility\" --design-system -p \"B2B UX Portfolio\" -f markdown)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"B2B UX designer portfolio enterprise professional credibility\" --design-system -p \"B2B UX Portfolio\" -f markdown)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"professional enterprise minimal dark\" --domain style)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio professional SaaS enterprise\" --domain color)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio case study hero landing professional\" --domain landing)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"animation accessibility interaction keyboard\" --domain ux)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"professional elegant enterprise serif\" --domain typography)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio layout responsive grid\" --stack html-tailwind)"
+    ]
+  }
+}
