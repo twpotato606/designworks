@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Archivo', sans-serif;
+  }
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Scroll-triggered fade-up animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
+  }
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

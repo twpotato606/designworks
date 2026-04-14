@@ -8,7 +8,13 @@
       "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio case study hero landing professional\" --domain landing)",
       "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"animation accessibility interaction keyboard\" --domain ux)",
       "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"professional elegant enterprise serif\" --domain typography)",
-      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio layout responsive grid\" --stack html-tailwind)"
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"portfolio layout responsive grid\" --stack html-tailwind)",
+      "Bash(ls \"G:\\\\CursorProjects\\\\designworks\"/*.html)",
+      "Bash(npm --version)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

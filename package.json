@@ -1,0 +1,27 @@
+{
+  "name": "designworks",
+  "version": "1.0.0",
+  "description": "- **MDUI 2**: 使用MDUI作為主要UI框架，提供Material Design風格的元件\r   - 引入方式: 通過CDN引入 (`https://unpkg.com/mdui@2/mdui.css` 和 `https://unpkg.com/mdui@2/mdui.global.js`)\r - **Material Icons**: 使用Google的Material Icons作為圖示庫\r   - 引入方式: 通過CDN引入 (`https://fonts.googleapis.com/icon?family=Material+Icons`)",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twpotato606/designworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twpotato606/designworks/issues"
+  },
+  "homepage": "https://github.com/twpotato606/designworks#readme",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.8"
+  }
+}

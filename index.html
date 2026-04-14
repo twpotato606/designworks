@@ -1,269 +1,531 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-  <meta name="renderer" content="webkit"/>
-  <title>產品設計師作品集 - Portfolio</title>
-  
-  <!-- 引入MDUI CSS和JS -->
-  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
-  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
-  <!-- 引入Material圖標 -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- 引入自訂CSS -->
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>王昱翔 — 產品設計師</title>
+  <meta name="description" content="王昱翔，B2B 產品設計師。專注於企業級複雜系統體驗設計，服務橫跨醫療、政府與消費電子產業。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="main.css">
 </head>
-<body>
-  <!-- Menu按鈕 (手機版) -->
-  <mdui-button class="menu-button" id="menuButton" variant="filled">
-    <mdui-icon slot="icon" name="menu"></mdui-icon>
-  </mdui-button>
+<body class="bg-slate-50 text-slate-950 antialiased">
 
-  <!-- Navigation Rail (左側導覽列) -->
-  <mdui-navigation-rail id="navigationRail">
-    <!-- 關閉按鈕 (手機版) -->
-    <mdui-button class="close-button" id="closeButton" variant="text">
-      <mdui-icon slot="icon" name="close" style="color: rgb(73, 69, 78);"></mdui-icon>
-    </mdui-button>
-    <!-- 導覽項目 -->
-    <mdui-navigation-rail-item icon="person" value="about" id="aboutNav">關於我</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="palette" value="portfolio" id="portfolioNav">作品</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="mail" value="contact" id="contactNav">聯絡我</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="description" value="cv" id="cvNav" onclick="window.open('cv.html', '_blank')">我的CV</mdui-navigation-rail-item>
-  </mdui-navigation-rail>
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-sky-700 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+    跳至主要內容
+  </a>
 
-  <!-- 主要內容區域 - 改為一頁式顯示 -->
-  <div class="main-content">
-    <!-- 關於我 部分 -->
-    <div id="aboutSection" class="content-section">
-      <h2>關於我</h2>
-      <div class="profile-image-container">
-        <img src="images/大頭照.png" alt="個人照片" class="profile-image">
+  <!-- ─── Floating Nav ─── -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-4">
+    <nav id="navbar" class="max-w-7xl mx-auto bg-white/95 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 h-14 flex items-center justify-between transition-shadow duration-200">
+      <a href="#hero" class="font-heading font-bold text-slate-900 text-lg cursor-pointer hover:text-sky-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded">
+        王昱翔
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#work" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">作品</a>
+        <a href="#approach" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">方法論</a>
+        <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">關於我</a>
       </div>
-      <mdui-card class="card-profile">
-        <div class="card-padding">
-          <h3>王昱翔 - 產品設計師</h3>
-          <p>專注於解決科技領域的複雜設計問題。以設計思維驅動創新，成功將校園疫苗接種系統從紙本轉型為數位平台，並為智慧醫療個案管理打造直覺化介面，顯著提升工作效率。</p>
-          <p>在Acer期間，我設計的的PredatorSense遊戲控制中心榮獲德國iF設計獎，證明我能將複雜技術轉化為簡潔易用的產品體驗。我擅長進行深入的使用者研究，並將洞察轉化為實際解決方案，為組織創造實質價值。</p>
-          
-          <h4>技能專長</h4>
-          <div class="skills-container">
-            <mdui-chip>需求分析</mdui-chip>
-            <mdui-chip>使用者研究</mdui-chip>
-            <mdui-chip>系統性規劃</mdui-chip>
-            <mdui-chip>產品設計</mdui-chip>
-            <mdui-chip>介面設計</mdui-chip>
-            <mdui-chip>雛型製作</mdui-chip>
-            <mdui-chip>Figma</mdui-chip>
-            <mdui-chip>Cursor</mdui-chip>
-          </div>
-          
-          <h4>個人特質</h4>
-          <div class="traits-container">
-            <div class="traits-chips">
-              <mdui-chip onclick="toggleTrait('observation')">
-                <span>敏銳觀察力</span>
-                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
-              </mdui-chip>
-              <mdui-chip onclick="toggleTrait('systematic')">
-                <span>系統性思維</span>
-                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
-              </mdui-chip>
-              <mdui-chip onclick="toggleTrait('communication')">
-                <span>有效溝通</span>
-                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
-              </mdui-chip>
-              <mdui-chip onclick="toggleTrait('teamwork')">
-                <span>團隊導向</span>
-                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
-              </mdui-chip>
-              <mdui-chip onclick="toggleTrait('learning')">
-                <span>持續學習</span>
-                <mdui-icon class="trait-icon" style="width: 20px; height: 20px; font-size: 20px;">add</mdui-icon>
-              </mdui-chip>
-            </div>
-            
-            <div id="traitDetails" class="trait-details" style="width: 100%;">
-              <div id="observation" class="trait-detail" style="display: none; width: 100%;">
-                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
-                  <div class="card-padding">
-                    <p>善於洞察用戶真實需求，從細微處發現問題本質。在專案中，能夠透過深入觀察用戶行為，發掘潛在需求，並轉化為有效的設計解決方案。</p>
-                  </div>
-                </mdui-card>
-              </div>
-              
-              <div id="systematic" class="trait-detail" style="display: none; width: 100%;">
-                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
-                  <div class="card-padding">
-                    <p>注重整體架構，平衡用戶體驗與系統可維護性。在設計過程中，不僅考慮當下的使用體驗，更著重於系統的長期發展與維護。</p>
-                  </div>
-                </mdui-card>
-              </div>
-              
-              <div id="communication" class="trait-detail" style="display: none; width: 100%;">
-                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
-                  <div class="card-padding">
-                    <p>善於傾聽與表達，能與各利益相關者建立共識。在專案中，能夠清楚傳達設計理念，並有效整合各方意見，推動專案順利進行。</p>
-                  </div>
-                </mdui-card>
-              </div>
-              
-              <div id="teamwork" class="trait-detail" style="display: none; width: 100%;">
-                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
-                  <div class="card-padding">
-                    <p>以團隊整體利益為考量，尋求多方共贏的解決方案。在合作過程中，注重團隊協作，共同創造最佳成果。</p>
-                  </div>
-                </mdui-card>
-              </div>
-              
-              <div id="learning" class="trait-detail" style="display: none; width: 100%;">
-                <mdui-card style="width: 100%; background-color: var(--mdui-color-surface-container);">
-                  <div class="card-padding">
-                    <p>主動追求進步，善於分析問題並制定改善計劃。面對挑戰時，能夠快速學習新技能，持續提升專業能力。</p>
-                  </div>
-                </mdui-card>
-              </div>
-            </div>
-          </div>
-          
-          <h4>工作經歷</h4>
-          <mdui-list>
-            <mdui-list-item>
-              <mdui-list-item-content>
-                <mdui-list-item-title>Assistant Manager - DeepQ</mdui-list-item-title>
-                <mdui-list-item-subtitle>2020年6月至今</mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-            <mdui-list-item>
-              <mdui-list-item-content>
-                <mdui-list-item-title>資深設計師 - Acer</mdui-list-item-title>
-                <mdui-list-item-subtitle>2014年9月 - 2020年6月</mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-          </mdui-list>
-        </div>
-      </mdui-card>
-    </div>
-    
-    <!-- 我的設計 部分 -->
-    <div id="portfolioSection" class="content-section">
-      <h2>作品</h2>
-      <p>以下是我完成的重點設計項目，展示我在不同需求中解決問題的能力。</p>
-      
-      <div class="portfolio-grid">
-        <!-- 作品項目 1 -->
-        <mdui-card>
-          <img src="images/civs.png" class="full-width-img" alt="CIVS 專案">
-          <div class="card-padding">
-            <h3>校園疫苗接種數位轉型</h3>
-            <p>為疾管署開發全國性的校園疫苗接種管理系統，從紙本到雲端，打造智慧校園健康管理。</p>
-            <mdui-button onclick="window.location.href='civs.html'">查看詳情</mdui-button>
-          </div>
-        </mdui-card>
-        
-        <!-- 作品項目 2 -->
-        <mdui-card>
-          <img src="images/mdm.png" class="full-width-img" alt="智慧醫療個案管理平台">
-          <div class="card-padding">
-            <h3>智慧醫療個案管理平台</h3>
-            <p>將慢性病管理機制自動化，讓個管師能夠專注於照護。</p>
-            <mdui-button onclick="window.location.href='mdm.html'">查看詳情</mdui-button>
-          </div>
-        </mdui-card>
-        
-        <!-- 作品項目 3 -->
-        <mdui-card>
-          <img src="images/PredatorSense.png" class="full-width-img" alt="PredatorSense">
-          <div class="card-padding">
-            <h3>PredatorSense 遊戲控制中心</h3>
-            <p>為電競玩家打造的強大系統管理工具。</p>
-            <mdui-button onclick="window.location.href='predatorsense.html'">查看詳情</mdui-button>
-          </div>
-        </mdui-card>
-        
-        
-        <!-- 作品項目 4 -->
-        <mdui-card>
-          <img src="images/Vision360.png" class="full-width-img" alt="Vision360">
-          <div class="card-padding">
-            <h3>Vision360 雲端行車紀錄器</h3>
-            <p>360度無死角的行車安全守護者。</p>
-            <mdui-button onclick="window.location.href='vision360.html'">查看詳情</mdui-button>
-          </div>
-        </mdui-card>
-        
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-sky-700 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-800 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+          聯絡我
+        </a>
+        <button id="menuBtn" aria-label="開啟選單" aria-expanded="false" class="md:hidden p-2 text-slate-700 hover:text-slate-900 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-lg transition-colors duration-150">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden mt-2 max-w-7xl mx-auto bg-white border border-slate-200 rounded-2xl p-4 shadow-md">
+      <div class="flex flex-col gap-1">
+        <a href="#work"     class="nav-mobile-link px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors duration-150 cursor-pointer">作品</a>
+        <a href="#approach" class="nav-mobile-link px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors duration-150 cursor-pointer">方法論</a>
+        <a href="#about"    class="nav-mobile-link px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl transition-colors duration-150 cursor-pointer">關於我</a>
+        <a href="#contact"  class="nav-mobile-link mt-2 px-4 py-3 text-sm font-semibold text-white bg-sky-700 hover:bg-sky-800 rounded-xl text-center transition-colors duration-150 cursor-pointer">聯絡我</a>
       </div>
     </div>
-    
-    <!-- 聯絡我 部分 -->
-    <div id="contactSection" class="content-section">
-      <h2>聯絡我</h2>
-      <p>如果您對我的作品感興趣，或有任何合作機會，歡迎透過以下方式與我聯繫。</p>
-      
-      <mdui-card class="contact-info-card">
-        <div class="card-padding-lg">
-          <h3>聯絡方式</h3>
-          <mdui-list>
-            <mdui-list-item>
-              <mdui-icon slot="icon" name="email"></mdui-icon>
-              <mdui-list-item-content>
-                <mdui-list-item-title>電子郵件</mdui-list-item-title>
-                <mdui-list-item-subtitle>twpotato606@gmail.com</mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-            <mdui-list-item>
-              <mdui-icon slot="icon" name="phone"></mdui-icon>
-              <mdui-list-item-content>
-                <mdui-list-item-title>電話</mdui-list-item-title>
-                <mdui-list-item-subtitle>0978089505</mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-            <mdui-list-item>
-              <mdui-icon slot="icon" name="link"></mdui-icon>
-              <mdui-list-item-content>
-                <mdui-list-item-title>LinkedIn</mdui-list-item-title>
-                <mdui-list-item-subtitle><a href="https://www.linkedin.com/in/yu-xiang-wang/" target="_blank">https://www.linkedin.com/in/yu-xiang-wang/</a></mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-          </mdui-list>
-        </div>
-      </mdui-card>
-    </div>
-  </div>
+  </header>
 
-  <!-- 引入自訂JS -->
-  <script src="script.js"></script>
+  <main id="main">
+
+    <!-- ─── Hero ─── -->
+    <section id="hero" class="min-h-screen bg-slate-900 flex items-center pt-32 pb-20 px-4">
+      <div class="max-w-7xl mx-auto w-full px-4 md:px-6 lg:px-8">
+        <div class="max-w-3xl">
+
+          <!-- Tag -->
+          <div class="inline-flex items-center gap-2 bg-sky-950 border border-sky-800 text-sky-400 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-8">
+            UX Designer
+          </div>
+
+          <!-- Name -->
+          <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+            王昱翔
+          </h1>
+
+          <!-- Role -->
+          <p class="text-xl md:text-2xl text-slate-300 font-medium mb-5 leading-relaxed">
+            產品設計師，專注於企業級<br class="hidden md:block">複雜系統的體驗設計
+          </p>
+
+          <!-- Description -->
+          <p class="text-base md:text-lg text-slate-400 leading-relaxed mb-10 max-w-2xl">
+            從硬體到醫療，以設計思維驅動服務創新，將複雜業務邏輯轉化為直覺易用的數位體驗。10 年以上設計資歷，橫跨政府、醫療與消費電子產業。
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4">
+            <a href="#work" class="inline-flex items-center gap-2 bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-600 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+              查看作品
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 border border-slate-600 text-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 hover:border-slate-500 hover:text-white transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+              聯絡我
+            </a>
+          </div>
+
+          <!-- Trust bar -->
+          <div class="mt-20 pt-10 border-t border-slate-800">
+            <p class="text-xs text-slate-500 uppercase tracking-widest mb-5 font-semibold">服務過的機構或客戶</p>
+            <div class="flex flex-wrap items-center gap-10">
+              <span class="text-slate-400 font-semibold text-sm tracking-wide">Acer</span>
+              <span class="text-slate-600 text-xs">·</span>
+              <span class="text-slate-400 font-semibold text-sm tracking-wide">DeepQ</span>
+              <span class="text-slate-600 text-xs">·</span>
+              <span class="text-slate-400 font-semibold text-sm tracking-wide">疾病管制署</span>
+              <span class="text-slate-600 text-xs">·</span>
+              <span class="text-slate-400 font-semibold text-sm tracking-wide">奇美醫院</span>
+              <span class="text-slate-600 text-xs">·</span>
+              <span class="text-slate-400 font-semibold text-sm tracking-wide">彰化基督教醫院</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Selected Work ─── -->
+    <section id="work" class="py-24 bg-slate-50 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <!-- Section header -->
+        <div class="mb-14 fade-up">
+          <div class="inline-flex items-center bg-sky-50 border border-sky-200 text-sky-700 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+            Selected Work
+          </div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-3">重點設計案例</h2>
+          <p class="text-lg text-slate-600 max-w-xl">展示在不同產業、複雜需求中解決問題的能力</p>
+        </div>
+
+        <!-- Cards grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Card 1: CIVS -->
+          <a href="civs.html" class="group block bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-250 cursor-pointer fade-up focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+            <div class="aspect-video overflow-hidden relative bg-slate-100">
+              <img src="images/civs.png" alt="校園疫苗接種數位轉型系統介面" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                <span class="text-white font-semibold text-sm flex items-center gap-2">
+                  查看案例
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">政府 · 醫療資訊系統</div>
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">校園疫苗接種數位轉型</h3>
+              <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">為疾管署開發全國性的校園疫苗接種管理系統，從紙本到雲端，打造智慧校園健康管理。</p>
+              <p class="mt-4 text-sm font-medium text-emerald-700">300萬+ 家長完成線上填寫 · 全台 90% 學校滿意</p>
+            </div>
+          </a>
+
+          <!-- Card 2: MDM -->
+          <a href="mdm.html" class="group block bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-250 cursor-pointer fade-up focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2" style="transition-delay: 60ms">
+            <div class="aspect-video overflow-hidden relative bg-slate-100">
+              <img src="images/mdm.png" alt="智慧醫療個案管理平台介面截圖" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                <span class="text-white font-semibold text-sm flex items-center gap-2">
+                  查看案例
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">醫療 · 企業 SaaS</div>
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">智慧醫療個案管理平台</h3>
+              <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">將慢性病管理機制自動化，讓個管師能夠專注於照護。</p>
+              <p class="mt-4 text-sm font-medium text-emerald-700">個管師行政負擔顯著降低，照護品質提升</p>
+            </div>
+          </a>
+
+          <!-- Card 3: PredatorSense -->
+          <a href="predatorsense.html" class="group block bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-250 cursor-pointer fade-up focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2" style="transition-delay: 120ms">
+            <div class="aspect-video overflow-hidden relative bg-slate-100">
+              <img src="images/PredatorSense.png" alt="PredatorSense 遊戲控制中心介面" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                <span class="text-white font-semibold text-sm flex items-center gap-2">
+                  查看案例
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">消費電子 · 軟體設計</div>
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">PredatorSense 遊戲控制中心</h3>
+              <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">為電競玩家打造的強大系統管理工具。</p>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  德國 iF Design Award 獲獎
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Vision360 -->
+          <a href="vision360.html" class="group block bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-250 cursor-pointer fade-up focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2" style="transition-delay: 180ms">
+            <div class="aspect-video overflow-hidden relative bg-slate-100">
+              <img src="images/Vision360.png" alt="Vision360 雲端行車紀錄器介面" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-slate-900/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                <span class="text-white font-semibold text-sm flex items-center gap-2">
+                  查看案例
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">消費電子 · IoT</div>
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">Vision360 雲端行車紀錄器</h3>
+              <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">360 度無死角的行車安全守護者。</p>
+              <p class="mt-4 text-sm font-medium text-emerald-700">跨裝置雲端整合，全景行車體驗</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Approach ─── -->
+    <section id="approach" class="py-24 bg-white px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="mb-14 fade-up">
+          <div class="inline-flex items-center bg-sky-50 border border-sky-200 text-sky-700 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+            Process
+          </div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-3">設計方法論</h2>
+          <p class="text-lg text-slate-600 max-w-xl">以研究為基底，從業務目標出發，確保設計決策有據可依</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          <!-- Step 1 -->
+          <div class="fade-up">
+            <div class="w-12 h-12 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">01</div>
+            <h3 class="font-heading text-lg font-semibold text-slate-900 mb-3">深入發掘問題與需求</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">實地訪談、業務流程分析、使用者觀察。了解真實痛點而非表面需求，確保設計方向解決正確問題。</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="fade-up" style="transition-delay: 80ms">
+            <div class="w-12 h-12 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">02</div>
+            <h3 class="font-heading text-lg font-semibold text-slate-900 mb-3">整體性產品規劃與設計</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">資訊架構規劃、流程簡化、元件系統建立。在複雜業務邏輯中找出最低認知負擔的操作路徑。</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="fade-up" style="transition-delay: 160ms">
+            <div class="w-12 h-12 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">03</div>
+            <h3 class="font-heading text-lg font-semibold text-slate-900 mb-3">持續驗證優化</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">使用者測試、數據追蹤、持續迭代。以實際使用反饋驗證設計假設，將觀察轉化為可衡量的改善成果。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Impact Metrics ─── -->
+    <section id="impact" class="py-24 bg-slate-900 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="mb-14 fade-up">
+          <div class="inline-flex items-center bg-sky-950 border border-sky-800 text-sky-400 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+            Impact
+          </div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-3">業務影響力</h2>
+          <p class="text-lg text-slate-400 max-w-xl">設計成果以可量化的業務指標呈現</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+
+          <div class="fade-up">
+            <div class="font-heading text-4xl md:text-5xl font-bold text-white mb-2">300萬+</div>
+            <div class="text-slate-400 text-sm leading-relaxed">家長完成線上疫苗意願填寫</div>
+          </div>
+
+          <div class="fade-up" style="transition-delay: 60ms">
+            <div class="font-heading text-4xl md:text-5xl font-bold text-white mb-2">90%</div>
+            <div class="text-slate-400 text-sm leading-relaxed">客戶滿意度</div>
+          </div>
+
+          <div class="fade-up" style="transition-delay: 120ms">
+            <div class="font-heading text-4xl md:text-5xl font-bold text-white mb-2">iF</div>
+            <div class="text-slate-400 text-sm leading-relaxed">德國 iF Design Award 獲獎作品</div>
+          </div>
+
+          <div class="fade-up" style="transition-delay: 180ms">
+            <div class="font-heading text-4xl md:text-5xl font-bold text-white mb-2">10+</div>
+            <div class="text-slate-400 text-sm leading-relaxed">年產品設計資歷，橫跨政府、醫療與消費電子產業</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── About ─── -->
+    <section id="about" class="py-24 bg-white px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+          <!-- Left: Photo + Experience -->
+          <div class="fade-up">
+            <img src="images/大頭照.png" alt="王昱翔個人照片" class="w-44 h-44 rounded-2xl object-cover mb-8 ring-1 ring-slate-200">
+
+            <h3 class="font-heading text-base font-semibold text-slate-900 mb-5">工作經歷</h3>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="mt-1.5 w-2 h-2 rounded-full bg-sky-700 flex-shrink-0"></div>
+                <div>
+                  <div class="font-semibold text-slate-900 text-sm">Assistant Manager</div>
+                  <div class="text-slate-500 text-sm mt-0.5">DeepQ · 2020年6月至今</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="mt-1.5 w-2 h-2 rounded-full bg-slate-300 flex-shrink-0"></div>
+                <div>
+                  <div class="font-semibold text-slate-900 text-sm">資深設計師</div>
+                  <div class="text-slate-500 text-sm mt-0.5">Acer · 2014年9月 — 2020年6月</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Bio + Skills + Traits -->
+          <div class="fade-up" style="transition-delay: 80ms">
+            <div class="inline-flex items-center bg-sky-50 border border-sky-200 text-sky-700 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5">
+              About
+            </div>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-6">關於我</h2>
+
+            <p class="text-slate-600 leading-relaxed mb-4">
+              專注於解決科技領域的複雜設計問題。以設計思維驅動創新，成功將校園疫苗接種系統從紙本轉型為數位平台，並為智慧醫療個案管理打造直覺化介面，顯著提升工作效率。
+            </p>
+            <p class="text-slate-600 leading-relaxed mb-8">
+              在 Acer 期間，設計的 PredatorSense 遊戲控制中心榮獲德國 iF 設計獎，證明能將複雜技術轉化為簡潔易用的產品體驗。擅長進行深入的使用者研究，並將洞察轉化為實際解決方案，為組織創造實質價值。
+            </p>
+
+            <!-- Skills -->
+            <h3 class="font-heading text-sm font-semibold text-slate-900 mb-3 uppercase tracking-wide">核心能力</h3>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">需求分析</span>
+              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">系統性規劃</span>
+              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">AI協同設計</span>
+              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">自動化設計稿生成</span>
+              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">Claude Code</span>
+            </div>
+
+            <!-- Traits -->
+            <h3 class="font-heading text-sm font-semibold text-slate-900 mb-3 uppercase tracking-wide">個人特質</h3>
+            <div class="space-y-3">
+
+              <details class="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors duration-150 list-none">
+                  善於聆聽與理解
+                  <svg class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <div class="px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  善於洞察用戶真實需求，從細微處發現問題本質。能夠透過深入觀察用戶行為，發掘潛在需求，並轉化為有效的設計解決方案。
+                </div>
+              </details>
+
+              <details class="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors duration-150 list-none">
+                  系統性思維
+                  <svg class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <div class="px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  注重整體架構，平衡用戶體驗與系統可維護性。不僅考慮當下的使用體驗，更著重於系統的長期發展與維護。
+                </div>
+              </details>
+
+              <details class="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors duration-150 list-none">
+                  有效溝通
+                  <svg class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <div class="px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  從客戶角度出發，能與各利益相關者建立共識。能夠清楚傳達設計理念，並有效整合各方意見，推動專案順利進行。
+                </div>
+              </details>
+
+              <details class="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors duration-150 list-none">
+                  團隊導向
+                  <svg class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <div class="px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  以團隊整體利益為考量，尋求多方共贏的解決方案。注重團隊協作，共同創造最佳成果。
+                </div>
+              </details>
+
+              <details class="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors duration-150 list-none">
+                  持續學習
+                  <svg class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </summary>
+                <div class="px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  主動追求進步，善於分析問題並制定改善計劃。面對挑戰時，能夠快速學習新技能，持續提升專業能力。
+                </div>
+              </details>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Contact ─── -->
+    <section id="contact" class="py-24 bg-slate-50 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <div class="max-w-xl fade-up">
+
+          <div class="inline-flex items-center bg-sky-50 border border-sky-200 text-sky-700 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5">
+            Contact
+          </div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">聯絡我</h2>
+          <p class="text-slate-600 leading-relaxed mb-10">
+            如果您對我的作品感興趣，或有任何合作機會，歡迎透過以下方式與我聯繫。
+          </p>
+
+          <div class="space-y-4">
+
+            <!-- Email -->
+            <a href="mailto:twpotato606@gmail.com" class="group flex items-center gap-5 p-5 bg-white border border-slate-200 rounded-xl hover:shadow-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+              <div class="w-12 h-12 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-sky-100 transition-colors duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">電子郵件</div>
+                <div class="text-slate-900 font-medium text-sm truncate">twpotato606@gmail.com</div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors duration-150 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:0978089505" class="group flex items-center gap-5 p-5 bg-white border border-slate-200 rounded-xl hover:shadow-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+              <div class="w-12 h-12 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-sky-100 transition-colors duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l.93-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">電話</div>
+                <div class="text-slate-900 font-medium text-sm">0978-089-505</div>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/yu-xiang-wang/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-5 p-5 bg-white border border-slate-200 rounded-xl hover:shadow-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+              <div class="w-12 h-12 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-sky-100 transition-colors duration-150">
+                <svg class="w-5 h-5 text-sky-700" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">LinkedIn</div>
+                <div class="text-slate-900 font-medium text-sm">yu-xiang-wang</div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors duration-150 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+
+          </div>
+
+          <!-- CV link -->
+          <div class="mt-8">
+            <a href="cv.html" target="_blank" class="inline-flex items-center gap-2 text-sky-700 font-medium text-sm hover:underline underline-offset-4 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded">
+              查看完整履歷
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="bg-slate-900 py-8 px-4">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="text-slate-500 text-sm">© 2026 王昱翔. All rights reserved.</div>
+      <div class="text-slate-600 text-sm">UX Designer · Taipei, Taiwan</div>
+    </div>
+  </footer>
+
   <script>
-    function toggleTrait(traitId) {
-      // 獲取被點擊的 chip 和對應的圖示
-      const clickedChip = document.querySelector(`mdui-chip[onclick="toggleTrait('${traitId}')"]`);
-      const icon = clickedChip.querySelector('.trait-icon');
-      const selectedDetail = document.getElementById(traitId);
-      
-      // 如果當前特質已經顯示（圖示是減號），則收合它
-      if (icon.textContent === 'remove') {
-        selectedDetail.style.display = 'none';
-        icon.textContent = 'add';
-        return;
-      }
-      
-      // 隱藏所有特質說明
-      const allDetails = document.querySelectorAll('.trait-detail');
-      allDetails.forEach(detail => {
-        detail.style.display = 'none';
-      });
-      
-      // 重置所有圖示為加號
-      const allIcons = document.querySelectorAll('.trait-icon');
-      allIcons.forEach(icon => {
-        icon.textContent = 'add';
-      });
-      
-      // 顯示選中的特質說明並將圖示改為減號
-      selectedDetail.style.display = 'block';
-      icon.textContent = 'remove';
+    // ── Mobile menu toggle ──
+    const menuBtn    = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon   = document.getElementById('menuIcon');
+    const closeIcon  = document.getElementById('closeIcon');
+
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', '開啟選單');
     }
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        menuBtn.setAttribute('aria-label', '關閉選單');
+      }
+    });
+
+    document.querySelectorAll('.nav-mobile-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // ── Scroll-triggered fade-up ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+
 </body>
-</html> 
+</html>
