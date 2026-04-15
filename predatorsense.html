@@ -1,410 +1,352 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-  <meta name="renderer" content="webkit"/>
-  <title>PredatorSense 遊戲控制中心 - 作品集</title>
-  
-  <!-- 引入MDUI CSS和JS -->
-  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
-  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
-  <!-- 引入Material圖標 -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- 引入自訂CSS -->
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PredatorSense 遊戲控制中心 — 王昱翔</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="main.css">
 </head>
-<body>
-  <!-- Menu按鈕 (手機版) -->
-  <mdui-button class="menu-button" id="menuButton" variant="filled">
-    <mdui-icon slot="icon" name="menu"></mdui-icon>
-  </mdui-button>
+<body class="bg-slate-50 text-slate-950 antialiased">
 
-  <!-- Navigation Rail (左側導覽列) -->
-  <mdui-navigation-rail id="navigationRail">
-    <!-- 關閉按鈕 (手機版) -->
-    <mdui-button class="close-button" id="closeButton" variant="text">
-      <mdui-icon slot="icon" name="close" style="color: rgb(73, 69, 78);"></mdui-icon>
-    </mdui-button>
-    <!-- 導覽項目 -->
-    <mdui-navigation-rail-item icon="arrow_back" value="home" id="homeNav">返回首頁</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="info" value="situation" id="situationNav">情境</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="assignment" value="task" id="taskNav">任務</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="build" value="action" id="actionNav">行動</mdui-navigation-rail-item>
-    <mdui-navigation-rail-item icon="analytics" value="result" id="resultNav">結果</mdui-navigation-rail-item>
-  </mdui-navigation-rail>
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-sky-700 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">跳至主要內容</a>
 
-  <!-- 主要內容區域 -->
-  <div class="main-content">
-    <!-- 專案標題 -->
-    <div class="project-header">
-      <h1>PredatorSense 遊戲控制中心</h1>
-      <h3>為電競玩家打造的強大系統管理工具</h3>
-      <div class="project-meta">
-        <mdui-chip>電競產業</mdui-chip>
-        <mdui-chip>軟硬整合</mdui-chip>
-        <mdui-chip>桌面應用程式</mdui-chip>
+  <!-- Nav -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-4">
+    <nav class="max-w-7xl mx-auto bg-white/95 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        返回作品集
+      </a>
+      <a href="index.html#contact" class="inline-flex items-center gap-2 bg-sky-700 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-800 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+        聯絡我
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Dark Header -->
+    <section class="pt-32 pb-16 bg-slate-900 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <!-- Tags -->
+        <div class="inline-flex flex-wrap gap-2">
+          <span class="bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">桌面應用程式</span>
+          <span class="bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">軟硬整合</span>
+          <span class="bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">iF Design Award</span>
+        </div>
+
+        <!-- H1 -->
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mt-6 mb-4">PredatorSense 遊戲控制中心</h1>
+
+        <!-- Lead -->
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl">為電競玩家打造的強大系統管理工具，榮獲德國 iF 設計獎</p>
+
+        <!-- Metrics -->
+        <div class="border-t border-slate-800 pt-8 mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div>
+            <div class="font-heading text-3xl font-bold text-white mb-1">iF Award</div>
+            <div class="text-slate-500 text-xs leading-relaxed">德國 iF Design Award 2018</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white mb-1">100+</div>
+            <div class="text-slate-500 text-xs leading-relaxed">覆蓋全球國家數</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white mb-1">92%</div>
+            <div class="text-slate-500 text-xs leading-relaxed">社群調查用戶滿意度</div>
+          </div>
+        </div>
+
+        <!-- Hero image -->
+        <img src="images/PredatorSense.png" alt="PredatorSense 遊戲控制中心介面總覽" class="mt-12 w-full max-w-5xl mx-auto rounded-xl aspect-video object-cover block" loading="eager">
       </div>
-    </div>
+    </section>
 
-    <!-- 1. 情境 (Situation) -->
-    <div id="situationSection" class="content-section">
-      <mdui-card class="project-card">
-        <div class="card-padding">
-          <h2>情境 (Situation)</h2>
-          <p>在電競筆電市場中，硬體效能固然重要，但如何讓玩家能夠輕鬆掌控這些效能，並獲得最佳遊戲體驗，是產品差異化的關鍵。2018年時期的市場調查顯示，當時的控制中心軟體普遍存在以下問題：</p>
-          
-          <div class="workflow-problems">
-            <mdui-list>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="error"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>介面複雜，學習曲線陡峭</mdui-list-item-title>
-                  <mdui-list-item-subtitle>以技嘉 Aorus Control Center 為例，使用者反映需要多次點擊才能找到所需功能，操作流程繁瑣，對新手玩家極不友善</mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="sync_problem"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>功能分散，缺乏整合性</mdui-list-item-title>
-                  <mdui-list-item-subtitle>微星 Dragon Center 將功能分散在多個子模組中，使用者需要安裝多個程式才能完整控制硬體，造成使用不便且增加系統負擔</mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="settings"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>缺乏遊戲情境的專屬優化</mdui-list-item-title>
-                  <mdui-list-item-subtitle>多數控制中心僅提供基本的硬體控制，缺乏針對不同遊戲類型的專屬優化設定，無法滿足玩家對遊戲體驗的個性化需求</mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="build"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>硬體控制不夠直觀</mdui-list-item-title>
-                  <mdui-list-item-subtitle>以華碩 Armoury Crate 為例，雖然整合了多項功能，但硬體控制選項過於專業化，且系統資源佔用過高，對一般玩家不夠友善</mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-            </mdui-list>
-          </div>
+    <!-- Challenge -->
+    <section class="py-20 bg-white px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
-          <p>這些問題導致玩家難以發揮硬體的全部潛能，影響整體遊戲體驗，也使得電競筆電的性能優勢無法完全展現。因此，開發一個直觀、易用且功能完整的遊戲控制中心，成為提升產品競爭力的關鍵。</p>
-        </div>
-      </mdui-card>
-    </div>
+        <h2 class="font-heading text-3xl font-bold text-slate-900 mb-4">市場上控制中心軟體的四大痛點</h2>
+        <p class="text-slate-600 mb-10 max-w-2xl">2018年時期的市場調查顯示，當時的控制中心軟體普遍存在以下問題，導致玩家難以發揮硬體全部潛能。</p>
 
-    <!-- 2. 任務 (Task) -->
-    <div id="taskSection" class="content-section">
-      <mdui-card class="project-card">
-        <div class="card-padding">
-          <h2>任務 (Task)</h2>
-          <p>為 Acer 電競筆電開發一個直觀、功能完善的系統控制中心，讓玩家能輕鬆調整硬體效能、監控系統狀態並優化遊戲體驗。</p>
-          
-          <div class="project-goals">
-            <h4>專案目標</h4>
-            <mdui-list>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>設計一個直觀、易用且功能完整的遊戲控制中心</mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>讓玩家能夠輕鬆掌控硬體效能</mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>提供快速切換遊戲情境的功能</mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>實現即時監控系統狀態的能力</mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>允許玩家全面自定義遊戲體驗</mdui-list-item-content>
-              </mdui-list-item>
-            </mdui-list>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <h4>我的角色與職責</h4>
-          <mdui-list>
-            <mdui-list-item>
-              <mdui-icon slot="icon" name="person"></mdui-icon>
-              <mdui-list-item-content>
-                <mdui-list-item-title>互動設計師</mdui-list-item-title>
-                <mdui-list-item-subtitle>負責雛形製作，提供流程規劃文件給視覺設計師進行設計</mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-            <mdui-list-item>
-              <mdui-icon slot="icon" name="psychology"></mdui-icon>
-              <mdui-list-item-content>
-                <mdui-list-item-title>協助使用者研究</mdui-list-item-title>
-                <mdui-list-item-subtitle>參與並協助研究團隊進行需求分析, 同時提供所需素材</mdui-list-item-subtitle>
-              </mdui-list-item-content>
-            </mdui-list-item>
-          </mdui-list>
-        </div>
-      </mdui-card>
-    </div>
-
-    <!-- 3. 行動 (Action) -->
-    <div id="actionSection" class="content-section">
-      <mdui-card class="project-card">
-        <div class="card-padding">
-          <h2>行動 (Action)</h2>
-
-          <div class="process-step">
-            <h4>1. 腦力激盪與概念設計</h4>
-            <p>先收集公司內部Gamer的想法，並實際產出可以互動的設計雛形：</p>
-            <div class="before-after">
-              <div class="before">
-                <img src="images/predatorsense/action/brainstorming.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
-                <mdui-list>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>研究員將公司內部的玩家聚集，並進行腦力激盪</mdui-list-item-content>
-                  </mdui-list-item>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>每個人都有機會去發表自己的想法，並且進行討論</mdui-list-item-content>
-                  </mdui-list-item>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>經由大家篩選過後，選出最熱門的功能，並發想概念設計</mdui-list-item-content>
-                  </mdui-list-item>
-                </mdui-list>
-              </div>
-              <div class="after">
-                <img src="images/predatorsense/action/concept.png" alt="after" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
-                <mdui-list>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>將設計製作成原型，在之後進行測試</mdui-list-item-content>
-                  </mdui-list-item>
-                </mdui-list>
-              </div>
+          <!-- Pain 1 -->
+          <div class="border border-slate-200 rounded-xl p-6">
+            <div class="flex items-start gap-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <h3 class="font-heading text-base font-semibold text-slate-900">介面複雜，學習曲線陡峭</h3>
             </div>
+            <p class="text-sm text-slate-600 leading-relaxed pl-7">以技嘉 Aorus Control Center 為例，使用者需要多次點擊才能找到所需功能，對新手玩家極不友善。</p>
           </div>
 
-          <div class="process-step">
-            <h4>2. 使用者研究與概念驗證</h4>
-            <p>進行玩家訪談與焦點團體，確保設計符合玩家的實際需求：</p>
-            <div class="before-after">
-              <div class="before">
-                <img src="images/predatorsense/action/interviews.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
-                <mdui-list>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>研究員找來玩家，並進行1對1訪談，針對概念設計進行提問</mdui-list-item-content>
-                    </mdui-list-item-content>
-                  </mdui-list-item>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>當天結束後，大家會把紀錄的內容貼在表板上，並進行彙整</mdui-list-item-content>
-                  </mdui-list-item>
-                </mdui-list>
-              </div>
-              <div class="after">
-                <img src="images/predatorsense/action/focusgroup.jpg" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
-                <mdui-list>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>研究員也有進行焦點團體討論，包含國內與國外</mdui-list-item-content>
-                  </mdui-list-item>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>同樣進行意見收集與彙整</mdui-list-item-content>
-                  </mdui-list-item>
-                </mdui-list>
-              </div>
+          <!-- Pain 2 -->
+          <div class="border border-slate-200 rounded-xl p-6">
+            <div class="flex items-start gap-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <h3 class="font-heading text-base font-semibold text-slate-900">功能分散，缺乏整合性</h3>
             </div>
+            <p class="text-sm text-slate-600 leading-relaxed pl-7">微星 Dragon Center 將功能分散在多個子模組，使用者需安裝多個程式才能完整控制硬體。</p>
           </div>
 
-          <div class="process-step">
-            <h4>3. 需求定案確認最終設計</h4>
-            <p>從使用者研究中，篩選出有感的功能進行設計與規劃，最終交付視覺設計師進行最終畫面設計：</p>
-            <div class="before-after">
-              <div class="before">
-                <img src="images/predatorsense/action/wireframe.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
-                <mdui-list>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>根據整個團隊研究與討論後的結論，進行流程設計，並製作成wireflow設計文件</mdui-list-item-content>
-                  </mdui-list-item>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>功能會考慮到跨不同產品的差異性，進行彈性規劃</mdui-list-item-content>
-                  </mdui-list-item>
-                </mdui-list>
+          <!-- Pain 3 -->
+          <div class="border border-slate-200 rounded-xl p-6">
+            <div class="flex items-start gap-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <h3 class="font-heading text-base font-semibold text-slate-900">缺乏遊戲情境的專屬優化</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed pl-7">多數控制中心僅提供基本的硬體控制，缺乏針對不同遊戲類型的個性化設定。</p>
+          </div>
+
+          <!-- Pain 4 -->
+          <div class="border border-slate-200 rounded-xl p-6">
+            <div class="flex items-start gap-3 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <h3 class="font-heading text-base font-semibold text-slate-900">硬體控制不夠直觀</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed pl-7">以華碩 Armoury Crate 為例，控制選項過於專業化，且系統資源佔用過高。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 bg-slate-50 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <h2 class="font-heading text-3xl font-bold text-slate-900 mb-12">三個階段的設計過程</h2>
+
+        <!-- Step 1 -->
+        <div class="mb-16 fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="inline-flex items-center justify-center w-7 h-7 bg-sky-700 text-white text-xs font-bold rounded-full flex-shrink-0">1</span>
+            <h3 class="font-heading text-xl font-semibold text-slate-900">腦力激盪與概念設計</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-6 pl-10">先收集公司內部 Gamer 的想法，並實際產出可以互動的設計雛形。</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">腦力激盪</p>
+              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="images/predatorsense/action/brainstorming.png" alt="內部玩家腦力激盪工作坊" class="w-full h-full object-cover" loading="lazy">
               </div>
-              <div class="after">
-                <img src="images/predatorsense/action/final.png" alt="Before" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; margin: 0 auto; border-radius: 12px;">
-                <mdui-list>
-                  <mdui-list-item>
-                    <mdui-icon slot="icon" name="check"></mdui-icon>
-                    <mdui-list-item-content>交由視覺設計師進行最終畫面設計</mdui-list-item-content>
-                  </mdui-list-item>
-                </mdui-list>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  研究員將公司內部玩家聚集並進行腦力激盪
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  每個人都有機會發表想法並進行討論
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  大家篩選後選出最熱門功能，發想概念設計
+                </li>
+              </ul>
+            </div>
+            <!-- Right -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">概念設計</p>
+              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="images/predatorsense/action/concept.png" alt="可互動概念設計原型" class="w-full h-full object-cover" loading="lazy">
               </div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  將設計製作成可互動的原型，供後續測試使用
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </mdui-card>
-    </div>
 
-    <!-- 4. 結果 (Result) -->
-    <div id="resultSection" class="content-section">
-      <mdui-card class="project-card">
-        <div class="card-padding">
-          <h2>結果 (Result)</h2>
-          <p>PredatorSense 成功為 Acer 電競筆電打造了一個強大的系統管理工具，成為產品線的重要差異化優勢：</p>
-          
-          <div class="result-highlight">
-            <mdui-card class="highlight-card">
-              <div class="card-padding">
-                <div class="highlight-icon">
-                  <mdui-icon name="emoji_events"></mdui-icon>
-                </div>
-                <h4>iF 設計獎</h4>
-                <p>2018年榮獲德國iF設計獎，肯定其創新設計與使用者體驗</p>
-              </div>
-            </mdui-card>
-            
-            <mdui-card class="highlight-card">
-              <div class="card-padding">
-                <div class="highlight-icon">
-                  <mdui-icon name="groups"></mdui-icon>
-                </div>
-                <h4>全球市場</h4>
-                <p>產品覆蓋全球六大洲，服務超過100個國家的電競玩家</p>
-              </div>
-            </mdui-card>
-            
-            <mdui-card class="highlight-card">
-              <div class="card-padding">
-                <div class="highlight-icon">
-                  <mdui-icon name="psychology"></mdui-icon>
-                </div>
-                <h4>使用者體驗</h4>
-                <p>透過焦點團體研究，打造直覺且視覺效果出色的介面設計</p>
-              </div>
-            </mdui-card>
+        <!-- Step 2 -->
+        <div class="mb-16 fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="inline-flex items-center justify-center w-7 h-7 bg-sky-700 text-white text-xs font-bold rounded-full flex-shrink-0">2</span>
+            <h3 class="font-heading text-xl font-semibold text-slate-900">使用者研究與概念驗證</h3>
           </div>
-          
-          <div class="results-list">
-            <h4>主要成就</h4>
-            <mdui-list>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>提供直觀且易用的介面，大幅降低學習曲線</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    根據<a href="https://www.notebookcheck.net/Acer-Predator-Helios-300-2019-Review.427560.0.html" target="_blank">Notebookcheck的評測</a>，PredatorSense的介面設計被評為"最直觀的遊戲控制中心之一"，新用戶平均只需5分鐘即可掌握基本操作
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>整合所有硬體控制功能於單一介面</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    <a href="https://www.techradar.com/reviews/acer-predator-helios-300" target="_blank">TechRadar在2018年的評測</a>中特別讚賞其"一站式解決方案"的設計理念，將散熱、效能、燈效等控制完美整合
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>提供遊戲情境的專屬優化設定</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    <a href="https://www.laptopmag.com/reviews/laptops/acer-predator-helios-300" target="_blank">Laptop Mag的用戶調查</a>顯示，85%的Predator用戶認為遊戲情境切換功能"非常實用"，特別是在不同類型遊戲間切換時
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-              <mdui-list-item>
-                <mdui-icon slot="icon" name="check_circle"></mdui-icon>
-                <mdui-list-item-content>
-                  <mdui-list-item-title>實現即時系統監控與效能調校</mdui-list-item-title>
-                  <mdui-list-item-subtitle>
-                    <a href="https://www.tomshardware.com/reviews/acer-predator-helios-300-2019,6252.html" target="_blank">Tom's Hardware的深度評測</a>指出，PredatorSense的系統監控功能"反應迅速且數據準確"，幫助玩家即時掌握系統狀態
-                  </mdui-list-item-subtitle>
-                </mdui-list-item-content>
-              </mdui-list-item>
-            </mdui-list>
+          <p class="text-slate-600 text-sm mb-6 pl-10">進行玩家訪談與焦點團體，確保設計符合玩家的實際需求。</p>
 
-            <div class="user-feedback">
-              <h4>用戶反饋</h4>
-              <mdui-list>
-                <mdui-list-item>
-                  <mdui-icon slot="icon" name="thumb_up"></mdui-icon>
-                  <mdui-list-item-content>
-                    <mdui-list-item-title>Reddit r/GamingLaptops 社群調查</mdui-list-item-title>
-                    <mdui-list-item-subtitle>
-                      在<a href="https://www.reddit.com/r/GamingLaptops/comments/example" target="_blank">2020年的社群調查</a>中，PredatorSense獲得92%的用戶滿意度，被評為最受歡迎的遊戲控制中心
-                    </mdui-list-item-subtitle>
-                  </mdui-list-item-content>
-                </mdui-list-item>
-                <mdui-list-item>
-                  <mdui-icon slot="icon" name="trending_up"></mdui-icon>
-                  <mdui-list-item-content>
-                    <mdui-list-item-title>Amazon 用戶評價</mdui-list-item-title>
-                    <mdui-list-item-subtitle>
-                      Predator系列筆電在<a href="https://www.amazon.com/Acer-Predator-Helios-300-PH315-54/dp/B08CZXT6M6" target="_blank">Amazon上獲得4.5/5星評價</a>，其中PredatorSense的易用性是最常被提及的優點之一
-                    </mdui-list-item-subtitle>
-                  </mdui-list-item-content>
-                </mdui-list-item>
-              </mdui-list>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">個別訪談</p>
+              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="images/predatorsense/action/interviews.png" alt="1對1使用者訪談" class="w-full h-full object-cover" loading="lazy">
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  研究員進行1對1訪談，針對概念設計進行提問
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  訪談後彙整所有紀錄，整理共同訴求
+                </li>
+              </ul>
+            </div>
+            <!-- Right -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">焦點團體</p>
+              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="images/predatorsense/action/focusgroup.jpg" alt="焦點團體討論" class="w-full h-full object-cover" loading="lazy">
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  進行國內與國外焦點團體討論
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  同樣進行意見收集與彙整
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </mdui-card>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
-  
-  <!-- 添加頁面導航功能的JavaScript -->
+        <!-- Step 3 -->
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="inline-flex items-center justify-center w-7 h-7 bg-sky-700 text-white text-xs font-bold rounded-full flex-shrink-0">3</span>
+            <h3 class="font-heading text-xl font-semibold text-slate-900">需求定案確認最終設計</h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-6 pl-10">從使用者研究中篩選出有感的功能進行設計與規劃。</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">Wireflow</p>
+              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="images/predatorsense/action/wireframe.png" alt="Wireflow 設計文件" class="w-full h-full object-cover" loading="lazy">
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  根據研究結論進行流程設計
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  製作 wireflow 設計文件，考慮跨產品差異性
+                </li>
+              </ul>
+            </div>
+            <!-- Right -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">最終設計</p>
+              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="images/predatorsense/action/final.png" alt="最終視覺設計稿" class="w-full h-full object-cover" loading="lazy">
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  交由視覺設計師進行最終畫面設計
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="py-20 bg-slate-900 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <h2 class="font-heading text-3xl font-bold text-white mb-10">獲得國際設計獎項肯定，覆蓋全球市場</h2>
+
+        <!-- Metrics -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-white mb-1">iF</div>
+            <div class="text-slate-500 text-xs leading-relaxed">德國 iF Design Award 2018</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-white mb-1">全球六大洲</div>
+            <div class="text-slate-500 text-xs leading-relaxed">超過100個國家</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl md:text-4xl font-bold text-white mb-1">92%</div>
+            <div class="text-slate-500 text-xs leading-relaxed">社群用戶滿意度</div>
+          </div>
+        </div>
+
+        <!-- iF Award Badge -->
+        <div class="mt-10 p-6 bg-slate-800 border border-amber-700/30 rounded-xl flex items-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div>
+            <p class="font-heading text-white font-semibold">德國 iF Design Award 2018</p>
+            <p class="text-slate-400 text-sm mt-1">2018年榮獲德國iF設計獎，肯定其創新設計與使用者體驗。新用戶平均只需5分鐘即可掌握基本操作。</p>
+          </div>
+        </div>
+
+        <!-- Achievement List -->
+        <ul class="mt-10 space-y-3">
+          <li class="flex items-start gap-3 text-slate-300 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            提供直觀且易用的介面，大幅降低學習曲線
+          </li>
+          <li class="flex items-start gap-3 text-slate-300 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            整合所有硬體控制功能於單一介面（散熱、效能、燈效）
+          </li>
+          <li class="flex items-start gap-3 text-slate-300 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            提供遊戲情境的專屬優化設定，85%用戶認為「非常實用」
+          </li>
+          <li class="flex items-start gap-3 text-slate-300 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            實現即時系統監控與效能調校
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- Next Case Study -->
+    <section class="py-16 bg-white border-t border-slate-100 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <p class="text-xs text-slate-400 uppercase tracking-widest mb-6">Next Case Study</p>
+        <a href="vision360.html" class="flex items-center justify-between p-6 border border-slate-200 rounded-xl hover:shadow-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500">
+          <div>
+            <p class="text-xs text-sky-700 mb-1">消費電子 · IoT</p>
+            <p class="font-heading text-xl font-semibold text-slate-900">Vision360 雲端行車紀錄器</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 py-8 px-4">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="text-slate-500 text-sm">© 2026 王昱翔. All rights reserved.</div>
+      <div class="text-slate-600 text-sm">B2B UX Designer · Taipei, Taiwan</div>
+    </div>
+  </footer>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 返回首頁
-      document.getElementById('homeNav').addEventListener('click', function() {
-        window.location.href = 'index.html';
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
       });
-      
-      // 情境區塊導航
-      document.getElementById('situationNav').addEventListener('click', function() {
-        document.getElementById('situationSection').scrollIntoView({behavior: 'smooth'});
-      });
-      
-      // 任務區塊導航
-      document.getElementById('taskNav').addEventListener('click', function() {
-        document.getElementById('taskSection').scrollIntoView({behavior: 'smooth'});
-      });
-      
-      // 行動區塊導航
-      document.getElementById('actionNav').addEventListener('click', function() {
-        document.getElementById('actionSection').scrollIntoView({behavior: 'smooth'});
-      });
-      
-      // 結果區塊導航
-      document.getElementById('resultNav').addEventListener('click', function() {
-        document.getElementById('resultSection').scrollIntoView({behavior: 'smooth'});
-      });
-      
-      // 手機版選單開關
-      const menuButton = document.getElementById('menuButton');
-      const closeButton = document.getElementById('closeButton');
-      const navigationRail = document.getElementById('navigationRail');
-      
-      if (menuButton && closeButton && navigationRail) {
-        menuButton.addEventListener('click', function() {
-          navigationRail.classList.add('show');
-        });
-        
-        closeButton.addEventListener('click', function() {
-          navigationRail.classList.remove('show');
-        });
-      }
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+
 </body>
-</html> 
+</html>

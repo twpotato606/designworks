@@ -19,8 +19,11 @@
   <!-- ─── Floating Nav ─── -->
   <header class="fixed top-4 left-0 right-0 z-50 px-4">
     <nav id="navbar" class="max-w-7xl mx-auto bg-white/95 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 h-14 flex items-center justify-between transition-shadow duration-200">
-      <a href="#hero" class="font-heading font-bold text-slate-900 text-lg cursor-pointer hover:text-sky-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded">
-        王昱翔
+      <a id="navLogo" href="#hero" class="inline-flex items-center gap-2 font-heading font-bold text-slate-900 text-lg cursor-pointer hover:text-sky-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 rounded">
+        <!-- Home icon：所有尺寸都顯示 -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
+        <!-- 姓名：手機隱藏，其他尺寸顯示 -->
+        <span class="hidden md:inline">王昱翔</span>
       </a>
 
       <!-- Desktop links -->
@@ -124,7 +127,7 @@
 
         <!-- Section header -->
         <div class="mb-14 fade-up">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-3">重點設計案例</h2>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-3">設計案例</h2>
           <p class="text-lg text-slate-600 max-w-xl">展示在不同產業、複雜需求中解決問題的能力</p>
         </div>
 
@@ -143,10 +146,14 @@
               </div>
             </div>
             <div class="p-6">
-              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">政府 · 醫療資訊系統</div>
               <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">校園疫苗接種數位轉型</h3>
               <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">為疾管署開發全國性的校園疫苗接種管理系統，從紙本到雲端，打造智慧校園健康管理。</p>
-              <p class="mt-4 text-sm font-medium text-emerald-700">300萬+ 家長完成線上填寫 · 全台 90% 學校滿意</p>
+              <div class="mt-4 flex items-center gap-2 flex-wrap">
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">政府</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">醫療資訊系統</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">300萬+使用者</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">90% 滿意度</span>
+              </div>
             </div>
           </a>
 
@@ -162,10 +169,13 @@
               </div>
             </div>
             <div class="p-6">
-              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">醫療 · 企業 SaaS</div>
               <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">智慧醫療個案管理平台</h3>
               <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">將慢性病管理機制自動化，讓個管師能夠專注於照護。</p>
-              <p class="mt-4 text-sm font-medium text-emerald-700">個管師行政負擔顯著降低，照護品質提升</p>
+              <div class="mt-4 flex items-center gap-2 flex-wrap">
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">醫療</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">SaaS</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">顯著降低醫護負擔</span>
+              </div>
             </div>
           </a>
 
@@ -181,13 +191,13 @@
               </div>
             </div>
             <div class="p-6">
-              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">消費電子 · 軟體設計</div>
               <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">PredatorSense 遊戲控制中心</h3>
               <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">為電競玩家打造的強大系統管理工具。</p>
-              <div class="mt-4 flex items-center gap-2">
-                <span class="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  德國 iF Design Award 獲獎
+              <div class="mt-4 flex items-center gap-2 flex-wrap">
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">桌面應用程式</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">軟硬整合</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  iF Design Award
                 </span>
               </div>
             </div>
@@ -205,10 +215,16 @@
               </div>
             </div>
             <div class="p-6">
-              <div class="text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2">消費電子 · IoT</div>
               <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">Vision360 雲端行車紀錄器</h3>
               <p class="text-slate-600 text-sm leading-relaxed line-clamp-2">360 度無死角的行車安全守護者。</p>
-              <p class="mt-4 text-sm font-medium text-emerald-700">跨裝置雲端整合，全景行車體驗</p>
+              <div class="mt-4 flex items-center gap-2 flex-wrap">
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">消費電子</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">IoT</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">新創產品</span>
+                <span class="inline-flex items-center bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  iF Design Award
+                </span>
+              </div>
             </div>
           </a>
 
@@ -462,19 +478,6 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // ── Nav logo: 捲過 Hero 大頭照才顯示 ──
-    const navLogo   = document.getElementById('navLogo');
-    const heroAnchor = document.getElementById('hero-anchor');
-
-    const logoObserver = new IntersectionObserver((entries) => {
-      const visible = entries[0].isIntersecting;
-      navLogo.classList.toggle('opacity-0',          visible);
-      navLogo.classList.toggle('translate-y-[-4px]', visible);
-      navLogo.classList.toggle('opacity-100',        !visible);
-      navLogo.classList.toggle('translate-y-0',      !visible);
-    }, { threshold: 0.2 });
-
-    logoObserver.observe(heroAnchor);
 
     // ── Scroll-triggered fade-up ──
     const observer = new IntersectionObserver((entries) => {

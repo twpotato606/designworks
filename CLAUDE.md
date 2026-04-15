@@ -25,7 +25,7 @@ design-guideline/B2B-UX-Portfolio-Design-Guideline.md
    - 字型：Archivo（標題）+ Space Grotesk（內文），尺寸依第 2 章 type scale
    - 間距：依第 3 章 spacing token，不自行發明數值
    - 元件：依第 5 章 component library 規格實作
-   - 互動：依第 8 章 interaction patterns，不使用 scale transform
+   - 互動：依第 8 章 interaction patterns（scale 僅允許用於 overflow-hidden 圖片容器內）
 
 3. **執行 Pre-Delivery Checklist**
    - 對照準則第 14 章 checklist，逐項確認後才輸出程式碼
@@ -90,7 +90,7 @@ designworks/
 
 所有頁面遵循準則第 4 章的 section 順序：
 
-**首頁：** Nav → Hero → Selected Work → Process → Metrics → Project Grid → About → Contact → Footer
+**首頁：** Nav → Hero（含 Metrics 嵌入）→ Selected Work → Approach → About → Contact + Footer
 
 **Case Study 頁：** Header (dark) → Challenge → Research → Insights → Design Process → Solution → Outcomes → Next Case Study
 

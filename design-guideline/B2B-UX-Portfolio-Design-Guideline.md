@@ -170,33 +170,27 @@ Project cards:
 
 ```
 ┌─────────────────────────────────────────┐
-│  NAV (floating, transparent → solid)    │
+│  NAV (floating pill, always-on style)   │
 ├─────────────────────────────────────────┤
-│  HERO                                   │
-│  Name · Role · Value Prop · CTA         │
-│  Trust bar: client logos                │
+│  HERO (dark bg-slate-900)               │
+│  Photo · Role · Value Prop · CTAs       │
+│  Metrics grid (embedded, 4 columns)     │
 ├─────────────────────────────────────────┤
-│  SELECTED WORK                          │
-│  Case study cards (3 featured)          │
+│  SELECTED WORK (bg-slate-50)            │
+│  Case study cards (2-column grid)       │
 ├─────────────────────────────────────────┤
-│  APPROACH / PROCESS                     │
-│  UX methodology, research-to-launch     │
+│  APPROACH / PROCESS (dark bg-slate-900) │
+│  3-step methodology cards               │
 ├─────────────────────────────────────────┤
-│  METRICS & IMPACT                       │
-│  Key outcomes from past work            │
+│  ABOUT (bg-white)                       │
+│  Work history · Skills · Personality    │
 ├─────────────────────────────────────────┤
-│  MORE WORK                              │
-│  Project grid (masonry) + category filter│
-├─────────────────────────────────────────┤
-│  ABOUT                                  │
-│  Bio · philosophy · tools used          │
-├─────────────────────────────────────────┤
-│  CONTACT / CTA                          │
-│  Clear ask, calendar link               │
-├─────────────────────────────────────────┤
-│  FOOTER                                 │
+│  CONTACT + FOOTER (dark bg-slate-900)   │
+│  Contact cards · Copyright bar          │
 └─────────────────────────────────────────┘
 ```
+
+> **注意：** Metrics 不獨立成 section，而是嵌入 Hero 底部的 4 欄網格。「More Work」區塊目前未實作。
 
 ---
 
@@ -205,18 +199,23 @@ Project cards:
 ### 5.1 Navigation
 
 ```
-Position:     fixed top, floating (top-4 left-4 right-4 within max-w-7xl)
-Height:       56px
-Background:   Initial: transparent | Scrolled: bg-white/95 backdrop-blur-sm
-Border:       Initial: none | Scrolled: border-b border-slate-200
-Shadow:       shadow-sm (on scroll only)
-Transition:   all 200ms ease
+Position:     fixed top-4, full-width header (left-0 right-0 px-4)
+Inner nav:    max-w-7xl mx-auto
+Height:       56px (h-14)
+Background:   bg-white/95 backdrop-blur-sm (always-on, no scroll transition)
+Border:       border border-slate-200 (always-on)
+Border-radius: rounded-2xl (pill nav style)
+Padding:      px-6
+Transition:   transition-shadow duration-200
 Z-index:      z-50
 ```
 
-**Nav items:** text-sm font-medium text-slate-700 hover:text-slate-900  
+**Nav items:** text-sm font-medium text-slate-600 hover:text-slate-900  
 **Active state:** text-sky-700 font-semibold  
 **CTA button:** Filled accent button (see Buttons)
+
+**Mobile menu:** Dropdown panel below nav — `bg-white border border-slate-200 rounded-2xl p-4 shadow-md`  
+Mobile links: `px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-xl`
 
 ### 5.2 Buttons
 
@@ -264,31 +263,36 @@ Image container:
   overflow: hidden
   rounded-t-xl
 
+Image hover:
+  Image:      group-hover:scale-105 transition-transform duration-500
+              (scale 允許用於 overflow-hidden 容器內，不造成 layout shift)
+
 Hover overlay:
   opacity-0 → group-hover:opacity-100
-  bg-slate-900/80
+  bg-slate-900/75
   transition-opacity 200ms
-  Shows: View Case Study →
+  Shows: 查看案例 →
 
-Card body (p-5 pt-4):
-  Tag:        text-label uppercase text-sky-700 mb-2
-  Title:      text-h3 font-semibold text-slate-900 mb-2
-  Summary:    text-body text-slate-600 line-clamp-2
-  Outcome:    text-small text-emerald-700 font-medium mt-3
-              (e.g., "+34% task completion rate")
+Card body (p-6):
+  Tag:        text-xs font-semibold tracking-widest uppercase text-sky-700 mb-2
+  Title:      text-xl font-semibold text-slate-900 mb-2 (font-heading)
+  Summary:    text-sm text-slate-600 leading-relaxed line-clamp-2
+  Outcome:    text-sm font-medium text-emerald-700 mt-4
 ```
 
-### 5.4 Metric / Impact Cards
+### 5.4 Metric / Impact — Hero Inline Grid
+
+Metrics 嵌入於 Hero section 底部，使用 4 欄網格（mobile 2 欄），無卡片外框：
 
 ```
-Background:    bg-white border border-slate-200
-Border-radius: rounded-xl
-Padding:       p-6
+Container:  mt-16 pt-10 border-t border-slate-800
+Grid:       grid-cols-2 md:grid-cols-4 gap-6 md:gap-10
 
-Number:     text-display font-bold text-slate-900 (e.g., "34%")
-Label:      text-small text-slate-500 uppercase tracking-wide mt-1
-Context:    text-body text-slate-600 mt-2 line-clamp-2
+Number:     font-heading text-3xl md:text-4xl font-bold text-white mb-1
+Label:      text-slate-500 text-xs leading-relaxed
 ```
+
+範例值：`300萬+`、`90%`、`iF`、`10+`
 
 ### 5.5 Trust Badges & Client Logos
 
@@ -316,7 +320,74 @@ Border-radius: rounded-full
 Usage:        Mark section type above h2 headings
 ```
 
-### 5.7 Case Study Page Layout
+### 5.7 Hero Photo Avatar
+
+```
+Size:         w-40 h-40 (160px)
+Shape:        rounded-2xl
+Object:       object-cover
+Ring:         ring-1 ring-slate-700
+Container:    mb-8 flex justify-center
+```
+
+### 5.8 Approach Step Cards (Dark Section)
+
+用於 dark bg-slate-900 的方法論 section，3 欄 grid：
+
+```
+Grid:         grid-cols-1 md:grid-cols-3 gap-10
+
+Icon container:
+  w-12 h-12 bg-sky-900/50 border border-sky-700/50 rounded-xl
+  flex items-center justify-center mb-5
+  Icon: w-5 h-5 text-sky-400 stroke-width="1.5"
+
+Step number:  text-xs font-semibold text-slate-500 uppercase tracking-widest mb-2
+              (e.g., "01", "02", "03")
+Title:        font-heading text-lg font-semibold text-white mb-3
+Body:         text-slate-400 text-sm leading-relaxed
+```
+
+### 5.9 Contact Cards (Dark Variant)
+
+用於 dark bg-slate-900 的聯絡 section：
+
+```
+Card:         flex items-center gap-5 p-5
+              bg-slate-800 border border-slate-700 rounded-xl
+              hover:bg-slate-700 transition-colors duration-150
+              cursor-pointer
+
+Icon container:
+  w-12 h-12 bg-sky-900/50 border border-sky-700/50 rounded-xl flex-shrink-0
+  Icon: w-5 h-5 text-sky-400 stroke-width="1.5"
+
+Label:        text-xs text-slate-500 uppercase tracking-widest font-semibold mb-0.5
+Value:        text-white font-medium text-sm
+
+Arrow icon:   w-4 h-4 text-slate-600 group-hover:text-slate-400 transition-colors duration-150
+```
+
+### 5.10 About Accordion (details/summary)
+
+用於「個人特質」等摺疊展開內容：
+
+```
+Wrapper:      border border-slate-200 rounded-xl overflow-hidden
+
+summary:      flex items-center justify-between px-5 py-4
+              cursor-pointer text-sm font-medium text-slate-700
+              hover:bg-slate-50 transition-colors duration-150 list-none
+
+Toggle icon:  w-4 h-4 text-slate-400
+              group-open:rotate-45 transition-transform duration-200
+              (使用 + 符號 SVG)
+
+Content:      px-5 pb-4 pt-1 text-sm text-slate-600 leading-relaxed
+              border-t border-slate-100
+```
+
+### 5.11 Case Study Page Layout
 
 ```
 Header:
@@ -378,7 +449,7 @@ Logo strip:   grayscale → color (200ms)
 Nav items:    color shift (150ms)
 ```
 
-**Rule:** Never use scale transforms that cause layout shift. Use only `transform: translateY`, `opacity`, and `color` transitions.
+**Rule:** 禁止在卡片容器本身使用 scale（會造成 layout shift）。例外：卡片圖片包在 `overflow-hidden` 容器內時，可對 `<img>` 使用 `group-hover:scale-105`，因容器會剪裁溢出部分，不影響佈局。
 
 ### Loading States
 - Skeleton screens for project grid (bg-slate-200 animate-pulse)
