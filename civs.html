@@ -67,7 +67,7 @@
         </div>
 
         <!-- Hero image -->
-        <img src="images/civs.png" alt="CIVS 校園疫苗接種系統" class="mt-12 w-full max-w-5xl mx-auto rounded-xl aspect-video object-cover" loading="lazy">
+        <img src="images/civs.png" alt="CIVS 校園疫苗接種系統" class="mt-12 w-full max-w-5xl mx-auto rounded-xl cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
 
       </div>
     </section>
@@ -188,8 +188,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-                <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                  <img src="images/civs/student-list/before.jpg" alt="學生名冊造冊 Before" class="object-cover w-full h-full" loading="lazy">
+                <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                  <img src="images/civs/student-list/before.jpg" alt="學生名冊造冊 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
                 </div>
                 <ul class="space-y-2">
                   <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -204,8 +204,8 @@
               </div>
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-                <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                  <img src="images/civs/student-list/after.jpg" alt="學生名冊造冊 After" class="object-cover w-full h-full" loading="lazy">
+                <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                  <img src="images/civs/student-list/after.jpg" alt="學生名冊造冊 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
                 </div>
                 <ul class="space-y-2">
                   <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -235,8 +235,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-                <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                  <img src="images/civs/vaccination-session/before.jpg" alt="接種場次安排 Before" class="object-cover w-full h-full" loading="lazy">
+                <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                  <img src="images/civs/vaccination-session/before.jpg" alt="接種場次安排 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
                 </div>
                 <ul class="space-y-2">
                   <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -251,8 +251,8 @@
               </div>
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-                <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                  <img src="images/civs/vaccination-session/after.jpg" alt="接種場次安排 After" class="object-cover w-full h-full" loading="lazy">
+                <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                  <img src="images/civs/vaccination-session/after.jpg" alt="接種場次安排 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
                 </div>
                 <ul class="space-y-2">
                   <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -278,8 +278,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-                <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                  <img src="images/civs/consent-form/before.jpg" alt="意願書簽署介面 Before" class="object-cover w-full h-full" loading="lazy">
+                <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                  <img src="images/civs/consent-form/before.jpg" alt="意願書簽署介面 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
                 </div>
                 <ul class="space-y-2">
                   <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -294,8 +294,8 @@
               </div>
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-                <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                  <img src="images/civs/consent-form/after.jpg" alt="意願書簽署介面 After" class="object-cover w-full h-full" loading="lazy">
+                <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                  <img src="images/civs/consent-form/after.jpg" alt="意願書簽署介面 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
                 </div>
                 <ul class="space-y-2">
                   <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -422,6 +422,12 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-200" onclick="closeLightbox()">
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+    <img id="lightbox-img" src="" alt="" class="relative max-w-full max-h-full rounded-xl shadow-2xl scale-95 transition-transform duration-200 cursor-zoom-out">
+  </div>
+
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -432,6 +438,27 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    function openLightbox(img) {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.remove('opacity-0', 'pointer-events-none');
+      requestAnimationFrame(() => lbImg.classList.remove('scale-95'));
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.classList.add('scale-95');
+      lb.classList.add('opacity-0');
+      setTimeout(() => lb.classList.add('pointer-events-none'), 200);
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
 </body>

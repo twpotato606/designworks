@@ -62,7 +62,7 @@
         </div>
 
         <!-- Hero image -->
-        <img src="images/mdm.png" alt="智慧醫療個案管理平台" class="mt-12 w-full max-w-5xl mx-auto rounded-xl aspect-video object-cover" loading="lazy">
+        <img src="images/mdm.png" alt="智慧醫療個案管理平台" class="mt-12 w-full max-w-5xl mx-auto rounded-xl cursor-zoom-in" loading="lazy" id="hero-img" onclick="openLightbox(this)">
 
       </div>
     </section>
@@ -72,7 +72,6 @@
       <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         <div class="fade-up max-w-3xl">
-          <span class="inline-flex items-center border border-sky-200 bg-sky-50 text-sky-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest mb-4">CHALLENGE</span>
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">分散的系統與繁瑣流程，讓個管師無法專注照護</h2>
           <p class="text-lg text-slate-600 leading-relaxed">個案管理是從美國引進台灣的醫療照護機制，主要著重於慢性病管理。透過專業個案管理師提供衛教知識，協助個案改善慢性病狀態。</p>
         </div>
@@ -93,11 +92,7 @@
               </li>
               <li class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-7 h-7 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold flex items-center justify-center">3</span>
-                <span class="text-slate-700 pt-0.5">分派照護個管師</span>
-              </li>
-              <li class="flex items-start gap-4">
-                <span class="flex-shrink-0 w-7 h-7 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold flex items-center justify-center">4</span>
-                <span class="text-slate-700 pt-0.5">擬定評估與照護計畫</span>
+                <span class="text-slate-700 pt-0.5">個管師查找資料，擬定照護計畫</span>
               </li>
               <li class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-7 h-7 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold flex items-center justify-center">5</span>
@@ -124,15 +119,11 @@
               </li>
               <li class="flex items-start gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                <span class="text-slate-700">需手動記錄個案回報數據，非常花時間</span>
+                <span class="text-slate-700">需要耗費很多精力追蹤個案狀況</span>
               </li>
               <li class="flex items-start gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                <span class="text-slate-700">衛教內容缺乏系統化管理</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                <span class="text-slate-700">個案追蹤狀況難以即時掌握</span>
+                <span class="text-slate-700">下班後仍會被個案打擾</span>
               </li>
             </ul>
           </div>
@@ -146,8 +137,7 @@
       <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         <div class="fade-up max-w-3xl mb-16">
-          <span class="inline-flex items-center border border-sky-200 bg-sky-50 text-sky-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest mb-4">PROCESS</span>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">五項功能改善，全面提升個案管理效率</h2>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">四項功能改善，全面提升個案管理效率</h2>
         </div>
 
         <!-- 2a. 簡化註冊流程 -->
@@ -159,8 +149,8 @@
           <div class="ml-[52px] grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/registration/before.png" alt="簡化註冊流程 Before" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/registration/before.png" alt="簡化註冊流程 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -175,8 +165,8 @@
             </div>
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/registration/after.png" alt="簡化註冊流程 After" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/registration/after.png" alt="簡化註冊流程 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -201,8 +191,8 @@
           <div class="ml-[52px] grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/data/before.png" alt="整合病患資料 Before" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/data/before.png" alt="整合病患資料 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -217,8 +207,8 @@
             </div>
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/data/after.png" alt="整合病患資料 After" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/data/after.png" alt="整合病患資料 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -235,21 +225,21 @@
         </div>
 
         <!-- 2c. 問卷自動生成 -->
-        <div class="fade-up mb-14">
+        <!-- <div class="fade-up mb-14">
           <div class="flex items-center gap-4 mb-6">
             <span class="flex-shrink-0 w-9 h-9 rounded-full bg-sky-700 text-white text-sm font-bold flex items-center justify-center font-heading">3</span>
-            <h3 class="font-heading text-xl font-semibold text-slate-900">問卷自動生成</h3>
+            <h3 class="font-heading text-xl font-semibold text-slate-900">多種照護模式</h3>
           </div>
           <div class="ml-[52px] grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/form/before.png" alt="問卷自動生成 Before" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/form/before.png" alt="問卷自動生成 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                  大多數個管都是訊息詢問狀況並手動記錄
+                  依據醫院個管類別的不同，個管師提供的服務方式也差異很大
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-600">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -259,8 +249,8 @@
             </div>
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/form/after.png" alt="問卷自動生成 After" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/form/after.png" alt="問卷自動生成 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -278,19 +268,19 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- 2d. 智能追蹤排程 -->
         <div class="fade-up mb-14">
           <div class="flex items-center gap-4 mb-6">
-            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-sky-700 text-white text-sm font-bold flex items-center justify-center font-heading">4</span>
+            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-sky-700 text-white text-sm font-bold flex items-center justify-center font-heading">3</span>
             <h3 class="font-heading text-xl font-semibold text-slate-900">智能追蹤排程</h3>
           </div>
           <div class="ml-[52px] grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/tracking/before.png" alt="智能追蹤排程 Before" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/tracking/before.png" alt="智能追蹤排程 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -305,8 +295,8 @@
             </div>
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/tracking/after.png" alt="智能追蹤排程 After" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/tracking/after.png" alt="智能追蹤排程 After" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -325,14 +315,14 @@
         <!-- 2e. 機器人智能回覆 -->
         <div class="fade-up">
           <div class="flex items-center gap-4 mb-6">
-            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-sky-700 text-white text-sm font-bold flex items-center justify-center font-heading">5</span>
+            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-sky-700 text-white text-sm font-bold flex items-center justify-center font-heading">4</span>
             <h3 class="font-heading text-xl font-semibold text-slate-900">機器人智能回覆</h3>
           </div>
           <div class="ml-[52px] grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Before</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/team/before.png" alt="機器人智能回覆 Before" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <img src="images/mdm/team/before.png" alt="機器人智能回覆 Before" class="w-full cursor-zoom-in" loading="lazy" onclick="openLightbox(this)">
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
@@ -347,17 +337,77 @@
             </div>
             <div>
               <p class="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-3">After</p>
-              <div class="aspect-video overflow-hidden rounded-xl bg-slate-100 mb-4">
-                <img src="images/mdm/team/after.png" alt="機器人智能回覆 After" class="object-cover w-full h-full" loading="lazy">
+              <div class="rounded-xl bg-white mb-4 overflow-hidden shadow-sm ring-1 ring-slate-200">
+                <svg viewBox="0 0 560 276" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;font-family:'Space Grotesk',system-ui,sans-serif;">
+                  <defs>
+                    <marker id="dt-arr" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+                      <path d="M0,0 L6,3 L0,6 Z" fill="#94A3B8"/>
+                    </marker>
+                  </defs>
+                  <!-- BG -->
+                  <rect width="560" height="276" fill="#F8FAFC"/>
+                  <!-- START NODE -->
+                  <rect x="155" y="14" width="250" height="40" rx="20" fill="#0F172A"/>
+                  <text x="280" y="39" text-anchor="middle" fill="#F1F5F9" font-size="13" font-weight="600">個案在下班時間發送訊息</text>
+                  <!-- Arrow: start → decision -->
+                  <line x1="280" y1="54" x2="280" y2="72" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#dt-arr)"/>
+                  <!-- DECISION NODE -->
+                  <rect x="140" y="76" width="280" height="40" rx="8" fill="#E0F2FE" stroke="#0369A1" stroke-width="1.5"/>
+                  <text x="280" y="101" text-anchor="middle" fill="#0369A1" font-size="13" font-weight="600">機器人判斷訊息類型</text>
+                  <!-- Line: decision → bus -->
+                  <line x1="280" y1="116" x2="280" y2="138" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <!-- Horizontal bus -->
+                  <line x1="71" y1="138" x2="489" y2="138" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <!-- Col drops to badge -->
+                  <line x1="71"  y1="138" x2="71"  y2="154" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <line x1="210" y1="138" x2="210" y2="154" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <line x1="349" y1="138" x2="349" y2="154" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <line x1="489" y1="138" x2="489" y2="154" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <!-- CONDITION BADGES -->
+                  <rect x="21"  y="154" width="100" height="22" rx="11" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+                  <text x="71"  y="169" text-anchor="middle" fill="#92400E" font-size="10.5">多媒體訊息</text>
+                  <rect x="160" y="154" width="100" height="22" rx="11" fill="#FEE2E2" stroke="#EF4444" stroke-width="1"/>
+                  <text x="210" y="169" text-anchor="middle" fill="#991B1B" font-size="10.5">非醫療問題</text>
+                  <rect x="293" y="154" width="112" height="22" rx="11" fill="#D1FAE5" stroke="#059669" stroke-width="1"/>
+                  <text x="349" y="169" text-anchor="middle" fill="#065F46" font-size="10.5">醫療・知識庫有</text>
+                  <rect x="433" y="154" width="112" height="22" rx="11" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1"/>
+                  <text x="489" y="169" text-anchor="middle" fill="#475569" font-size="10.5">醫療・知識庫無</text>
+                  <!-- Arrows: badge → outcome -->
+                  <line x1="71"  y1="176" x2="71"  y2="194" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#dt-arr)"/>
+                  <line x1="210" y1="176" x2="210" y2="194" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#dt-arr)"/>
+                  <line x1="349" y1="176" x2="349" y2="194" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#dt-arr)"/>
+                  <line x1="489" y1="176" x2="489" y2="194" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#dt-arr)"/>
+                  <!-- OUTCOME BOXES -->
+                  <!-- col1 amber: 多媒體 -->
+                  <rect x="16"  y="198" width="110" height="64" rx="8" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+                  <text x="71"  y="216" text-anchor="middle" fill="#92400E" font-size="11" font-weight="600">罐頭訊息</text>
+                  <text x="71"  y="233" text-anchor="middle" fill="#78350F" font-size="10.5">引導個案改用</text>
+                  <text x="71"  y="249" text-anchor="middle" fill="#78350F" font-size="10.5">文字訊息</text>
+                  <!-- col2 rose: 非醫療 -->
+                  <rect x="155" y="198" width="110" height="64" rx="8" fill="#FFF1F2" stroke="#FB7185" stroke-width="1.5"/>
+                  <text x="210" y="216" text-anchor="middle" fill="#9F1239" font-size="11" font-weight="600">非業務範圍</text>
+                  <text x="210" y="233" text-anchor="middle" fill="#881337" font-size="10.5">告知不在</text>
+                  <text x="210" y="249" text-anchor="middle" fill="#881337" font-size="10.5">服務範圍內</text>
+                  <!-- col3 emerald: 知識庫有 -->
+                  <rect x="294" y="198" width="110" height="64" rx="8" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+                  <text x="349" y="216" text-anchor="middle" fill="#065F46" font-size="11" font-weight="600">知識庫回覆</text>
+                  <text x="349" y="233" text-anchor="middle" fill="#064E3B" font-size="10.5">自動抓取答案</text>
+                  <text x="349" y="249" text-anchor="middle" fill="#064E3B" font-size="10.5">即時回覆個案</text>
+                  <!-- col4 slate: 知識庫無 -->
+                  <rect x="434" y="198" width="110" height="64" rx="8" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+                  <text x="489" y="214" text-anchor="middle" fill="#334155" font-size="11" font-weight="600">排程回覆</text>
+                  <text x="489" y="230" text-anchor="middle" fill="#475569" font-size="10.5">待個管師上班</text>
+                  <text x="489" y="246" text-anchor="middle" fill="#475569" font-size="10.5">後馬上回覆</text>
+                </svg>
               </div>
               <ul class="space-y-2">
                 <li class="flex items-start gap-2 text-sm text-slate-600">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  院方可以輕鬆提供相關資料，讓機器人代為回覆
+                  個管師下班後，由機器人代為回覆
                 </li>
                 <li class="flex items-start gap-2 text-sm text-slate-600">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  機器人不會回覆與個管不相干的問題
+                  規劃應答決策樹，讓機器人根據問題類型給予適當回覆
                 </li>
               </ul>
             </div>
@@ -372,7 +422,6 @@
       <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         <div class="fade-up max-w-3xl mb-12">
-          <span class="inline-flex items-center border border-sky-800 bg-sky-950 text-sky-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest mb-4">OUTCOMES</span>
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">系統上線，顯著改善照護效率</h2>
         </div>
 
@@ -437,6 +486,12 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-200" onclick="closeLightbox()">
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+    <img id="lightbox-img" src="" alt="" class="relative max-w-full max-h-full rounded-xl shadow-2xl scale-95 transition-transform duration-200 cursor-zoom-out">
+  </div>
+
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -447,6 +502,27 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    function openLightbox(img) {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.remove('opacity-0', 'pointer-events-none');
+      requestAnimationFrame(() => lbImg.classList.remove('scale-95'));
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.classList.add('scale-95');
+      lb.classList.add('opacity-0');
+      setTimeout(() => lb.classList.add('pointer-events-none'), 200);
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
 </body>
