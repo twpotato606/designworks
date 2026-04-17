@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>從「畫布工人」到「體驗導演」— 王昱翔</title>
+  <meta name="description" content="研究 AI 如何重塑設計流程，並自行開發 Wireflow Viewer，實現意圖驅動設計，生產效率提升 4 倍。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-slate-50 text-slate-950 antialiased">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-sky-700 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">跳至主要內容</a>
+
+  <!-- Nav -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-4">
+    <nav class="max-w-7xl mx-auto bg-white/95 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        返回作品集
+      </a>
+      <a href="index.html#contact" class="inline-flex items-center gap-2 bg-sky-700 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-sky-800 transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+        聯絡我
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ─── Dark Header ─── -->
+    <section class="pt-32 pb-16 bg-slate-900 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <!-- Tags row -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">AI 研究</span>
+          <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">自建工具</span>
+          <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">設計流程</span>
+          <span class="inline-flex items-center bg-sky-900 border border-sky-700 text-sky-300 text-xs px-3 py-1 rounded-full">DeepQ 自主研究</span>
+        </div>
+
+        <!-- H1 -->
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mt-6 mb-4">從「畫布工人」到「體驗導演」</h1>
+
+        <!-- Lead -->
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl">一邊應用 AI產出，一邊思考如何改造設計流程，最後自行開發 Wireflow Viewer，讓設計師以意圖驅動生成，取代逐頁手繪</p>
+
+        <!-- Metrics row -->
+        <div class="border-t border-slate-800 pt-8 mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+          <div>
+            <div class="font-heading text-3xl font-bold text-white">4x</div>
+            <div class="text-sm text-slate-400 mt-1">生產速度提升，相較傳統手工模式</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white">100%</div>
+            <div class="text-sm text-slate-400 mt-1">文件自動化率，AI 自動生成與維護</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white">0</div>
+            <div class="text-sm text-slate-400 mt-1">第三方設計工具依賴，完全自研工具鏈</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Challenge ─── -->
+    <section class="py-20 bg-white px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="fade-up max-w-3xl mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">傳統設計日常：高昂的手作成本</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">核心觀念：「線性增長的工時」——畫面數量翻倍，工時同步翻倍，設計師淪為工廠裡的零件組裝工，而非創造價值的體驗設計者。</p>
+        </div>
+
+        <div class="fade-up grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="w-10 h-10 bg-red-50 border border-red-200 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h3 class="font-heading text-base font-semibold text-slate-900 mb-2">手工成本</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">每一像素、每一份圖文說明皆需手寫。100 個畫面即 100 倍工時，無法規模化複製或快速迭代。</p>
+          </div>
+
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="w-10 h-10 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="font-heading text-base font-semibold text-slate-900 mb-2">Design System 隱形負擔</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Design System 雖減少重複製圖，卻大幅增加維護組件的隱形成本與元件如何使用的溝通摩擦。</p>
+          </div>
+
+          <div class="p-6 bg-red-50 rounded-xl border border-red-200">
+            <div class="w-10 h-10 bg-red-100 border border-red-300 rounded-xl flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="font-heading text-base font-semibold text-slate-900 mb-2">根本問題：價值錯置</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">設計師精力耗費在組裝零件，而非聚焦於真正創造使用者價值的體驗決策與策略思考。</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Research ─── -->
+    <section class="py-20 bg-slate-50 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="fade-up max-w-3xl mb-12">
+          <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-3">典範轉移</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">2026 核心願景：Vibe Coding to Design</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">核心觀念：「從個別畫面轉向意圖生成」——不再逐頁繪製，而是透過 AI 生成產品全流程雛形，在進入開發前完成設計驗證。</p>
+        </div>
+
+        <div class="fade-up grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="text-slate-700">設計師從執行者轉型為產品體驗的「導演」，專注策略與創意決策，由 AI 負責執行層面的批次生成</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="text-slate-700">Prompt 驅動批次操作體驗生成，取代過去逐頁手繪的線性工作流</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="text-slate-700">互動是真實的，設計師可以馬上知道哪邊體驗好哪邊體驗不好，及時修正</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="text-slate-700">AI 直接從最終 code 反向生成規格文件，始終與實作同步，避免浪費時間在對齊文件規格上</p>
+            </div>
+          </div>
+
+          <!-- Jenny 引言 -->
+          <div class="bg-slate-900 rounded-xl p-6 md:p-8">
+            <div class="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 text-slate-400 text-xs px-3 py-1 rounded-full mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Hatch Conference 2025 · Main Stage
+            </div>
+            <blockquote class="text-white text-xl md:text-2xl font-heading font-semibold leading-snug mb-4">
+              「產品體驗的設計，正從「預設所有場景」轉向「即時測試與調適」。」
+            </blockquote>
+            <p class="text-slate-400 text-sm">— Jenny，Anthropic 設計總監</p>
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed">這句話點出了 AI 時代設計思維的核心轉變——速度、驗證、持續迭代，取代過去繁瑣的靜態規劃流程。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Insights ─── -->
+    <section class="py-20 bg-white px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="fade-up max-w-3xl mb-10">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">關鍵挑戰：雛形 ≠ 可交付開發</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">溝通鴻溝：單純的 Prototype 缺乏開發所需的深度資訊。工程師需要包含<strong class="text-slate-900">架構說明、例外處理與資料邏輯</strong>的圖文流程文件。若手動補齊文件，AI 省下的效率將被完全抵消，形成新的浪費循環。</p>
+        </div>
+
+        <div class="fade-up bg-amber-50 border border-amber-200 rounded-xl p-5 flex items-start gap-3 max-w-3xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p class="text-sm text-amber-800 leading-relaxed">工程師實際需要的圖文流程文件，涵蓋架構說明、例外狀態與資料邏輯，遠超一般原型所能提供的資訊深度。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Design Process ─── -->
+    <section class="py-20 bg-slate-50 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="fade-up max-w-3xl mb-16">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">解決方案演進：三個版本</h2>
+        </div>
+
+        <!-- VER.1 & VER.2：共用 timeline，末步不同 -->
+        <div class="fade-up mb-16">
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">VER.1 → VER.2：相同流程，最後一步的差異</p>
+
+          <div class="flex gap-8 md:gap-16">
+
+            <!-- Timeline (左側) -->
+            <div class="flex-shrink-0 w-48 md:w-56">
+
+              <!-- Step 1 -->
+              <div class="flex gap-3 items-start">
+                <div class="flex flex-col items-center flex-shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center">1</div>
+                  <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:36px"></div>
+                </div>
+                <div class="pt-1 pb-6">
+                  <div class="text-sm font-semibold text-slate-900 mb-0.5">設計師驗證</div>
+                  <div class="text-xs text-slate-500">親自測試產品體驗</div>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="flex gap-3 items-start">
+                <div class="flex flex-col items-center flex-shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center">2</div>
+                  <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:36px"></div>
+                </div>
+                <div class="pt-1 pb-6">
+                  <div class="text-sm font-semibold text-slate-900 mb-0.5">AI 執行爬蟲</div>
+                  <div class="text-xs text-slate-500">自動提取設計內容</div>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="flex gap-3 items-start">
+                <div class="flex flex-col items-center flex-shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center">3</div>
+                  <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:36px"></div>
+                </div>
+                <div class="pt-1 pb-6">
+                  <div class="text-sm font-semibold text-slate-900 mb-0.5">生成 JSON</div>
+                  <div class="text-xs text-slate-500">取得結構化資料檔案</div>
+                </div>
+              </div>
+
+              <!-- Step 4：Fork -->
+              <div class="flex gap-3 items-start">
+                <div class="flex flex-col items-center flex-shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-slate-300 text-slate-600 text-xs font-bold flex items-center justify-center">4</div>
+                </div>
+                <div class="pt-1">
+                  <div class="text-sm font-semibold text-slate-500 mb-1">匯入目的地</div>
+                  <div class="text-xs text-slate-400">VER.1 / VER.2 在此分岔</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Fork cards (右側) -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 self-end">
+
+              <!-- VER.1 -->
+              <div class="border-2 border-red-200 rounded-xl overflow-hidden">
+                <div class="bg-red-50 px-4 py-3 flex items-center gap-2 border-b border-red-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <span class="text-xs font-semibold text-red-700">VER.1 已淘汰 — 匯入 Figma</span>
+                </div>
+                <div class="p-4 bg-white">
+                  <p class="text-sm text-slate-600 mb-4">透過AI讀取擷取.md腳本，將 JSON 轉換並匯入 Figma，自動生成設計交付文件。</p>
+                  <!-- 影片 -->
+                  <div class="aspect-video rounded-lg overflow-hidden bg-slate-100 mb-4">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/6NzNzPJ_vkU" title="VER.1 Demo：雛形轉 Figma" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="space-y-1.5">
+                    <div class="flex items-start gap-2 text-xs text-red-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      物件零散，無組件關聯性
+                    </div>
+                    <div class="flex items-start gap-2 text-xs text-red-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-red-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      後期更新需大量人工介入
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VER.2 -->
+              <div class="border-2 border-sky-200 rounded-xl overflow-hidden">
+                <div class="bg-sky-50 px-4 py-3 flex items-center gap-2 border-b border-sky-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="text-xs font-semibold text-sky-700">VER.2 改進 — 匯入 VS Code Plugin</span>
+                </div>
+                <div class="p-4 bg-white">
+                  <p class="text-sm text-slate-600 mb-4">直接渲染可被 AI 閱讀的 JSON 格式，在VS Code內直接可視化與批次編輯。</p>
+                  <!-- 影片 -->
+                  <div class="aspect-video rounded-lg overflow-hidden bg-slate-100 mb-4">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/-PJedCPsLtw" title="VER.2 Demo：DeepQ VS Code Plugin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  </div>
+                  <div class="space-y-1.5">
+                    <div class="flex items-start gap-2 text-xs text-sky-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-sky-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      可視化、可被 AI 閱讀與批次編輯
+                    </div>
+                    <div class="flex items-start gap-2 text-xs text-sky-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-sky-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      團隊共用一份文件，脫離 Figma 依賴
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- VER.3 -->
+        <div class="fade-up">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="inline-flex items-center gap-2 bg-emerald-100 border border-emerald-300 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              VER.3 現行方案
+            </span>
+            <span class="text-xs text-slate-400">完全捨棄爬蟲，重新設計架構</span>
+          </div>
+          <h3 class="font-heading text-xl font-semibold text-slate-900 mb-2">Wireflow Viewer：直接渲染真實 React 元件</h3>
+          <p class="text-slate-600 mb-6 max-w-2xl">無需爬蟲，直接 import 原專案的真實 React 元件，以 iframe 節點形式渲染在無限畫布上，搭配 CaptureFlow AI 腳本，讓 AI 自動分析原始碼並產出完整 Wireflow。</p>
+
+          <!-- VER.3 影片 -->
+          <div class="max-w-2xl mb-8">
+            <div class="aspect-video rounded-xl overflow-hidden bg-slate-100">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/12RWo9-r_04" title="VER.3 Demo：Wireflow Viewer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- Comparison table -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
+            <div class="p-5 bg-red-50 border border-red-200 rounded-xl">
+              <div class="text-sm font-semibold text-red-900 mb-3">Figma 的限制</div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-red-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  無法直接查詢產品流程規格
+                </li>
+                <li class="flex items-start gap-2 text-sm text-red-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  需手動更新元件/介面最新樣式
+                </li>
+                <li class="flex items-start gap-2 text-sm text-red-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  不支援設計修改同步至 Vibe Coding 專案(2026 Figma mcp已經可以穩定支援)
+                </li>
+              </ul>
+            </div>
+            <div class="p-5 bg-emerald-50 border border-emerald-200 rounded-xl">
+              <div class="text-sm font-semibold text-emerald-900 mb-3">Wireflow Viewer 的能力</div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-emerald-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  可透過AI查詢流程完整規格文件
+                </li>
+                <li class="flex items-start gap-2 text-sm text-emerald-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  可自動對齊並批次更新儀表板樣式
+                </li>
+                <li class="flex items-start gap-2 text-sm text-emerald-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  一鍵同步設計修改至 Vibe Coding 專案
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Solution ─── -->
+    <section class="py-20 bg-white px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="fade-up max-w-3xl mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">Wireflow Viewer：工具核心能力</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">一套基於 React + Vite 的互動式流程畫布工具，將真實的 React 元件以「畫面節點」形式渲染在 iframe 中，並以有向箭頭連接，可視化呈現完整的使用者操作流程。</p>
+        </div>
+
+        <div class="fade-up grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-sky-900/10 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3 class="font-heading text-base font-semibold text-slate-900">直接 import 原始元件</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">Wrapper 透過絕對路徑引用原專案的頁面與 Layout，畫面 100% 與原始碼一致，原始碼更新後 Wireflow 自動同步。不複製程式碼，不脫離開發環境。</p>
+          </div>
+
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-sky-900/10 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <h3 class="font-heading text-base font-semibold text-slate-900">AI 自動擷取（CaptureFlow）</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">只需對 AI 說出指令並附上腳本，AI 自動分析 React 原始碼、識別所有畫面狀態與轉換觸發條件，自動產出 Wrapper.tsx 與 Wireflow JSON。</p>
+          </div>
+
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-sky-900/10 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3 class="font-heading text-base font-semibold text-slate-900">版控整合 Git</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">PRD、Wireflow、Prototype 全納入 Git，歷史可追溯、變更可回滾。PM、設計師、工程師不需要切換工具，可隨時取用所需的資料。</p>
+          </div>
+
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-sky-900/10 border border-sky-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="font-heading text-base font-semibold text-slate-900">三角色無縫協作</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">PM、設計師、工程師同處一個環境，消除工具切換與資訊落差。修改後直接發起討論，指定 PIC Review，持續推進專案進度不中斷。</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Outcomes ─── -->
+    <section class="py-20 bg-slate-900 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+
+        <div class="fade-up max-w-3xl mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">初步評估成效</h2>
+        </div>
+
+        <!-- Metrics -->
+        <div class="fade-up grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-12">
+          <div>
+            <div class="font-heading text-4xl font-bold text-white">4x</div>
+            <div class="text-sm font-semibold text-slate-300 mt-2 mb-1">生產速度提升</div>
+            <div class="text-sm text-slate-400">AI 生成 + 自動化文件 + 批次邏輯調整，相較傳統手工模式效率提升四倍</div>
+          </div>
+          <div>
+            <div class="font-heading text-4xl font-bold text-white">100%</div>
+            <div class="text-sm font-semibold text-slate-300 mt-2 mb-1">文件自動化率</div>
+            <div class="text-sm text-slate-400">設計規格文件由 AI 自動生成與維護，消除手動補齊文件的耗時工序</div>
+          </div>
+          <div>
+            <div class="font-heading text-4xl font-bold text-white">0</div>
+            <div class="text-sm font-semibold text-slate-300 mt-2 mb-1">第三方設計工具依賴</div>
+            <div class="text-sm text-slate-400">全程使用 DeepQ 自研工具，擺脫 Figma 等外部平台的限制與授權成本</div>
+          </div>
+        </div>
+
+        <!-- Outcome quote -->
+        <div class="fade-up border-t border-slate-800 pt-10">
+          <div class="flex items-start gap-3 max-w-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <p class="text-slate-300">設計師將擁有更多時間<strong class="text-white">「專注於病患需求與醫療創新」</strong>，而非對齊像素。這才是設計的真正價值所在。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Next Case Study ─── -->
+    <section class="py-16 bg-white border-t border-slate-100 px-4">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <p class="text-xs uppercase tracking-widest text-slate-400 mb-6">下一個案例</p>
+        <a href="mdm.html" class="flex items-center justify-between p-6 border border-slate-200 rounded-xl hover:shadow-md transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 group">
+          <div>
+            <p class="text-xs font-medium text-sky-700 mb-1">醫療 · SaaS</p>
+            <h3 class="font-heading text-xl font-semibold text-slate-900 group-hover:text-sky-700 transition-colors duration-150">智慧醫療個案管理平台</h3>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-400 group-hover:text-sky-700 group-hover:translate-x-1 transition-all duration-150 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 py-8 px-4">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="text-slate-500 text-sm">© 2026 王昱翔. All rights reserved.</div>
+      <div class="text-slate-600 text-sm">B2B UX Designer · Taipei, Taiwan</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
