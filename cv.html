@@ -10,10 +10,61 @@
   <link rel="stylesheet" href="main.css">
 
   <style>
+    /* ── Print styles ── */
+    @page { size: A4; margin: 10mm; }
+
     @media print {
+      /* 隱藏非列印元素 */
       .no-print { display: none !important; }
-      body { background: white; }
-      .cv-wrap { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+
+      /* 移除頁面背景與容器裝飾 */
+      html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
+      .cv-wrap { box-shadow: none !important; border-radius: 0 !important; margin: 0 !important; max-width: 100% !important; }
+
+      /* Header：深色改為淺色（節省墨水，保持對比） */
+      .cv-header-bg {
+        background: #F1F5F9 !important;
+        border-bottom: 2px solid #0F172A !important;
+        padding: 14px 24px !important;
+      }
+      .cv-header-bg h1 { color: #0F172A !important; font-size: 1.4rem !important; margin-bottom: 2px !important; }
+      .cv-header-bg .cv-role { color: #0369A1 !important; font-size: 0.8rem !important; margin-bottom: 6px !important; }
+      .cv-header-bg .cv-summary { color: #475569 !important; font-size: 0.68rem !important; line-height: 1.4 !important; margin-bottom: 6px !important; }
+      .cv-header-bg .cv-contacts a,
+      .cv-header-bg .cv-contacts span { color: #334155 !important; font-size: 0.68rem !important; }
+      .cv-header-bg img { width: 56px !important; height: 56px !important; border-radius: 8px !important; }
+      .cv-header-bg .gap-8 { gap: 14px !important; }
+      .cv-header-bg .mt-5 { margin-top: 4px !important; }
+
+      /* Body：壓縮間距 */
+      .cv-body { padding: 10px 24px !important; }
+      .cv-body .space-y-10 > section + section { margin-top: 10px !important; }
+      .cv-body section h2 { margin-bottom: 6px !important; font-size: 0.6rem !important; }
+
+      /* 工作經驗 */
+      .cv-job { margin-bottom: 6px !important; }
+      .cv-job .job-title { font-size: 0.75rem !important; }
+      .cv-job .job-role { font-size: 0.68rem !important; }
+      .cv-job .job-date { font-size: 0.68rem !important; }
+
+      /* 成就卡片 */
+      .achievement-card { padding: 8px 10px !important; border-radius: 8px !important; }
+      .achievement-card h3 { font-size: 0.68rem !important; margin-bottom: 2px !important; }
+      .achievement-card li { font-size: 0.62rem !important; line-height: 1.3 !important; }
+      .achievement-card .tag { font-size: 0.58rem !important; }
+      .grid-cols-2-print { gap: 6px !important; }
+
+      /* 技能 */
+      .skill-tag { font-size: 0.6rem !important; padding: 2px 6px !important; }
+      .skills-grid { gap: 10px !important; }
+      .skill-label { font-size: 0.6rem !important; margin-bottom: 4px !important; }
+
+      /* 獎項 */
+      .award-row { gap: 8px !important; }
+      .award-icon-box { width: 28px !important; height: 28px !important; }
+      .award-title { font-size: 0.7rem !important; }
+      .award-sub { font-size: 0.65rem !important; }
+      .award-gap > div + div { margin-top: 6px !important; }
     }
   </style>
 </head>
@@ -38,18 +89,18 @@
   <div class="cv-wrap max-w-4xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden">
 
     <!-- ─── Header ─── -->
-    <div class="bg-slate-900 px-8 md:px-12 pt-10 pb-10">
+    <div class="cv-header-bg bg-slate-900 px-8 md:px-12 pt-10 pb-10">
       <div class="flex flex-col md:flex-row md:items-start gap-8">
 
         <img src="images/大頭照.png" alt="王昱翔照片" class="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover ring-2 ring-slate-700 flex-shrink-0">
 
         <div class="flex-1">
           <h1 class="font-heading text-3xl md:text-4xl font-bold text-white mb-1">王昱翔</h1>
-          <p class="text-sky-400 font-semibold text-lg mb-4">資深產品設計師 · B2B UX</p>
-          <p class="text-slate-400 text-sm leading-relaxed max-w-2xl">
+          <p class="cv-role text-sky-400 font-semibold text-lg mb-4">資深UX產品設計師</p>
+          <p class="cv-summary text-slate-400 text-sm leading-relaxed max-w-2xl">
             10+ 年企業級產品設計資歷，橫跨醫療 SaaS、政府數位服務與消費電子。擅長將複雜業務邏輯轉化為直覺易用的系統體驗，近期深入研究 AI 如何重塑設計流程，並自行開發工具實踐意圖驅動設計。
           </p>
-          <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
+          <div class="cv-contacts mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
             <a href="mailto:twpotato606@gmail.com" class="inline-flex items-center gap-1.5 hover:text-sky-400 transition-colors duration-150">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
               twpotato606@gmail.com
@@ -72,7 +123,7 @@
       </div>
     </div>
 
-    <div class="px-8 md:px-12 py-10 space-y-10">
+    <div class="cv-body px-8 md:px-12 py-10 space-y-10">
 
       <!-- ─── 工作經驗 ─── -->
       <section>
@@ -81,38 +132,20 @@
           工作經驗
         </h2>
 
-        <!-- DeepQ -->
-        <div class="mb-8">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
+        <div class="space-y-4">
+          <div class="cv-job flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
             <div>
-              <span class="font-heading font-semibold text-slate-900 text-base">DeepQ</span>
-              <span class="ml-2 text-slate-500 text-sm">資深產品設計師 / Assistant Manager</span>
+              <span class="job-title font-heading font-semibold text-slate-900 text-base">DeepQ</span>
+              <span class="job-role ml-2 text-slate-500 text-sm">Assistant Manager</span>
             </div>
-            <span class="text-sm text-slate-400 flex-shrink-0">2020年6月 — 至今</span>
+            <span class="job-date text-sm text-slate-400 flex-shrink-0">2020年6月 — 至今</span>
           </div>
-          <ul class="mt-3 space-y-2 text-sm text-slate-600 leading-relaxed">
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-600 flex-shrink-0"></span>主導智慧醫療個案管理平台（MDM）的全流程 UX 設計，將慢性病管理機制自動化，顯著降低個管師每日行政負擔，提升照護效率。</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-600 flex-shrink-0"></span>負責校園疫苗接種數位轉型系統（CIVS）設計，服務全台疾管署，覆蓋 300 萬+ 使用者，縮短意願書作業時間 80%，客戶滿意度達 90%。</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-600 flex-shrink-0"></span>自主研究 AI 如何重塑設計流程，開發 Wireflow Viewer——直接 import 真實 React 元件渲染於無限畫布，搭配 CaptureFlow AI 腳本自動分析原始碼產出 Wireflow，實現 4x 生產速度提升、100% 文件自動化、0 第三方工具依賴。</li>
-            <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-600 flex-shrink-0"></span>建立設計系統與規格文件流程，透過 AI 協作工具鏈讓 PM、設計師、工程師在同一 Git 倉庫持續迭代，消除跨角色溝通落差。</li>
-          </ul>
-        </div>
-
-        <div class="border-t border-slate-100 pt-6">
-          <!-- Acer -->
-          <div>
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-              <div>
-                <span class="font-heading font-semibold text-slate-900 text-base">Acer（宏碁）</span>
-                <span class="ml-2 text-slate-500 text-sm">資深設計師</span>
-              </div>
-              <span class="text-sm text-slate-400 flex-shrink-0">2014年9月 — 2020年6月</span>
+          <div class="cv-job flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 border-t border-slate-100 pt-4">
+            <div>
+              <span class="job-title font-heading font-semibold text-slate-900 text-base">Acer（宏碁）</span>
+              <span class="job-role ml-2 text-slate-500 text-sm">資深設計師</span>
             </div>
-            <ul class="mt-3 space-y-2 text-sm text-slate-600 leading-relaxed">
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>主導 PredatorSense 遊戲控制中心設計，訪談 50+ 位電競玩家，將複雜硬體控制整合於單一直觀介面，榮獲 2018 年德國 iF Design Award，產品覆蓋全球 100+ 個國家。</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>設計 Vision360 雲端行車紀錄器，整合 360 度全景攝影、雲端備份與智能防盜功能，榮獲 2017 年德國 iF Design Award。</li>
-              <li class="flex items-start gap-2"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>參與多項跨平台產品設計，負責 UX 研究、資訊架構與互動設計，推動設計決策從主觀判斷轉向以用戶數據為依據。</li>
-            </ul>
+            <span class="job-date text-sm text-slate-400 flex-shrink-0">2014年9月 — 2020年6月</span>
           </div>
         </div>
       </section>
@@ -124,12 +157,12 @@
           主要成就
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid-cols-2-print grid grid-cols-1 md:grid-cols-2 gap-4">
 
-          <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+          <div class="achievement-card bg-slate-50 rounded-xl p-5 border border-slate-200">
             <div class="flex items-start justify-between gap-3 mb-2">
               <h3 class="font-heading font-semibold text-slate-900 text-sm">校園疫苗接種數位轉型</h3>
-              <span class="text-xs text-slate-400 flex-shrink-0">疾管署</span>
+              <span class="tag text-xs text-slate-400 flex-shrink-0">疾管署</span>
             </div>
             <ul class="space-y-1 text-xs text-slate-600 leading-relaxed">
               <li>· 300 萬+ 使用者，全台國中小部署</li>
@@ -138,10 +171,10 @@
             </ul>
           </div>
 
-          <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+          <div class="achievement-card bg-slate-50 rounded-xl p-5 border border-slate-200">
             <div class="flex items-start justify-between gap-3 mb-2">
               <h3 class="font-heading font-semibold text-slate-900 text-sm">智慧醫療個案管理平台</h3>
-              <span class="text-xs text-slate-400 flex-shrink-0">DeepQ</span>
+              <span class="tag text-xs text-slate-400 flex-shrink-0">DeepQ</span>
             </div>
             <ul class="space-y-1 text-xs text-slate-600 leading-relaxed">
               <li>· 自動化慢性病管理流程，降低醫護行政負擔</li>
@@ -150,22 +183,22 @@
             </ul>
           </div>
 
-          <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+          <div class="achievement-card bg-slate-50 rounded-xl p-5 border border-slate-200">
             <div class="flex items-start justify-between gap-3 mb-2">
               <h3 class="font-heading font-semibold text-slate-900 text-sm">AI 設計工具研究：Wireflow Viewer</h3>
-              <span class="text-xs text-sky-600 font-semibold flex-shrink-0">自主研發</span>
+              <span class="tag text-xs text-sky-600 font-semibold flex-shrink-0">自主開發工具</span>
             </div>
             <ul class="space-y-1 text-xs text-slate-600 leading-relaxed">
-              <li>· 4x 生產速度提升，100% 文件自動化</li>
-              <li>· 直接 import 真實 React 元件，畫面 100% 與原始碼一致</li>
-              <li>· 版控整合 Git，PRD / Wireflow / Prototype 協作於單一倉庫</li>
+              <li>· 4x 生產速度提升，100% 文件自動化，0 第三方工具依賴</li>
+              <li>· 直接 import 真實 React 元件，畫面與原始碼 100% 一致</li>
+              <li>· PRD / Wireflow / Prototype 版控整合於單一 Git 倉庫</li>
             </ul>
           </div>
 
-          <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+          <div class="achievement-card bg-slate-50 rounded-xl p-5 border border-slate-200">
             <div class="flex items-start justify-between gap-3 mb-2">
               <h3 class="font-heading font-semibold text-slate-900 text-sm">PredatorSense &amp; Vision360</h3>
-              <span class="text-xs text-amber-600 font-semibold flex-shrink-0">iF Design Award ×2</span>
+              <span class="tag text-xs text-amber-600 font-semibold flex-shrink-0">iF Design Award ×2</span>
             </div>
             <ul class="space-y-1 text-xs text-slate-600 leading-relaxed">
               <li>· PredatorSense：電競控制中心，覆蓋全球 100+ 國家</li>
@@ -184,31 +217,31 @@
           核心技能
         </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="skills-grid grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div>
-            <p class="text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">設計方法</p>
+            <p class="skill-label text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">設計方法</p>
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">用戶研究</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">需求分析</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">資訊架構</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">系統性規劃</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">設計系統</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">用戶研究</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">需求分析</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">資訊架構</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">系統性規劃</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">設計系統</span>
             </div>
           </div>
           <div>
-            <p class="text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">AI 協作</p>
+            <p class="skill-label text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">AI 協作</p>
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">Vibe Coding</span>
-              <span class="px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">自動化設計稿生成</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">Vibe Coding</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">自動化設計稿生成</span>
             </div>
           </div>
           <div>
-            <p class="text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">工具</p>
+            <p class="skill-label text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">工具</p>
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Figma</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Git</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">VS Code</span>
-              <span class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg">Claude Code</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">Figma</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">Git</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">VS Code</span>
+              <span class="skill-tag px-3 py-1.5 bg-sky-50 text-sky-700 text-xs font-medium rounded-lg border border-sky-200">Claude Code</span>
             </div>
           </div>
         </div>
@@ -221,23 +254,23 @@
           獲獎與認可
         </h2>
 
-        <div class="space-y-4">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-amber-50 border border-amber-200 rounded-lg flex items-center justify-center flex-shrink-0">
+        <div class="award-gap space-y-4">
+          <div class="award-row flex items-start gap-4">
+            <div class="award-icon-box w-9 h-9 bg-amber-50 border border-amber-200 rounded-lg flex items-center justify-center flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <div>
-              <div class="font-semibold text-slate-900 text-sm">德國 iF Design Award 2018</div>
-              <div class="text-slate-500 text-sm">PredatorSense 遊戲控制中心 — 桌面應用程式類別</div>
+              <div class="award-title font-semibold text-slate-900 text-sm">德國 iF Design Award 2018</div>
+              <div class="award-sub text-slate-500 text-sm">PredatorSense 遊戲控制中心 — 桌面應用程式類別</div>
             </div>
           </div>
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-amber-50 border border-amber-200 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div class="award-row flex items-start gap-4">
+            <div class="award-icon-box w-9 h-9 bg-amber-50 border border-amber-200 rounded-lg flex items-center justify-center flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <div>
-              <div class="font-semibold text-slate-900 text-sm">德國 iF Design Award 2017</div>
-              <div class="text-slate-500 text-sm">Vision360 雲端行車紀錄器 — 消費電子類別</div>
+              <div class="award-title font-semibold text-slate-900 text-sm">德國 iF Design Award 2017</div>
+              <div class="award-sub text-slate-500 text-sm">Vision360 雲端行車紀錄器 — 消費電子類別</div>
             </div>
           </div>
         </div>
