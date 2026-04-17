@@ -14,6 +14,7 @@ export default defineConfig({
         mdm:           resolve(__dirname, 'mdm.html'),
         predatorsense: resolve(__dirname, 'predatorsense.html'),
         vision360:     resolve(__dirname, 'vision360.html'),
+        'ai-research': resolve(__dirname, 'ai-research.html'),
       },
     },
   },
