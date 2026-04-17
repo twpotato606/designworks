@@ -36,9 +36,9 @@
         <!-- Tags row -->
         <div class="flex flex-wrap items-center gap-2">
           <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">AI 研究</span>
-          <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">自建工具</span>
+          <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">Vibe Coding</span>
           <span class="inline-flex items-center bg-slate-800 border border-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full">設計流程</span>
-          <span class="inline-flex items-center bg-sky-900 border border-sky-700 text-sky-300 text-xs px-3 py-1 rounded-full">DeepQ 自主研究</span>
+          <span class="inline-flex items-center bg-sky-900 border border-sky-700 text-sky-300 text-xs px-3 py-1 rounded-full">自主研究</span>
         </div>
 
         <!-- H1 -->
@@ -140,7 +140,13 @@
               <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <p class="text-slate-700">AI 直接從最終 code 反向生成規格文件，始終與實作同步，避免浪費時間在對齊文件規格上</p>
+              <p class="text-slate-700">AI 直接從修正後的 code 反向更新規格文件，始終與實作同步，避免浪費時間在對齊文件規格上</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="text-slate-700">雛形與規格相輔相成，PM、設計師、工程師在同一個 Git 倉庫持續迭代——版控即協作，設計交付不再是單向移交</p>
             </div>
           </div>
 
@@ -166,7 +172,7 @@
       <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         <div class="fade-up max-w-3xl mb-10">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">關鍵挑戰：雛形 ≠ 可交付開發</h2>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">關鍵挑戰：Vibe Coding雛形 ≠ 可交付開發</h2>
           <p class="text-lg text-slate-600 leading-relaxed">溝通鴻溝：單純的 Prototype 缺乏開發所需的深度資訊。工程師需要包含<strong class="text-slate-900">架構說明、例外處理與資料邏輯</strong>的圖文流程文件。若手動補齊文件，AI 省下的效率將被完全抵消，形成新的浪費循環。</p>
         </div>
 
@@ -190,10 +196,10 @@
         <div class="fade-up mb-16">
           <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">VER.1 → VER.2：相同流程，最後一步的差異</p>
 
-          <div class="flex gap-8 md:gap-16">
+          <div class="flex flex-col md:flex-row gap-8 md:gap-16">
 
-            <!-- Timeline (左側) -->
-            <div class="flex-shrink-0 w-48 md:w-56">
+            <!-- Timeline (上方 / 左側) -->
+            <div class="flex-shrink-0 md:w-56">
 
               <!-- Step 1 -->
               <div class="flex gap-3 items-start">
