@@ -45,7 +45,7 @@
         <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mt-6 mb-4">從「畫布工人」到「體驗導演」</h1>
 
         <!-- Lead -->
-        <p class="text-xl text-slate-300 mb-10 max-w-2xl">一邊應用 AI產出，一邊思考如何改造設計流程，最後自行開發 Wireflow Viewer，讓設計師以意圖驅動生成，取代逐頁手繪</p>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl">不斷地嘗試使用AI協助設計的過程中，思考如何優化設計流程，並自行開發 Wireflow Viewer，讓設計師以意圖驅動產品體驗生成，取代Figma逐頁手繪</p>
 
         <!-- Metrics row -->
         <div class="border-t border-slate-800 pt-8 mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
@@ -117,37 +117,112 @@
         </div>
 
         <div class="fade-up grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div class="space-y-8">
+
+            <!-- 實作流程 -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-4">實作流程</p>
+              <div class="space-y-0">
+
+                <!-- Step 1 -->
+                <div class="flex gap-3">
+                  <div class="flex flex-col items-center flex-shrink-0">
+                    <div class="w-6 h-6 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</div>
+                    <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:20px"></div>
+                  </div>
+                  <div class="pb-4 pt-0.5">
+                    <p class="text-sm font-semibold text-slate-900 mb-0.5">建構設計系統環境</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">採用現成設計系統或自製 .tsx 元件庫，確立視覺語言基礎</p>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-3">
+                  <div class="flex flex-col items-center flex-shrink-0">
+                    <div class="w-6 h-6 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</div>
+                    <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:20px"></div>
+                  </div>
+                  <div class="pb-4 pt-0.5">
+                    <p class="text-sm font-semibold text-slate-900 mb-0.5">進行雛形開發</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">透過 AI 輔助快速生成產品流程雛形，取代逐頁繪製</p>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-3">
+                  <div class="flex flex-col items-center flex-shrink-0">
+                    <div class="w-6 h-6 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</div>
+                    <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:20px"></div>
+                  </div>
+                  <div class="pb-4 pt-0.5">
+                    <p class="text-sm font-semibold text-slate-900 mb-0.5">實際測試體驗感受</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">在可互動的真實環境中驗證體驗，而非靜態 mockup</p>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex gap-3">
+                  <div class="flex flex-col items-center flex-shrink-0">
+                    <div class="w-6 h-6 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</div>
+                    <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:20px"></div>
+                  </div>
+                  <div class="pb-4 pt-0.5">
+                    <p class="text-sm font-semibold text-slate-900 mb-0.5">載入 Wire-flow Viewer</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">自動擷取雛形中的完整使用者流程與畫面狀態</p>
+                  </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex gap-3">
+                  <div class="flex flex-col items-center flex-shrink-0">
+                    <div class="w-6 h-6 rounded-full bg-sky-700 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">5</div>
+                    <div class="w-px flex-1 bg-slate-200 my-1" style="min-height:20px"></div>
+                  </div>
+                  <div class="pb-4 pt-0.5">
+                    <p class="text-sm font-semibold text-slate-900 mb-0.5">Viewer 查看產品設計流程</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">擷取後透過 viewer 瀏覽並標註完整產品設計流程文件</p>
+                  </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="flex gap-3">
+                  <div class="flex flex-col items-center flex-shrink-0">
+                    <div class="w-6 h-6 rounded-full bg-emerald-700 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">6</div>
+                  </div>
+                  <div class="pt-0.5">
+                    <p class="text-sm font-semibold text-slate-900 mb-0.5">交付開發</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">附帶完整流程文件的雛形直接移交工程師，無需額外補齊規格</p>
+                  </div>
+                </div>
+
               </div>
-              <p class="text-slate-700">設計師從執行者轉型為產品體驗的「導演」，專注策略與創意決策，由 AI 負責執行層面的批次生成</p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+
+            <!-- 這麼做的好處 -->
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-widest text-sky-700 mb-4">這麼做的好處</p>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <p class="text-sm text-slate-700 leading-relaxed">設計師從執行者轉型為產品體驗的「導演」，專注策略與創意決策，由 AI 負責執行層面的批次生成</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <p class="text-sm text-slate-700 leading-relaxed">AI 直接從修正後的 code 反向更新規格文件，始終與實作同步，避免浪費時間在對齊文件規格上</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <p class="text-sm text-slate-700 leading-relaxed">雛形與規格相輔相成，PM、設計師、工程師在同一個 Git 倉庫持續迭代——版控即協作，設計交付不再是單向移交</p>
+                </div>
               </div>
-              <p class="text-slate-700">Prompt 驅動批次操作體驗生成，取代過去逐頁手繪的線性工作流</p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <p class="text-slate-700">互動是真實的，設計師可以馬上知道哪邊體驗好哪邊體驗不好，及時修正</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <p class="text-slate-700">AI 直接從修正後的 code 反向更新規格文件，始終與實作同步，避免浪費時間在對齊文件規格上</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-sky-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <p class="text-slate-700">雛形與規格相輔相成，PM、設計師、工程師在同一個 Git 倉庫持續迭代——版控即協作，設計交付不再是單向移交</p>
-            </div>
+
           </div>
 
           <!-- Jenny 引言 -->
@@ -374,7 +449,7 @@
 
         <div class="fade-up max-w-3xl mb-12">
           <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">Wireflow Viewer：工具核心能力</h2>
-          <p class="text-lg text-slate-600 leading-relaxed">一套基於 React + Vite 的互動式流程畫布工具，將真實的 React 元件以「畫面節點」形式渲染在 iframe 中，並以有向箭頭連接，可視化呈現完整的使用者操作流程。</p>
+          <p class="text-lg text-slate-600 leading-relaxed">一套基於 React + Vite 的互動式流程畫布工具，將成熟(或自創)的設計系統 .tsx元件以「畫面節點」形式渲染在 iframe 中，並以有向箭頭連接，可視化呈現完整的使用者操作流程。</p>
         </div>
 
         <div class="fade-up grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -386,7 +461,7 @@
               </div>
               <h3 class="font-heading text-base font-semibold text-slate-900">直接 import 原始元件</h3>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed">Wrapper 透過絕對路徑引用原專案的頁面與 Layout，畫面 100% 與原始碼一致，原始碼更新後 Wireflow 自動同步。不複製程式碼，不脫離開發環境。</p>
+            <p class="text-sm text-slate-600 leading-relaxed">Wrapper 透過引用原專案的頁面與 Layout，設計文件上畫面 100% 與雛形一致，原始碼更新後 Wireflow 自動同步。不複製程式碼，不脫離開發環境。</p>
           </div>
 
           <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
