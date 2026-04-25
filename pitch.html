@@ -19,17 +19,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Deck ── */
-    #deck {
-      position: fixed; inset: 0;
-      overflow: hidden;
-    }
+    #deck { position: fixed; inset: 0; overflow: hidden; }
 
     .slide {
       position: absolute; inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       padding: 5vh 7vw;
       will-change: transform;
       transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1);
@@ -45,7 +39,7 @@
       background-image: radial-gradient(#1a2840 1.5px, transparent 1.5px);
       background-size: 28px 28px;
     }
-    .bg-mid { background: #131f35; }
+    .bg-mid   { background: #131f35; }
     .bg-plain { background: #0f172a; }
     .bg-center {
       background: #0f172a;
@@ -60,11 +54,7 @@
     }
 
     /* ── Animation system ── */
-    [data-a] {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
+    [data-a] { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
     [data-a].on { opacity: 1; transform: translateY(0); }
     [data-a][data-d="1"] { transition-delay: 0.08s; }
     [data-a][data-d="2"] { transition-delay: 0.18s; }
@@ -73,8 +63,8 @@
     [data-a][data-d="5"] { transition-delay: 0.58s; }
     [data-a][data-d="6"] { transition-delay: 0.72s; }
     [data-a][data-d="7"] { transition-delay: 0.88s; }
-    [data-a="left"] { transform: translateX(-22px); }
-    [data-a="left"].on { transform: translateX(0); }
+    [data-a="left"]  { transform: translateX(-22px); }
+    [data-a="left"].on  { transform: translateX(0); }
     [data-a="right"] { transform: translateX(22px); }
     [data-a="right"].on { transform: translateX(0); }
 
@@ -86,114 +76,80 @@
     .red   { color: #fca5a5; }
     .amber { color: #fbbf24; }
 
-    /* ── Chapter label ── */
     .ch {
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: #38bdf8;
-      margin-bottom: 2.5vh;
-      display: block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #38bdf8; margin-bottom: 2.5vh; display: block;
     }
 
-    /* ── Metrics ── */
     .num {
       font-family: 'Archivo', sans-serif;
       font-size: clamp(26px, 3.2vw, 48px);
       font-weight: 800; color: #fff; line-height: 1;
     }
-    .num-label {
-      font-size: 11px; color: #475569;
-      margin-top: 5px; letter-spacing: 0.06em;
-    }
+    .num-label { font-size: 11px; color: #475569; margin-top: 5px; letter-spacing: 0.06em; }
 
-    /* ── Pill ── */
     .pill {
       display: inline-flex; align-items: center;
       padding: 6px 14px; border-radius: 9999px;
       font-size: clamp(12px, 1.1vw, 14px); font-weight: 500;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      color: #7dd3fc; background: rgba(56, 189, 248, 0.07);
+      border: 1px solid rgba(56,189,248,0.35);
+      color: #7dd3fc; background: rgba(56,189,248,0.07);
     }
 
-    /* ── Blockquote ── */
     .bq {
       font-family: 'Archivo', sans-serif;
       font-size: clamp(16px, 1.8vw, 24px);
-      font-weight: 600; line-height: 1.5;
-      color: #e2e8f0;
+      font-weight: 600; line-height: 1.5; color: #e2e8f0;
     }
 
     /* ── Story card ── */
     .story-card {
-      background: #0a1625;
-      border: 1px solid #1e2d3d;
+      background: #0a1625; border: 1px solid #1e2d3d;
       border-radius: 14px;
-      padding: clamp(14px, 1.8vh, 22px) clamp(14px, 1.6vw, 20px);
+      padding: clamp(14px,1.8vh,22px) clamp(14px,1.6vw,20px);
       flex: 1;
     }
-    .story-card.hi  { border-color: rgba(56, 189, 248, 0.4); }
-    .story-card.warn { border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.04); }
-    .story-card.amber-hi { border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.03); }
-    .story-label {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      margin-bottom: 7px;
-    }
-    .story-title {
-      font-size: clamp(13px, 1.4vw, 17px);
-      font-weight: 700; color: #e2e8f0; margin-bottom: 7px; line-height: 1.3;
-    }
-    .story-desc {
-      font-size: clamp(12px, 1.1vw, 14px);
-      color: #64748b; line-height: 1.65;
-    }
+    .story-card.hi       { border-color: rgba(56,189,248,0.4); }
+    .story-card.warn     { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.04); }
+    .story-card.amber-hi { border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.03); }
+    .story-label  { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 7px; }
+    .story-title  { font-size: clamp(13px,1.4vw,17px); font-weight: 700; color: #e2e8f0; margin-bottom: 7px; line-height: 1.3; }
+    .story-desc   { font-size: clamp(12px,1.1vw,14px); color: #64748b; line-height: 1.65; }
 
-    /* ── Crisis / resolve boxes ── */
     .crisis {
-      background: rgba(239, 68, 68, 0.07);
-      border: 1px solid rgba(239, 68, 68, 0.2);
-      border-radius: 11px;
-      padding: 12px 16px;
-      font-size: clamp(13px, 1.2vw, 15px);
-      color: #fca5a5; line-height: 1.5;
+      background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 11px; padding: 12px 16px;
+      font-size: clamp(13px,1.2vw,15px); color: #fca5a5; line-height: 1.5;
     }
     .resolve {
-      background: rgba(56, 189, 248, 0.06);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 11px;
-      padding: 12px 16px;
-      font-size: clamp(13px, 1.2vw, 15px);
-      color: #bae6fd; line-height: 1.5;
+      background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 11px; padding: 12px 16px;
+      font-size: clamp(13px,1.2vw,15px); color: #bae6fd; line-height: 1.5;
     }
 
-    /* ── Pillar card ── */
     .pillar {
-      background: #111e30;
-      border: 1px solid #1e2d3d;
+      background: #111e30; border: 1px solid #1e2d3d;
       border-radius: 16px;
-      padding: clamp(20px, 2.5vh, 32px) clamp(18px, 1.8vw, 28px);
-      text-align: center;
-      flex: 1;
+      padding: clamp(20px,2.5vh,32px) clamp(18px,1.8vw,28px);
+      text-align: center; flex: 1;
     }
-    .pillar.hi { border-color: rgba(56, 189, 248, 0.5); }
-    .pillar-icon { margin: 0 auto 14px; color: #38bdf8; width: 32px; height: 32px; }
-    .pillar-title { font-size: clamp(14px, 1.4vw, 17px); font-weight: 600; color: #e2e8f0; margin-bottom: 8px; }
-    .pillar-desc { font-size: clamp(11px, 1.1vw, 13px); color: #475569; line-height: 1.6; }
+    .pillar.hi { border-color: rgba(56,189,248,0.5); }
+    .pillar-icon  { margin: 0 auto 14px; color: #38bdf8; width: 32px; height: 32px; }
+    .pillar-title { font-size: clamp(14px,1.4vw,17px); font-weight: 600; color: #e2e8f0; margin-bottom: 8px; }
+    .pillar-desc  { font-size: clamp(11px,1.1vw,13px); color: #475569; line-height: 1.6; }
 
-    /* ── Nav buttons ── */
+    /* ── Nav ── */
     .nav-btn {
       position: fixed; top: 50%; transform: translateY(-50%);
       z-index: 200; width: 44px; height: 44px;
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer; color: #fff;
-      opacity: 0.25; transition: opacity 0.2s;
+      cursor: pointer; color: #fff; opacity: 0.25; transition: opacity 0.2s;
       background: none; border: none;
     }
     .nav-btn:hover { opacity: 0.7; }
     #btn-prev { left: 2vw; }
     #btn-next { right: 2vw; }
 
-    /* ── Progress dots ── */
     #progress {
       position: fixed; bottom: 2.8vh; left: 50%;
       transform: translateX(-50%);
@@ -201,35 +157,28 @@
     }
     .dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: rgba(148, 163, 184, 0.25);
+      background: rgba(148,163,184,0.25);
       cursor: pointer; transition: all 0.3s ease;
     }
     .dot.on { width: 22px; border-radius: 3px; background: #38bdf8; }
-    .dot.demo-dot { background: rgba(56, 189, 248, 0.4); }
+    .dot.demo-dot { background: rgba(56,189,248,0.4); }
     .dot.demo-dot.on { background: #38bdf8; }
 
-    /* ── Counter ── */
     #counter {
       position: fixed; top: 2.5vh; right: 3vw;
-      font-size: 12px; color: rgba(100, 116, 139, 0.5);
+      font-size: 12px; color: rgba(100,116,139,0.5);
       z-index: 200; letter-spacing: 0.06em;
     }
-
-    /* ── Hint ── */
     #hint {
       position: fixed; bottom: 6.5vh; right: 3.5vw;
-      font-size: 11px; color: rgba(100, 116, 139, 0.45);
+      font-size: 11px; color: rgba(100,116,139,0.45);
       display: flex; align-items: center; gap: 5px;
       z-index: 200; transition: opacity 0.4s;
     }
 
-    /* ── Arrow ── */
-    .arr {
-      font-size: 22px; color: #1e3a5f; flex-shrink: 0;
-      align-self: center;
-    }
+    .arr { font-size: 22px; color: #1e3a5f; flex-shrink: 0; align-self: center; }
 
-    /* ── Agenda timeline ── */
+    /* ── Agenda ── */
     .agenda-node { flex: 1; text-align: center; position: relative; }
     .agenda-dot {
       width: 16px; height: 16px; border-radius: 50%;
@@ -237,30 +186,30 @@
       margin: 0 auto 11px; position: relative; z-index: 1;
     }
     .agenda-dot.live { border-color: rgba(56,189,248,0.5); background: rgba(56,189,248,0.08); }
-    .agenda-ch {
-      font-size: 10px; font-weight: 700; color: #38bdf8;
-      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;
-    }
-    .agenda-title {
-      font-size: clamp(10px, 1vw, 12px); font-weight: 600; color: #94a3b8; margin-bottom: 4px;
-    }
-    .agenda-sub {
-      font-size: clamp(9px, 0.85vw, 11px); color: #334155; line-height: 1.5;
-    }
+    .agenda-ch    { font-size: 10px; font-weight: 700; color: #38bdf8; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+    .agenda-title { font-size: clamp(10px,1vw,12px); font-weight: 600; color: #94a3b8; margin-bottom: 4px; }
+    .agenda-sub   { font-size: clamp(9px,0.85vw,11px); color: #334155; line-height: 1.5; }
 
-    /* ── Feature row (wireflow) ── */
-    .feat-row {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 10px 0; border-bottom: 1px solid #1a2840;
-    }
+    /* ── Wireflow feature row ── */
+    .feat-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #1a2840; }
     .feat-row:last-child { border-bottom: none; }
-    .feat-icon { color: #38bdf8; flex-shrink: 0; margin-top: 1px; }
+    .feat-icon  { color: #38bdf8; flex-shrink: 0; margin-top: 1px; }
     .feat-title { font-size: clamp(13px,1.2vw,15px); font-weight: 600; color: #e2e8f0; margin-bottom: 2px; }
     .feat-desc  { font-size: clamp(11px,1.05vw,13px); color: #475569; line-height: 1.6; }
+
+    /* ── Role stage mini card ── */
+    .role-stage {
+      background: #0a1625; border: 1px solid #1e2d3d;
+      border-radius: 10px; padding: 10px 12px;
+      flex: 1; text-align: center;
+    }
+    .role-stage-num  { font-size: 10px; font-weight: 700; color: #38bdf8; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+    .role-stage-text { font-size: clamp(10px,0.95vw,12px); color: #475569; line-height: 1.5; }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
   </style>
 </head>
 <body>
-
 <div id="deck">
 
   <!-- ════════════════════════════════════
@@ -269,7 +218,6 @@
   <section class="slide bg-dark" data-slide="0">
     <div style="width:100%; max-width:1080px;">
 
-      <!-- Photo + name -->
       <div data-a data-d="1" style="display:flex; align-items:center; gap:14px; margin-bottom:3vh;">
         <img src="images/大頭照.png" alt="王昱翔" style="width:48px; height:48px; border-radius:10px; object-fit:cover; border:1px solid #1e3a5f;">
         <div>
@@ -278,17 +226,14 @@
         </div>
       </div>
 
-      <!-- Main headline -->
       <h1 data-a data-d="2" class="f-head" style="font-size:clamp(28px, 4.5vw, 58px); font-weight:900; line-height:1.1; letter-spacing:-0.02em; margin-bottom:2vh;">
         <span style="color:#fff;">我是Leo，希望透過這份簡報</span><span style="color:#38bdf8;"><br>可以讓你認識更認識我</span>
       </h1>
 
-      <!-- Narrative intro -->
       <p data-a data-d="3" style="font-size:clamp(14px, 1.35vw, 17px); color:#475569; line-height:1.85; max-width:660px; margin-bottom:3.5vh;">
-        方便你判斷，我是否適合加入你們的團隊<br>
+        方便你判斷，我是否適合加入你們的團隊
       </p>
 
-      <!-- Agenda timeline -->
       <div data-a data-d="4">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#1e3a5f; margin-bottom:16px;">今天要談的</div>
         <div style="position:relative;">
@@ -306,7 +251,7 @@
               <div class="agenda-dot"></div>
               <div class="agenda-ch">Ch.2</div>
               <div class="agenda-title">宏碁時期</div>
-              <div class="agenda-sub">差點被開除<br>→發揮長處</div>
+              <div class="agenda-sub">差點被開除<br>→發揮長處→成果</div>
             </div>
 
             <div class="agenda-node">
@@ -338,7 +283,7 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 2 — Ch.1 Part 1 退學 + 靜宜基礎
+       Slide 2 — Ch.1 Part 1 退學 + 靜宜
   ════════════════════════════════════ -->
   <section class="slide bg-dot" data-slide="1">
     <div style="width:100%; max-width:1080px;">
@@ -349,7 +294,6 @@
         那一年，<span style="color:#ef4444;">我被機械系退學了</span>
       </h2>
 
-      <!-- Two story moments -->
       <div style="display:flex; gap:14px; align-items:stretch; margin-bottom:3vh;">
 
         <div data-a="left" data-d="3" class="story-card warn" style="flex:1;">
@@ -357,8 +301,8 @@
           <div class="story-title">退學後在家待了三個月</div>
           <div class="story-desc">
             我理解到我對機械沒有熱情，那我的興趣在哪裡：<br>
-            <span style="color:#94a3b8;">我到底想做什麼？</span><br><br>
-            由於我對於遊戲感興趣，所以決定改念靜宜大學資訊傳播工程學系。
+            我到底想做什麼？<br><br>
+            由於我對於<span style="color:#38bdf8;">遊戲開發</span>感興趣，所以決定改念靜宜大學資訊傳播工程學系。
           </div>
         </div>
 
@@ -369,16 +313,15 @@
           <div class="story-title">認真打下的程式地基</div>
           <div class="story-desc">
             計算機概論、資料結構、演算法——我認真學，也大概懂了其原理理論。<br><br>
-            那段學習是紮實的。不是學了一個語法就說會，而是理解資料是怎麼流動的、程式是怎麼被設計出來的。<br><br>
+            那段學習是紮實的。不是學了一個語法就說會，而是理解資料是怎麼流動的、程式是怎麼被設計出來的。
           </div>
         </div>
 
       </div>
 
-      <!-- Conclusion -->
       <div data-a data-d="5" style="border-left:3px solid rgba(56,189,248,0.35); padding:clamp(12px,1.8vh,18px) clamp(16px,1.8vw,22px); background:rgba(56,189,248,0.04); border-radius:0 12px 12px 0;">
         <p class="bq" style="font-size:clamp(14px,1.6vw,21px);">
-          "在靜宜學到對於程式的思考邏輯——這份基礎，是我後來能跟工程師直接溝通沒有阻礙的根本原因。"
+          "在靜宜大學學到的程式思考邏輯——這份基礎，是我後來能跟工程師直接溝通沒有阻礙的根本原因。"
         </p>
       </div>
 
@@ -397,15 +340,14 @@
         學會寫程式，<span style="color:#94a3b8;">然後呢？</span>
       </h2>
 
-      <!-- Two cards -->
       <div style="display:flex; gap:14px; align-items:stretch; margin-bottom:3vh;">
 
         <div data-a="left" data-d="3" class="story-card amber-hi" style="flex:1;">
           <div class="story-label" style="color:#fbbf24;">畢業製作的體悟</div>
           <div class="story-title">會寫程式，不代表你的產出有人要</div>
-          <div style="color:#94a3b8;" class="story-desc">
+          <div class="story-desc" style="color:#94a3b8;">
             做畢業製作時，我發現那些得獎的作品——不是技術最精湛的，而是有明確主題、甚至是解決真實問題的作品。<br><br>
-            我的程式能力沒有問題，但我做出來的東西缺少一個核心：<br>
+            我的程式能力沒有問題，但我做出來的東西缺少一個核心：
           </div>
         </div>
 
@@ -416,23 +358,13 @@
           <div class="story-title">帶著疑問，走進設計的世界</div>
           <div class="story-desc">
             我開始思考軟體產品的價值，因此產生學習設計的想法，最終進入雲科設運所。<br><br>
-            教授的研究方向偏互動裝置與互動藝術。那時的我，天真地以為：<br>
-            <span style="color:#38bdf8;">「讓使用者開心的設計，就是 UX。」</span><br><br>
-            <span style="color:#38bdf8;">這個誤解，一直要到進入宏碁才被真正打破。</span>
+            教授的研究方向偏互動裝置與互動藝術。<br>
+            <span style="color:#38bdf8;">那時的我，天真地以為：「讓使用者開心的設計，就是 UX。」</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Transition quote
-      <div data-a data-d="5" style="border-top:1px solid #1a2840; padding-top:2.5vh; display:flex; align-items:center; gap:16px;">
-        <div style="width:3px; height:40px; background:rgba(56,189,248,0.3); border-radius:2px; flex-shrink:0;"></div>
-        <p style="font-size:clamp(13px,1.3vw,16px); color:#334155; line-height:1.75;">
-          帶著程式的思維，與剛萌芽的設計視角，我進了宏碁——準備迎接職場給我上的第一堂課。
-        </p>
-      </div> -->
-
-      <!-- Conclusion -->
       <div data-a data-d="5" style="border-left:3px solid rgba(56,189,248,0.35); padding:clamp(12px,1.8vh,18px) clamp(16px,1.8vw,22px); background:rgba(56,189,248,0.04); border-radius:0 12px 12px 0;">
         <p class="bq" style="font-size:clamp(14px,1.6vw,21px);">
           帶著程式的思維，與剛萌芽的設計視角，我進了宏碁——準備迎接職場給我上的第一堂課。
@@ -443,22 +375,22 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 4 — Ch.2 宏碁時期
+       Slide 4 — Ch.2 危機 + 轉機
   ════════════════════════════════════ -->
   <section class="slide bg-plain" data-slide="3">
     <div style="width:100%; max-width:1080px;">
 
       <span data-a data-d="1" class="ch">Ch.2 &nbsp;—&nbsp; 宏碁時期</span>
 
-      <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:clamp(28px, 5vw, 64px); align-items:start;">
+      <div style="display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(28px, 5vw, 64px); align-items:center;">
 
         <!-- Left: Crisis -->
         <div>
           <p data-a data-d="2" class="f-head" style="font-size:clamp(20px, 2.8vw, 36px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2.5vh;">
-            進了宏碁，<br><span style="color:#ef4444;">差點第一年就出局</span>
+            進了宏碁，擔任互動設計師<br><span style="color:#ef4444;">差點第一年就出局</span>
           </p>
 
-          <div style="display:flex; flex-direction:column; gap:9px; margin-bottom:2vh;">
+          <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:2.5vh;">
             <div data-a data-d="3" class="crisis">
               研究所對 UX 的理解太淺，進入職場後馬上被現實打臉
             </div>
@@ -474,40 +406,101 @@
           </div>
         </div>
 
-        <!-- Right: Turning point -->
-        <div>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-
-            <div data-a data-d="3" class="story-card amber-hi">
-              <div class="story-label" style="color:#fbbf24;">轉機</div>
-              <div class="story-title">宏碁宣布進軍電競</div>
-              <div class="story-desc">PC gaming 一直是我最主要的興趣。全隊裡，只有我是真正的玩家——我是唯一能真正讀懂這群使用者的人。</div>
-            </div>
-
-            <div data-a data-d="4" class="story-card">
-              <div class="story-label" style="color:#94a3b8;">發揮長處</div>
-              <div class="story-title">Prototype + 全程參與用戶研究</div>
-              <div class="story-desc">我把在靜宜和研究所學到的實作能力發揮出來，快速做出可互動的 prototype，全程帶著使用者走過每個操作流程。</div>
-            </div>
-
-            <div data-a data-d="5" class="story-card hi">
-              <div class="story-label" style="color:#38bdf8;">成果</div>
-              <div class="story-title" style="color:#38bdf8;">iF Design Award &nbsp;·&nbsp; 年度最佳考績</div>
-              <div class="story-desc">從幾乎被開除，到被主管提名為設計團隊當年度考績最好的人。電競團隊的成員給了我最高的評價。</div>
-            </div>
-
+        <!-- Right: Gaming pivot card -->
+        <div data-a data-d="6" class="story-card amber-hi" style="padding:clamp(22px,3vh,36px) clamp(20px,2vw,30px);">
+          <div class="story-label" style="color:#fbbf24;">轉機</div>
+          <div class="story-title" style="font-size:clamp(17px,2vw,24px); margin-bottom:14px;">宏碁宣布進軍電競</div>
+          <div class="story-desc" style="font-size:clamp(13px,1.3vw,16px); line-height:1.75;">
+            PC gaming 一直是我最主要的興趣。<br>
+            全隊裡，只有我是真正的玩家——<br>
+            <span style="color:#fbbf24;">我是唯一能真正讀懂這群使用者的人。</span><br><br>
+            因此被安排加入電競專案，從此開始了最重要的成長。
+          </div>
+          <div style="margin-top:20px; font-size:10px; font-weight:700; letter-spacing:0.12em; color:#475569; text-transform:uppercase;">
+            接下來 &nbsp;→&nbsp; 我具體做了什麼
           </div>
         </div>
 
       </div>
 
-      <!-- Key insight -->
-      <div data-a data-d="6" style="border-top:1px solid #1a2840; padding-top:2.5vh; margin-top:2.5vh;">
-        <p class="bq">
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 5 — Ch.2 發揮長處 (Video + Research)
+  ════════════════════════════════════ -->
+  <section class="slide bg-dot" data-slide="4">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.2 &nbsp;—&nbsp; 宏碁時期 · 發揮長處</span>
+
+      <h2 data-a data-d="2" class="f-head" style="font-size:clamp(20px, 2.8vw, 36px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2.5vh;">
+        Prototype + 全程參與用戶研究
+      </h2>
+
+      <!-- Media: 3-column equal -->
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:1.8vh; height:clamp(180px, 32vh, 290px);">
+
+        <!-- Video -->
+        <div data-a data-d="3" style="position:relative; border-radius:12px; overflow:hidden; background:#000; min-height:0;">
+          <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
+            <source src="images/predatorsense/predatorsense_proto.mp4" type="video/mp4">
+          </video>
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:7px 10px; background:linear-gradient(transparent, rgba(0,0,0,0.72));">
+            <span style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#7dd3fc;">實作雛形 · Prototype</span>
+          </div>
+        </div>
+
+        <!-- Brainstorming -->
+        <div data-a data-d="4" style="position:relative; border-radius:12px; overflow:hidden; min-height:0;">
+          <img src="images/predatorsense/action/brainstorming.png" alt="腦力激盪工作坊" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:7px 10px; background:linear-gradient(transparent, rgba(0,0,0,0.68));">
+            <span style="font-size:10px; font-weight:600; color:#94a3b8; letter-spacing:0.04em;">內部玩家腦力激盪工作坊</span>
+          </div>
+        </div>
+
+        <!-- Interviews -->
+        <div data-a data-d="5" style="position:relative; border-radius:12px; overflow:hidden; min-height:0;">
+          <img src="images/predatorsense/action/interviews.png" alt="1對1使用者訪談" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:7px 10px; background:linear-gradient(transparent, rgba(0,0,0,0.68));">
+            <span style="font-size:10px; font-weight:600; color:#94a3b8; letter-spacing:0.04em;">1 對 1 使用者訪談</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Role stages + context note -->
+      <div data-a data-d="5" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:2vh;">
+
+        <div style="display:flex; gap:8px;">
+          <div class="role-stage">
+            <div class="role-stage-num">① 研究前</div>
+            <div class="role-stage-text">概念 → 可互動雛形<br>準備研究素材</div>
+          </div>
+          <div class="role-stage">
+            <div class="role-stage-num">② 研究中</div>
+            <div class="role-stage-text">全程參與記錄<br>訪談 · 焦點團體</div>
+          </div>
+          <div class="role-stage">
+            <div class="role-stage-num">③ 研究後</div>
+            <div class="role-stage-text">規格定案<br>提案簡報</div>
+          </div>
+        </div>
+
+        <div style="background:#0a1625; border:1px solid #1e2d3d; border-radius:10px; padding:10px 14px; font-size:clamp(11px,1.05vw,13px); color:#475569; line-height:1.65; display:flex; align-items:center;">
+          <div>
+            <span style="color:#94a3b8; font-weight:600;">我的角色：</span>從研究到提案到實作到上線，全程主導。<br>
+            Core team 每次研究後舉辦討論活動，讓全團隊分享觀點。<br>
+            <span style="color:#334155;">流程由我規劃；視覺設計與另一位設計師搭配分工。</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quote -->
+      <div data-a data-d="6" style="border-left:3px solid rgba(56,189,248,0.4); padding:clamp(10px,1.5vh,16px) clamp(14px,1.6vw,20px); background:rgba(56,189,248,0.04); border-radius:0 12px 12px 0;">
+        <p class="bq" style="font-size:clamp(14px,1.6vw,21px);">
           "當你最懂使用者，你就有產品的主導權——因為討論時，沒有人比你更清楚。"
-        </p>
-        <p style="margin-top:8px; font-size:clamp(12px,1.1vw,14px); color:#334155;">
-          這讓我真正理解：深入了解使用者，對設計師來說不是加分項，是核心能力。
         </p>
       </div>
 
@@ -515,9 +508,67 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 5 — Ch.3 DeepQ / CIVS
+       Slide 6 — Ch.2 成果
   ════════════════════════════════════ -->
-  <section class="slide bg-dot" data-slide="4">
+  <section class="slide bg-mid" data-slide="5">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.2 &nbsp;—&nbsp; 宏碁時期 · 成果</span>
+
+      <div style="display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(24px, 4vw, 56px); align-items:center;">
+
+        <!-- Left: Final design image -->
+        <div data-a="left" data-d="2" style="position:relative; border-radius:14px; overflow:hidden; height:clamp(220px, 42vh, 360px); background:#000;">
+          <img src="images/predatorsense/action/final.png" alt="PredatorSense 最終視覺設計" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; bottom:0; left:0; right:0; padding:10px 14px; background:linear-gradient(transparent, rgba(0,0,0,0.72));">
+            <span style="font-size:10px; font-weight:600; color:#94a3b8; letter-spacing:0.04em;">最終視覺設計稿 · PredatorSense</span>
+          </div>
+        </div>
+
+        <!-- Right: Achievements -->
+        <div>
+          <p data-a data-d="3" class="f-head" style="font-size:clamp(20px, 2.5vw, 32px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2.5vh;">
+            從幾乎被開除，<br><span style="color:#38bdf8;">到團隊年度最佳</span>
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:2.5vh;">
+
+            <div data-a data-d="4" style="display:flex; align-items:center; gap:16px; background:#0a1625; border:1px solid rgba(56,189,248,0.3); border-radius:12px; padding:16px 20px;">
+              <div class="f-head" style="font-size:clamp(28px,3.2vw,44px); font-weight:900; color:#38bdf8; flex-shrink:0; line-height:1;">iF</div>
+              <div>
+                <div style="font-size:clamp(14px,1.4vw,17px); font-weight:700; color:#e2e8f0; margin-bottom:4px;">iF Design Award</div>
+                <div style="font-size:clamp(11px,1.05vw,13px); color:#475569;">德國 iF 設計大獎 · PredatorSense</div>
+              </div>
+            </div>
+
+            <div data-a data-d="5" style="display:flex; align-items:center; gap:16px; background:#0a1625; border:1px solid rgba(251,191,36,0.2); border-radius:12px; padding:16px 20px;">
+              <div class="f-head" style="font-size:clamp(20px,2.2vw,30px); font-weight:900; color:#fbbf24; flex-shrink:0; line-height:1;">No.1</div>
+              <div>
+                <div style="font-size:clamp(14px,1.4vw,17px); font-weight:700; color:#e2e8f0; margin-bottom:4px;">年度考績最佳</div>
+                <div style="font-size:clamp(11px,1.05vw,13px); color:#475569;">被主管提名為當年度設計團隊考績最好的人</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Conclusion -->
+      <div data-a data-d="6" style="border-top:1px solid #1a2840; padding-top:2.5vh; margin-top:2.5vh;">
+        <p class="bq">
+          "這讓我真正理解：深入了解使用者，對設計師來說不是加分項，是核心能力。"
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 7 — Ch.3 DeepQ / CIVS
+  ════════════════════════════════════ -->
+  <section class="slide bg-dot" data-slide="6">
     <div style="width:100%; max-width:1080px;">
 
       <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · CIVS</span>
@@ -528,7 +579,6 @@
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px, 3.5vw, 48px); margin-bottom:3vh;">
 
-        <!-- Left: Context -->
         <div>
           <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin-bottom:12px;">背景</p>
           <div style="display:flex; flex-direction:column; gap:9px;">
@@ -544,7 +594,6 @@
           </div>
         </div>
 
-        <!-- Right: The shock -->
         <div>
           <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#ef4444; margin-bottom:12px;">現實</p>
           <div style="display:flex; flex-direction:column; gap:9px;">
@@ -556,7 +605,6 @@
 
       </div>
 
-      <!-- Numbers + quote -->
       <div data-a data-d="7" style="border-top:1px solid #1a2840; padding-top:2.5vh; display:flex; align-items:center; gap:5vw;">
         <p class="bq" style="flex:1;">
           "設計師的責任不在交稿，在系統能不能真的跑起來。"
@@ -577,16 +625,15 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 6 — Wireflow Tool Explanation
+       Slide 8 — Wireflow 工具說明
   ════════════════════════════════════ -->
-  <section class="slide bg-mid" data-slide="5">
+  <section class="slide bg-mid" data-slide="7">
     <div style="width:100%; max-width:1080px;">
 
       <span data-a data-d="1" class="ch">Live Demo 前置 &nbsp;—&nbsp; 工具說明</span>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px, 5vw, 64px); align-items:start;">
 
-        <!-- Left: Why it exists -->
         <div>
           <p data-a data-d="2" class="f-head" style="font-size:clamp(22px, 3vw, 40px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2.5vh;">
             Wireflow Viewer v3<br><span style="color:#38bdf8;">被問題逼出來的工具</span>
@@ -598,7 +645,6 @@
               <div class="story-title">B2B 產品驗證週期太長</div>
               <div class="story-desc">等使用者回來再迭代，B2B 環境的每次驗證週期都很長。現代產品開發的節奏，這樣跟不上。</div>
             </div>
-
             <div data-a data-d="4" class="story-card hi">
               <div class="story-label" style="color:#38bdf8;">關鍵洞察</div>
               <div class="story-title">Vibe Coding 可以快速驗證</div>
@@ -607,36 +653,22 @@
           </div>
         </div>
 
-        <!-- Right: What it does -->
         <div>
           <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin-bottom:16px;">核心功能</p>
 
           <div data-a data-d="4" style="background:#0a1625; border:1px solid #1e2d3d; border-radius:14px; padding:clamp(16px,2vh,22px) clamp(16px,1.8vw,22px);">
-
             <div class="feat-row">
               <svg class="feat-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <div>
-                <div class="feat-title">Import 真實 React 元件</div>
-                <div class="feat-desc">不是截圖、不是 Figma mock——直接匯入實際在用的元件</div>
-              </div>
+              <div><div class="feat-title">Import 真實 React 元件</div><div class="feat-desc">不是截圖、不是 Figma mock——直接匯入實際在用的元件</div></div>
             </div>
-
             <div class="feat-row">
               <svg class="feat-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              <div>
-                <div class="feat-title">無限畫布呈現操作流程</div>
-                <div class="feat-desc">在同一個畫面看到完整 user flow，不再切頁切畫面</div>
-              </div>
+              <div><div class="feat-title">無限畫布呈現操作流程</div><div class="feat-desc">在同一個畫面看到完整 user flow，不再切頁切畫面</div></div>
             </div>
-
             <div class="feat-row">
               <svg class="feat-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-              <div>
-                <div class="feat-title">AI 自動擷取原始碼</div>
-                <div class="feat-desc">不爬蟲、零第三方依賴，直接從 source 取得</div>
-              </div>
+              <div><div class="feat-title">AI 自動擷取原始碼</div><div class="feat-desc">不爬蟲、零第三方依賴，直接從 source 取得</div></div>
             </div>
-
           </div>
 
           <div data-a data-d="5" style="display:flex; gap:clamp(16px,2.5vw,32px); margin-top:16px; text-align:center;">
@@ -661,30 +693,26 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 7 — Live Demo
+       Slide 9 — Live Demo
   ════════════════════════════════════ -->
-  <section class="slide bg-demo" data-slide="6">
+  <section class="slide bg-demo" data-slide="8">
     <div style="width:100%; max-width:960px; text-align:center;">
 
-      <!-- Live badge -->
       <div data-a data-d="1" style="display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(56,189,248,0.3); border-radius:9999px; padding:6px 16px; margin-bottom:4vh; background:rgba(56,189,248,0.06);">
         <span style="width:7px; height:7px; border-radius:50%; background:#38bdf8; display:inline-block; animation:pulse 1.8s ease-in-out infinite;"></span>
         <span style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#7dd3fc;">Live Demo</span>
       </div>
 
-      <!-- Main headline -->
       <h2 data-a data-d="2" class="f-head" style="font-size:clamp(32px, 5.5vw, 72px); font-weight:900; letter-spacing:-0.025em; color:#fff; line-height:1.05; margin-bottom:3vh;">
         Wireflow Viewer v3<br><span style="color:#38bdf8;">× CIVS 新架構</span>
       </h2>
 
-      <!-- Description -->
       <p data-a data-d="3" style="font-size:clamp(15px, 1.6vw, 20px); color:#475569; line-height:1.85; max-width:580px; margin:0 auto 4vh;">
         接下來，我會用 Wireflow Viewer v3 實際展示——<br>
         搭配今年度正在推動的 <span style="color:#94a3b8;">CIVS 新架構 vibe coding 成果</span>，<br>
         直接生成對應的操作流程。
       </p>
 
-      <!-- Two context pills -->
       <div data-a data-d="4" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:4vh;">
         <div style="display:inline-flex; align-items:center; gap:8px; border:1px solid #1e2d3d; border-radius:10px; padding:10px 18px; background:#0a1625;">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
@@ -708,16 +736,15 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 8 — Ch.4 對未來的想像
+       Slide 10 — Ch.4 對未來的想像
   ════════════════════════════════════ -->
-  <section class="slide bg-mid" data-slide="7">
+  <section class="slide bg-plain" data-slide="9">
     <div style="width:100%; max-width:1080px;">
 
       <span data-a data-d="1" class="ch">Ch.4 &nbsp;—&nbsp; 對未來設計的想像與期許</span>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px, 5vw, 64px); align-items:start;">
 
-        <!-- Left: Reflection -->
         <div>
           <p data-a data-d="2" class="f-head" style="font-size:clamp(22px, 3vw, 40px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2.5vh;">
             回頭看，<br><span style="color:#38bdf8;">被退學是最好的事</span>
@@ -738,7 +765,6 @@
           </div>
         </div>
 
-        <!-- Right: Forward -->
         <div>
           <div data-a data-d="3" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.2); border-radius:14px; padding:clamp(18px,2.5vh,28px) clamp(16px,1.8vw,22px); margin-bottom:14px;">
             <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#38bdf8; margin-bottom:10px;">期許</div>
@@ -771,9 +797,9 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 9 — Closing
+       Slide 11 — Closing
   ════════════════════════════════════ -->
-  <section class="slide bg-center" data-slide="8">
+  <section class="slide bg-center" data-slide="10">
     <div style="width:100%; max-width:1080px; text-align:center;">
 
       <span data-a data-d="1" class="ch">我能為你的團隊帶來什麼</span>
@@ -782,7 +808,6 @@
         我帶來的，<br>不只是設計
       </h2>
 
-      <!-- Three pillars -->
       <div data-a data-d="3" style="display:flex; gap:14px; justify-content:center; margin-bottom:3.5vh;">
 
         <div class="pillar">
@@ -819,7 +844,6 @@
 
 </div><!-- /deck -->
 
-<!-- ── Navigation ── -->
 <button id="btn-prev" class="nav-btn" aria-label="上一頁">
   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
 </button>
@@ -827,9 +851,10 @@
   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
 </button>
 
-<!-- ── Progress dots ── -->
 <div id="progress">
   <div class="dot on"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
   <div class="dot"></div>
   <div class="dot"></div>
   <div class="dot"></div>
@@ -840,32 +865,22 @@
   <div class="dot"></div>
 </div>
 
-<!-- ── Counter ── -->
-<div id="counter">1 / 9</div>
+<div id="counter">1 / 11</div>
 
-<!-- ── Keyboard hint ── -->
 <div id="hint">
   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
   Space &nbsp;/&nbsp; → 切換
 </div>
 
-<style>
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-</style>
-
 <script>
-  const slides   = Array.from(document.querySelectorAll('.slide'));
-  const dots     = Array.from(document.querySelectorAll('.dot'));
-  const counter  = document.getElementById('counter');
-  const hint     = document.getElementById('hint');
-  const TOTAL    = slides.length;
-  let current    = 0;
-  let busy       = false;
+  const slides  = Array.from(document.querySelectorAll('.slide'));
+  const dots    = Array.from(document.querySelectorAll('.dot'));
+  const counter = document.getElementById('counter');
+  const hint    = document.getElementById('hint');
+  const TOTAL   = slides.length;
+  let current   = 0;
+  let busy      = false;
 
-  /* ── Position all slides ── */
   function layout() {
     slides.forEach((s, i) => {
       s.style.transition = 'none';
@@ -873,18 +888,13 @@
     });
   }
 
-  /* ── Reveal animated items in a slide ── */
   function reveal(idx) {
-    const items = slides[idx].querySelectorAll('[data-a]');
-    items.forEach(el => el.classList.add('on'));
-
+    slides[idx].querySelectorAll('[data-a]').forEach(el => el.classList.add('on'));
     slides[idx].querySelectorAll('[data-countup]').forEach(el => {
       const target = parseInt(el.dataset.countup, 10);
       const suffix = el.dataset.suffix || '';
       let v = 0;
-      const dur = 900;
-      const fps = 1000 / 60;
-      const inc = target / (dur / fps);
+      const dur = 900, fps = 1000 / 60, inc = target / (dur / fps);
       const t = setInterval(() => {
         v = Math.min(v + inc, target);
         el.textContent = Math.floor(v) + suffix;
@@ -893,60 +903,43 @@
     });
   }
 
-  /* ── Reset animations ── */
   function reset(idx) {
-    slides[idx].querySelectorAll('[data-a]').forEach(el => {
-      el.classList.remove('on');
-    });
+    slides[idx].querySelectorAll('[data-a]').forEach(el => el.classList.remove('on'));
     slides[idx].querySelectorAll('[data-countup]').forEach(el => {
       el.textContent = '0' + (el.dataset.suffix || '');
     });
   }
 
-  /* ── Go to slide ── */
   function goTo(idx) {
     if (busy || idx === current || idx < 0 || idx >= TOTAL) return;
     busy = true;
-
     const prev = current;
     current = idx;
-
     slides.forEach((s, i) => {
       s.style.transition = 'transform 0.62s cubic-bezier(0.65, 0, 0.35, 1)';
       s.style.transform  = `translateX(${(i - current) * 100}%)`;
     });
-
     dots[prev].classList.remove('on');
     dots[current].classList.add('on');
     counter.textContent = `${current + 1} / ${TOTAL}`;
     hint.style.opacity  = current === 0 ? '1' : '0';
-
     setTimeout(() => reveal(current), 120);
-
-    setTimeout(() => {
-      reset(prev);
-      busy = false;
-    }, 700);
+    setTimeout(() => { reset(prev); busy = false; }, 700);
   }
 
-  /* ── Event listeners ── */
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
     if (e.key === 'ArrowLeft')                    { e.preventDefault(); goTo(current - 1); }
   });
-
   document.getElementById('btn-next').addEventListener('click', () => goTo(current + 1));
   document.getElementById('btn-prev').addEventListener('click', () => goTo(current - 1));
-
   document.getElementById('deck').addEventListener('click', e => {
     const x = e.clientX / window.innerWidth;
     if (x > 0.6) goTo(current + 1);
     else if (x < 0.4) goTo(current - 1);
   });
-
   dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
 
-  /* ── Init ── */
   layout();
   reveal(0);
 </script>
