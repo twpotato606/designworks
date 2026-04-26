@@ -3,7 +3,22 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    {
+      name: 'root-redirect',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url === '/' || req.url === '') {
+            res.writeHead(302, { Location: '/designworks/pitch.html' })
+            res.end()
+          } else {
+            next()
+          }
+        })
+      },
+    },
+  ],
   base: '/designworks/',
   build: {
     rollupOptions: {

@@ -15,7 +15,10 @@
       "Bash(npm install:*)",
       "Bash(npm run:*)",
       "mcp__Claude_Preview__preview_start",
-      "mcp__Claude_in_Chrome__tabs_context_mcp"
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(netstat -ano)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5176 -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -gt 5000 -and $_.LocalPort -lt 6000 } | Select-Object LocalPort, OwningProcess)"
     ]
   }
 }
