@@ -566,31 +566,134 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 7 — Ch.3 DeepQ / CIVS
+       Slide 7 — Ch.3 CIVS 系統簡介
   ════════════════════════════════════ -->
   <section class="slide bg-dot" data-slide="6">
     <div style="width:100%; max-width:1080px;">
 
-      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · CIVS</span>
+      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · CIVS 系統</span>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px, 5vw, 64px); align-items:start;">
+
+        <!-- Left: System intro + user groups -->
+        <div>
+          <h2 data-a data-d="2" class="f-head" style="font-size:clamp(20px, 2.8vw, 36px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:1.5vh;">
+            CIVS<br><span style="color:#38bdf8;">校園流感疫苗電子化系統</span>
+          </h2>
+
+          <p data-a data-d="3" style="font-size:clamp(13px,1.2vw,15px); color:#64748b; line-height:1.75; margin-bottom:2vh;">
+            全台校園流感疫苗接種管理平台，串聯學校、衛生單位與家長，讓疫苗施打流程數位化、可追蹤。
+          </p>
+
+          <div data-a data-d="4" style="display:flex; flex-direction:column; gap:8px;">
+            <div style="background:#0a1625; border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:10px 14px; display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(56,189,248,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:0.08em; margin-bottom:2px;">主要使用者 · 校護</div>
+                <div style="font-size:12px; color:#475569;">管理全校接種流程，負責建立名冊、安排場次、收集意願</div>
+              </div>
+            </div>
+            <div style="background:#0a1625; border:1px solid #1e2d3d; border-radius:10px; padding:10px 14px; display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(148,163,184,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; color:#94a3b8; letter-spacing:0.08em; margin-bottom:2px;">監管單位 · 衛生單位</div>
+                <div style="font-size:12px; color:#475569;">疾管署、衛生局所——統計數據、監控全台接種進度</div>
+              </div>
+            </div>
+            <div style="background:#0a1625; border:1px solid #1e2d3d; border-radius:10px; padding:10px 14px; display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(148,163,184,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; color:#94a3b8; letter-spacing:0.08em; margin-bottom:2px;">終端使用者 · 家長</div>
+                <div style="font-size:12px; color:#475569;">收到校護通知後，上網填寫子女的接種意願</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Nurse workflow -->
+        <div>
+          <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin-bottom:14px;">校護使用情境流程</p>
+
+          <div data-a data-d="5" style="display:flex; flex-direction:column; gap:0;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.4); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:700; color:#38bdf8;">1</div>
+              <div style="background:#0a1625; border:1px solid rgba(56,189,248,0.2); border-radius:10px; padding:10px 14px; flex:1;">
+                <div style="font-size:13px; font-weight:600; color:#e2e8f0;">建立施打學生名冊</div>
+                <div style="font-size:11px; color:#475569; margin-top:2px;">匯入學生基本資料，確認接種資格</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; padding:4px 0;"><div style="width:28px; flex-shrink:0; display:flex; justify-content:center;"><div style="width:1px; height:100%; background:#1e3a5f;"></div></div><div style="flex:1;"></div></div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(56,189,248,0.07); border:1px solid rgba(56,189,248,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:700; color:#7dd3fc;">2</div>
+              <div style="background:#0a1625; border:1px solid #1e2d3d; border-radius:10px; padding:10px 14px; flex:1;">
+                <div style="font-size:13px; font-weight:600; color:#e2e8f0;">安排接種場次</div>
+                <div style="font-size:11px; color:#475569; margin-top:2px;">設定接種日期、地點、分批次序</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; padding:4px 0;"><div style="width:28px; flex-shrink:0; display:flex; justify-content:center;"><div style="width:1px; height:100%; background:#1e3a5f;"></div></div><div style="flex:1;"></div></div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(56,189,248,0.07); border:1px solid rgba(56,189,248,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:700; color:#7dd3fc;">3</div>
+              <div style="background:#0a1625; border:1px solid #1e2d3d; border-radius:10px; padding:10px 14px; flex:1;">
+                <div style="font-size:13px; font-weight:600; color:#e2e8f0;">收集接種意願</div>
+                <div style="font-size:11px; color:#475569; margin-top:2px;">家長收到通知後線上回覆，校護追蹤回覆率</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; padding:4px 0;"><div style="width:28px; flex-shrink:0; display:flex; justify-content:center;"><div style="width:1px; height:100%; background:#1e3a5f;"></div></div><div style="flex:1;"></div></div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="width:28px; height:28px; border-radius:8px; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.4); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:700; color:#38bdf8;">4</div>
+              <div style="background:#0a1625; border:1px solid rgba(56,189,248,0.2); border-radius:10px; padding:10px 14px; flex:1;">
+                <div style="font-size:13px; font-weight:600; color:#e2e8f0;">執行施打</div>
+                <div style="font-size:11px; color:#475569; margin-top:2px;">現場確認，即時更新接種狀態</div>
+              </div>
+            </div>
+          </div>
+
+          <div data-a data-d="6" style="margin-top:12px; background:rgba(56,189,248,0.04); border:1px solid rgba(56,189,248,0.15); border-radius:10px; padding:10px 14px;">
+            <div style="font-size:10px; font-weight:700; color:#38bdf8; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;">家長端</div>
+            <div style="font-size:12px; color:#475569; line-height:1.6;">收到校護通知 → 上網填寫接種意願 → 等待施打當天通知</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 8 — Ch.3 接手的困境
+  ════════════════════════════════════ -->
+  <section class="slide bg-plain" data-slide="7">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · 接手的困境</span>
 
       <h2 data-a data-d="2" class="f-head" style="font-size:clamp(20px, 3vw, 40px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2.5vh;">
-        從宏碁到DeepQ，我以為接手一個<br><span style="color:#ef4444;">「已經驗證過的系統」會很輕鬆</span>
+        主設計師離職，<br><span style="color:#ef4444;">我需要在短時間內接手這個案子</span>
       </h2>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px, 3.5vw, 48px); margin-bottom:3vh;">
 
         <div>
-          <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin-bottom:12px;">背景</p>
+          <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; margin-bottom:12px;">接手當下的現實</p>
           <div style="display:flex; flex-direction:column; gap:9px;">
             <div data-a data-d="4" class="crisis">
               交接前：10 間學校試營運，數千名使用者<br>
               交接後：全台 12 縣市，幾十萬師生即將上線
             </div>
+            <div data-a data-d="5" class="crisis">
+              主設計師離職，系統文件殘缺，業務邏輯幾乎沒有記錄
+            </div>
           </div>
         </div>
 
         <div>
-          <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#ef4444; margin-bottom:12px;">現實</p>
+          <p data-a data-d="3" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#ef4444; margin-bottom:12px;">發現的開發問題</p>
           <div style="display:flex; flex-direction:column; gap:9px;">
             <div data-a data-d="4" class="crisis">帶著一堆未解決的 bug，系統就這樣大規模上線了</div>
             <div data-a data-d="5" class="crisis">設計到工程的溝通斷層——大量業務邏輯沒有定義，工程師各自決定怎麼處理</div>
@@ -600,18 +703,228 @@
 
       </div>
 
-      <div data-a data-d="7" style="border-top:1px solid #1a2840; padding-top:2.5vh; display:flex; align-items:center; gap:5vw;">
-        <p class="bq" style="flex:1;">
-          "設計師不是把設計稿交付就結束了，而是系統能不能真的順暢的運作起來。"
+      <div data-a data-d="7" style="border-left:3px solid rgba(239,68,68,0.4); padding:clamp(10px,1.5vh,16px) clamp(14px,1.6vw,20px); background:rgba(239,68,68,0.04); border-radius:0 12px 12px 0;">
+        <p class="bq">
+          "設計師不是把設計稿交付就結束了，而是要確保系統能真的順暢地運作起來。"
         </p>
-        <div style="display:flex; gap:clamp(20px,3.5vw,48px); flex-shrink:0; text-align:center;">
-          <div>
-            <div class="num sky" data-countup="300" data-suffix="萬+">0</div>
-            <div class="num-label">全國使用人數</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 9 — Ch.3 四大需求來源
+  ════════════════════════════════════ -->
+  <section class="slide bg-mid" data-slide="8">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · 需求來源</span>
+
+      <h2 data-a data-d="2" class="f-head" style="font-size:clamp(20px, 2.8vw, 36px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:3vh;">
+        四大需求來源，<span style="color:#38bdf8;">持續不斷地迭代系統</span>
+      </h2>
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-bottom:3vh;">
+
+        <div data-a data-d="3" class="pillar">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <div>
-            <div class="num sky" data-countup="90" data-suffix="%">0</div>
-            <div class="num-label">使用者滿意度</div>
+          <div class="pillar-title">實地訪談</div>
+          <div class="pillar-desc">到校訪談校護，了解實際使用狀況與遭遇的困難，發現系統設計與現實脫節之處</div>
+        </div>
+
+        <div data-a data-d="4" class="pillar hi">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="pillar-title" style="color:#38bdf8;">教育訓練</div>
+          <div class="pillar-desc">教校護使用系統，在教學過程中發現他們不理解的地方，評估是否能進一步優化設計</div>
+        </div>
+
+        <div data-a data-d="5" class="pillar">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 5.23 5.23l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.16z"/></svg>
+          </div>
+          <div class="pillar-title">客服紀錄</div>
+          <div class="pillar-desc">疫苗施打期間由客服收集系統問題，高頻率回報即是優化的優先項目</div>
+        </div>
+
+        <div data-a data-d="6" class="pillar">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="pillar-title">疾管署需求</div>
+          <div class="pillar-desc">業務政策邏輯更新，由疾管署提出需求，設計必須符合法規與施政方針</div>
+        </div>
+
+      </div>
+
+      <div data-a data-d="7" style="border-left:3px solid rgba(56,189,248,0.35); padding:clamp(10px,1.5vh,16px) clamp(14px,1.6vw,20px); background:rgba(56,189,248,0.04); border-radius:0 12px 12px 0;">
+        <p class="bq">
+          "這四個管道讓我真正接觸到使用者——而不只是坐在辦公室猜測他們的問題。"
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 10 — Ch.3 客服優化案例
+  ════════════════════════════════════ -->
+  <section class="slide bg-dot" data-slide="9">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; CIVS · 客服優化案例</span>
+
+      <div style="display:grid; grid-template-columns:1fr 1.9fr; gap:clamp(24px, 4vw, 52px); align-items:start;">
+
+        <!-- Left: Context -->
+        <div>
+          <h2 data-a data-d="2" class="f-head" style="font-size:clamp(18px, 2.4vw, 30px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:2vh;">
+            高優先度問題：<br><span style="color:#ef4444;">匯入學生名冊失敗</span>
+          </h2>
+
+          <div data-a data-d="3" style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.2); border-radius:12px; padding:12px 16px; margin-bottom:12px;">
+            <div style="font-size:10px; font-weight:700; color:#ef4444; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">舊版問題</div>
+            <div style="font-size:clamp(12px,1.1vw,14px); color:#fca5a5; line-height:1.65;">
+              檔案有問題時只會跳出<strong>模糊的例外提示</strong>，校護無法自行解決，只能打電話客服
+            </div>
+          </div>
+
+          <div data-a data-d="4" style="background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.2); border-radius:12px; padding:12px 16px; margin-bottom:12px;">
+            <div style="font-size:10px; font-weight:700; color:#38bdf8; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">新版解法</div>
+            <div style="font-size:clamp(12px,1.1vw,14px); color:#bae6fd; line-height:1.65;">
+              <strong>直接標示錯誤位置</strong>（流水號、頁籤、欄位），並給出修正建議，大幅降低客服量
+            </div>
+          </div>
+
+          <div data-a data-d="5" style="background:#0a1625; border:1px solid #1e2d3d; border-radius:10px; padding:10px 14px; display:flex; align-items:flex-start; gap:10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px; flex-shrink:0;"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <div style="font-size:clamp(11px,1vw,13px); color:#475569; line-height:1.6;">
+              客服紀錄顯示「匯入操作困難」為 <span style="color:#fca5a5; font-weight:600;">#1 高優先度</span>，共 611 筆回報，占整體 39.6%
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Before / After images -->
+        <div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+
+            <div data-a="left" data-d="4" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="font-size:10px; font-weight:700; color:#ef4444; letter-spacing:0.1em; text-transform:uppercase; text-align:center; padding:4px 0;">BEFORE</div>
+              <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(239,68,68,0.3); flex:1;">
+                <img src="images/civs/面試作品相關圖片/舊版(檔案格式錯誤).png" alt="舊版錯誤提示" style="width:100%; display:block; object-fit:cover;">
+              </div>
+              <div style="font-size:11px; color:#64748b; text-align:center; line-height:1.5;">模糊錯誤提示<br>校護只能傻眼</div>
+            </div>
+
+            <div data-a="right" data-d="5" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="font-size:10px; font-weight:700; color:#38bdf8; letter-spacing:0.1em; text-transform:uppercase; text-align:center; padding:4px 0;">AFTER</div>
+              <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(56,189,248,0.3); flex:1;">
+                <img src="images/civs/面試作品相關圖片/新版(檔案格式錯誤).png" alt="新版錯誤提示" style="width:100%; display:block; object-fit:cover;">
+              </div>
+              <div style="font-size:11px; color:#64748b; text-align:center; line-height:1.5;">精確標示錯誤位置<br>給出修正步驟</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 11 — Ch.3 CIVS 許多的第一次
+  ════════════════════════════════════ -->
+  <section class="slide bg-plain" data-slide="10">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · 許多的第一次</span>
+
+      <h2 data-a data-d="2" class="f-head" style="font-size:clamp(20px, 2.8vw, 36px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:3vh;">
+        在 CIVS，我做了很多<br><span style="color:#38bdf8;">設計師「份外」的事</span>
+      </h2>
+
+      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin-bottom:3vh;">
+
+        <div data-a="left" data-d="3" class="story-card hi">
+          <div class="story-label" style="color:#38bdf8;">第一次 · 教育訓練</div>
+          <div class="story-title">親自到校教校護用系統</div>
+          <div class="story-desc">不只是教操作步驟，更觀察哪些地方校護卡關——那些卡關點，才是設計真正需要改善的地方。</div>
+        </div>
+
+        <div data-a="right" data-d="3" class="story-card">
+          <div class="story-label" style="color:#94a3b8;">第一次 · 兼任客服</div>
+          <div class="story-title">施打旺季親自接聽客服電話</div>
+          <div class="story-desc">每一通電話都是真實的使用者問題。親自記錄、分類、追蹤，讓問題不再只是數字，而是有脈絡的優化依據。</div>
+        </div>
+
+        <div data-a="left" data-d="5" class="story-card">
+          <div class="story-label" style="color:#94a3b8;">第一次 · 撰寫操作手冊</div>
+          <div class="story-title">從零建立系統操作文件</div>
+          <div class="story-desc">系統缺乏文件，校護沒有依據。我整理了完整的操作手冊，讓教育訓練和客服都有標準可以依循。</div>
+        </div>
+
+        <div data-a="right" data-d="5" class="story-card">
+          <div class="story-label" style="color:#94a3b8;">第一次 · 剪輯教學影片</div>
+          <div class="story-title">製作系統操作教學影片</div>
+          <div class="story-desc">圖文手冊不夠直觀，我自己剪輯了影片版教學，讓校護可以照著影片一步一步操作，大幅降低上手門檻。</div>
+        </div>
+
+      </div>
+
+      <div data-a data-d="6" style="border-left:3px solid rgba(56,189,248,0.35); padding:clamp(10px,1.5vh,16px) clamp(14px,1.6vw,20px); background:rgba(56,189,248,0.04); border-radius:0 12px 12px 0;">
+        <p class="bq">
+          "這些我都覺得很值得——換來的是<span style="color:#38bdf8;">客戶的信任與使用者的感謝</span>，那才是設計真正發揮作用的樣子。"
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Slide 12 — Ch.3 CIVS 成果與展望
+  ════════════════════════════════════ -->
+  <section class="slide bg-center" data-slide="11">
+    <div style="width:100%; max-width:1080px;">
+
+      <span data-a data-d="1" class="ch">Ch.3 &nbsp;—&nbsp; DeepQ 時期 · CIVS 成果</span>
+
+      <h2 data-a data-d="2" class="f-head" style="font-size:clamp(20px, 3vw, 40px); font-weight:800; color:#fff; line-height:1.2; margin-bottom:3.5vh; text-align:center;">
+        從一個混亂的接手，<br><span style="color:#38bdf8;">到全台規模最大的校園疫苗平台</span>
+      </h2>
+
+      <div style="display:flex; gap:14px; justify-content:center; margin-bottom:4vh;">
+        <div data-a data-d="3" style="flex:1; max-width:220px; background:#0a1625; border:1px solid rgba(56,189,248,0.3); border-radius:16px; padding:clamp(20px,3vh,32px) clamp(16px,2vw,24px); text-align:center;">
+          <div class="num sky" data-countup="300" data-suffix="萬+" style="font-size:clamp(32px,4vw,52px);">0</div>
+          <div class="num-label" style="font-size:13px; margin-top:8px;">全國使用人數</div>
+        </div>
+        <div data-a data-d="4" style="flex:1; max-width:220px; background:#0a1625; border:1px solid rgba(56,189,248,0.2); border-radius:16px; padding:clamp(20px,3vh,32px) clamp(16px,2vw,24px); text-align:center;">
+          <div class="num sky" data-countup="90" data-suffix="%" style="font-size:clamp(32px,4vw,52px);">0</div>
+          <div class="num-label" style="font-size:13px; margin-top:8px;">使用者滿意度</div>
+        </div>
+        <div data-a data-d="5" style="flex:1; max-width:220px; background:#0a1625; border:1px solid rgba(56,189,248,0.2); border-radius:16px; padding:clamp(20px,3vh,32px) clamp(16px,2vw,24px); text-align:center;">
+          <div class="f-head" style="font-size:clamp(22px,2.8vw,36px); font-weight:900; color:#38bdf8; line-height:1.1;">持續<br>擴大</div>
+          <div class="num-label" style="font-size:13px; margin-top:8px;">疾管署加大範疇</div>
+        </div>
+      </div>
+
+      <div data-a data-d="6" style="background:#111e30; border:1px solid rgba(56,189,248,0.2); border-radius:16px; padding:clamp(18px,2.5vh,28px) clamp(20px,2.5vw,32px);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#38bdf8; margin-bottom:14px;">未來展望</div>
+        <div style="display:flex; gap:clamp(20px, 4vw, 48px); flex-wrap:wrap; align-items:center;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:6px; height:6px; border-radius:50%; background:#38bdf8; flex-shrink:0;"></div>
+            <span style="font-size:clamp(13px,1.3vw,16px); color:#bae6fd;">擴展至全國<strong>長照機構</strong></span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:6px; height:6px; border-radius:50%; background:#38bdf8; flex-shrink:0;"></div>
+            <span style="font-size:clamp(13px,1.3vw,16px); color:#bae6fd;">覆蓋全台<strong>社區接種站</strong></span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:6px; height:6px; border-radius:50%; background:#7dd3fc; flex-shrink:0;"></div>
+            <span style="font-size:clamp(13px,1.3vw,16px); color:#94a3b8;">疾管署持續加大本專案的投入範疇</span>
           </div>
         </div>
       </div>
@@ -620,9 +933,9 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 8 — Wireflow 工具說明
+       Slide 13 — Wireflow 工具說明
   ════════════════════════════════════ -->
-  <section class="slide bg-mid" data-slide="7">
+  <section class="slide bg-mid" data-slide="12">
     <div style="width:100%; max-width:1080px;">
 
       <span data-a data-d="1" class="ch">Live Demo 前置 &nbsp;—&nbsp; 工具說明</span>
@@ -688,9 +1001,9 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 9 — Live Demo
+       Slide 14 — Live Demo
   ════════════════════════════════════ -->
-  <section class="slide bg-demo" data-slide="8">
+  <section class="slide bg-demo" data-slide="13">
     <div style="width:100%; max-width:960px; text-align:center;">
 
       <div data-a data-d="1" style="display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(56,189,248,0.3); border-radius:9999px; padding:6px 16px; margin-bottom:4vh; background:rgba(56,189,248,0.06);">
@@ -731,9 +1044,9 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 10 — Ch.4 對未來的想像
+       Slide 15 — Ch.4 對未來的想像
   ════════════════════════════════════ -->
-  <section class="slide bg-plain" data-slide="9">
+  <section class="slide bg-plain" data-slide="14">
     <div style="width:100%; max-width:1080px;">
 
       <span data-a data-d="1" class="ch">Ch.4 &nbsp;—&nbsp; 對未來設計的想像與期許</span>
@@ -792,9 +1105,9 @@
   </section>
 
   <!-- ════════════════════════════════════
-       Slide 11 — Closing
+       Slide 16 — Closing
   ════════════════════════════════════ -->
-  <section class="slide bg-center" data-slide="10">
+  <section class="slide bg-center" data-slide="15">
     <div style="width:100%; max-width:1080px; text-align:center;">
 
       <span data-a data-d="1" class="ch">我能為你的團隊帶來什麼</span>
@@ -855,12 +1168,17 @@
   <div class="dot"></div>
   <div class="dot"></div>
   <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
   <div class="dot demo-dot"></div>
+  <div class="dot"></div>
   <div class="dot"></div>
   <div class="dot"></div>
 </div>
 
-<div id="counter">1 / 11</div>
+<div id="counter">1 / 16</div>
 
 <div id="hint">
   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
