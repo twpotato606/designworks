@@ -20,7 +20,8 @@
       "PowerShell(Get-NetTCPConnection -LocalPort 5176 -ErrorAction SilentlyContinue)",
       "PowerShell(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -gt 5000 -and $_.LocalPort -lt 6000 } | Select-Object LocalPort, OwningProcess)",
       "Bash(grep -oP 'color:#[0-9a-fA-F]{3,6}' G:/CursorProjects/designworks/pitch.html)",
-      "Bash(grep -oE 'color:#[0-9a-fA-F]{3,6}' G:/CursorProjects/designworks/pitch.html)"
+      "Bash(grep -oE 'color:#[0-9a-fA-F]{3,6}' G:/CursorProjects/designworks/pitch.html)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
