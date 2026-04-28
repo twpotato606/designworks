@@ -30,6 +30,7 @@ export default defineConfig({
         predatorsense: resolve(__dirname, 'predatorsense.html'),
         vision360:     resolve(__dirname, 'vision360.html'),
         'ai-research': resolve(__dirname, 'ai-research.html'),
+        pitch:         resolve(__dirname, 'pitch.html'),
       },
     },
   },
