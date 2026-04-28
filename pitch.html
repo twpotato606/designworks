@@ -359,10 +359,9 @@
     <option value="22">23 · Wireflow Viewer — 封面</option>
     <option value="23">24 · WV 時代背景</option>
     <option value="24">25 · WV 三大效率瓶頸</option>
-    <option value="25">26 · WV Wireflow Viewer 工具</option>
-    <option value="26">27 · WV CaptureFlow 指南</option>
-    <option value="27">28 · WV 技術突破</option>
-    <option value="28">29 · WV 成果</option>
+    <option value="25">26 · WV Live Demo</option>
+    <option value="26">27 · WV 技術突破</option>
+    <option value="27">28 · WV 成果</option>
   </select>
   <svg class="slide-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
 </div>
@@ -1110,93 +1109,103 @@
 
   <!-- ─── Slide 25 · 三大挑戰 ─── -->
   <section class="slide slide--dark" data-index="24">
-    <div style="max-width:1000px; width:100%;">
+    <div style="width:100%;">
       <div class="slide-label">Challenges</div>
-      <h2 class="h1" style="margin-bottom:40px;">設計師面臨的三大效率瓶頸</h2>
-      <div class="cols--3" style="gap:24px;">
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.12);">
-          <div style="font-size:2rem; font-weight:700; font-family:'Archivo',sans-serif; color:rgba(245,158,11,0.25); line-height:1; margin-bottom:16px;">01</div>
-          <div style="font-weight:600; color:#F1F5F9; margin-bottom:10px; font-size:1.05rem;">發想廣度受限</div>
-          <p class="body" style="color:#64748B; line-height:1.7;">人工收集資訊速度慢，難以快速窮舉設計方案，競品分析與使用者研究耗費大量時間</p>
+      <h2 class="display" style="margin-bottom:48px;">設計師面臨的三大效率瓶頸</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+
+        <!-- 01 -->
+        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.12); display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:start; padding:28px 32px;">
+          <div style="padding-top:4px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.70)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:1.25rem; color:#F1F5F9; margin-bottom:10px; letter-spacing:-0.01em;">發想廣度受限</div>
+            <p class="body" style="color:#94A3B8; line-height:1.8;">人工收集資訊速度慢，難以快速窮舉設計方案，競品分析與使用者研究耗費大量時間</p>
+          </div>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.12);">
-          <div style="font-size:2rem; font-weight:700; font-family:'Archivo',sans-serif; color:rgba(245,158,11,0.25); line-height:1; margin-bottom:16px;">02</div>
-          <div style="font-weight:600; color:#F1F5F9; margin-bottom:10px; font-size:1.05rem;">驗證延遲</div>
-          <p class="body" style="color:#64748B; line-height:1.7;">傳統 Prototype 製作耗時，無法即時驗證複雜流程的流暢度，錯誤發現時機太晚</p>
+
+        <!-- 02 -->
+        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.12); display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:start; padding:28px 32px;">
+          <div style="padding-top:4px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.70)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:1.25rem; color:#F1F5F9; margin-bottom:10px; letter-spacing:-0.01em;">驗證延遲</div>
+            <p class="body" style="color:#94A3B8; line-height:1.8;">傳統 Prototype 製作耗時，無法即時驗證複雜流程的流暢度，錯誤發現時機太晚</p>
+          </div>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.12);">
-          <div style="font-size:2rem; font-weight:700; font-family:'Archivo',sans-serif; color:rgba(245,158,11,0.25); line-height:1; margin-bottom:16px;">03</div>
-          <div style="font-weight:600; color:#F1F5F9; margin-bottom:10px; font-size:1.05rem;">維護效率低落</div>
-          <p class="body" style="color:#64748B; line-height:1.7;">頻繁改動文字與規格時，設計師需花大量時間在 Figma 對齊，而非精鍊設計本身</p>
+
+        <!-- 03 -->
+        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.12); display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:start; padding:28px 32px;">
+          <div style="padding-top:4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.70)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:1.25rem; color:#F1F5F9; margin-bottom:10px; letter-spacing:-0.01em;">維護效率低落</div>
+            <p class="body" style="color:#94A3B8; line-height:1.8;">頻繁改動文字與規格時，設計師需花大量時間在 Figma 對齊，而非精鍊設計本身</p>
+          </div>
         </div>
+
       </div>
     </div>
     <div class="slide-counter">25 / 29</div>
   </section>
 
-  <!-- ─── Slide 26 · 解決方案 01 · Wireflow Viewer ─── -->
-  <section class="slide slide--mid" data-index="25">
-    <div class="cols">
-      <div>
-        <div class="slide-label">Solution 01</div>
-        <h2 class="h1" style="margin-bottom:24px;">
-          Wireflow<br>Viewer
-        </h2>
-        <div class="accent-bar" style="background:#F59E0B;"></div>
-        <p class="body-lg" style="margin-bottom:32px;">
-          利用 AI Agent（Claude / GitHub Copilot）分析 React 原始碼，自動產出對應的使用者流程圖，取代手動繪製 Wireframe。
-        </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <span class="tag tag--gold">AI Agent</span>
-          <span class="tag tag--gold">Auto-generated</span>
-          <span class="tag tag--gold">React Source</span>
-        </div>
+  <!-- ─── Slide 26 · Live Demo ─── -->
+  <section class="slide slide--dark" data-index="25" style="position:relative; overflow:hidden; justify-content:center; align-items:center; text-align:center;">
+    <!-- animated grid background -->
+    <div style="position:absolute; inset:0; background-image: linear-gradient(rgba(245,158,11,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.04) 1px, transparent 1px); background-size:60px 60px; z-index:0;"></div>
+    <!-- radial glow -->
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(245,158,11,0.08) 0%, transparent 70%); z-index:0;"></div>
+    <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:32px;">
+      <div class="slide-label" style="opacity:1; color:#F59E0B; letter-spacing:0.15em;">Live Demo</div>
+      <h2 class="display" style="letter-spacing:-0.03em;">Wireflow Viewer</h2>
+      <p class="body-lg" style="max-width:540px; color:#94A3B8;">
+        AI 即時分析 React 原始碼，自動生成可互動的使用者流程圖
+      </p>
+      <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:center;">
+        <!-- Primary: Open live demo -->
+        <a href="https://wireflow-viewer.vercel.app" target="_blank" rel="noopener"
+           style="display:inline-flex; align-items:center; gap:10px; padding:14px 32px; background:var(--gold); color:#0F172A; font-family:'Archivo',sans-serif; font-weight:700; font-size:1rem; letter-spacing:-0.01em; border-radius:10px; text-decoration:none; transition:opacity 0.2s; cursor:pointer;"
+           onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          開始 Live Demo
+        </a>
+        <!-- Fallback: play demo video -->
+        <button onclick="document.getElementById('demoVideoWrap').style.display='flex'"
+           style="display:inline-flex; align-items:center; gap:10px; padding:14px 28px; background:rgba(255,255,255,0.06); color:#94A3B8; font-family:'Archivo',sans-serif; font-weight:600; font-size:0.95rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); cursor:pointer; transition:background 0.2s;"
+           onmouseover="this.style.background='rgba(255,255,255,0.10)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          播放 Demo 影片
+        </button>
       </div>
-      <div style="display:flex; align-items:center; justify-content:center;">
-        <div style="border-radius:12px; border:2px dashed rgba(245,158,11,0.35); background:rgba(245,158,11,0.04); display:flex; align-items:center; justify-content:center; width:100%; aspect-ratio:4/3; color:#64748B; font-size:0.85rem; letter-spacing:0.05em;">
-          [ 待上傳：Wireflow Viewer 截圖 ]
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+        <span class="tag tag--gold">AI Agent</span>
+        <span class="tag tag--gold">React Source Analysis</span>
+        <span class="tag tag--gold">Auto-generated Wireflow</span>
+      </div>
+    </div>
+    <!-- Video modal -->
+    <div id="demoVideoWrap" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:500; align-items:center; justify-content:center;">
+      <div style="position:relative; width:min(900px,90vw);">
+        <button onclick="document.getElementById('demoVideoWrap').style.display='none'"
+                style="position:absolute; top:-40px; right:0; background:none; border:none; color:#94A3B8; font-size:1.5rem; cursor:pointer; line-height:1;">✕</button>
+        <div style="position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden;">
+          <video controls style="position:absolute; top:0; left:0; width:100%; height:100%; background:#000;">
+            <source src="/images/pitch/jsontofigmaFast.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
-    <div class="slide-counter">26 / 29</div>
+    <div class="slide-counter">26 / 28</div>
   </section>
 
-  <!-- ─── Slide 27 · 解決方案 02 · CaptureFlow 指南 ─── -->
-  <section class="slide slide--dark" data-index="26">
-    <div class="cols">
-      <div>
-        <div class="slide-label">Solution 02</div>
-        <h2 class="h1" style="margin-bottom:24px;">
-          CaptureFlow<br>指南
-        </h2>
-        <div class="accent-bar" style="background:#F59E0B;"></div>
-        <p class="body-lg" style="margin-bottom:32px;">
-          建立標準操作指南，讓 AI 自動識別畫面狀態與轉換觸發條件，確保流程圖的完整性與準確性。
-        </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <span class="tag tag--gold">Standard Guide</span>
-          <span class="tag tag--gold">State Recognition</span>
-        </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:16px;">
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(245,158,11,0.35);">
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F59E0B; margin-bottom:12px;">畫面狀態識別</div>
-          <p class="body" style="color:#CBD5E1; line-height:1.7;">AI 自動識別每個頁面的初始、載入、錯誤、成功狀態，不遺漏任何 Edge Case</p>
-        </div>
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(245,158,11,0.35);">
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F59E0B; margin-bottom:12px;">轉換觸發條件</div>
-          <p class="body" style="color:#CBD5E1; line-height:1.7;">自動分析 onClick、onChange、API response 等事件，建立完整的流程轉換關係圖</p>
-        </div>
-      </div>
-    </div>
-    <div class="slide-counter">27 / 29</div>
-  </section>
-
-  <!-- ─── Slide 28 · 技術突破 ─── -->
-  <section class="slide slide--mid" data-index="27">
+  <!-- ─── Slide 27 · 技術突破 ─── -->
+  <section class="slide slide--mid" data-index="26">
     <div style="max-width:1000px; width:100%;">
       <div class="slide-label">Technical Breakthrough</div>
-      <h2 class="h1" style="margin-bottom:40px;">讓 AI 做苦工，設計師專注創造</h2>
+      <h2 class="h1" style="margin-bottom:40px;">Wireflow Viewer 透過以下三點解決維護效率低落的問題</h2>
       <div class="cols--3" style="gap:24px;">
         <div class="card" style="background:rgba(245,158,11,0.06); border-color:rgba(245,158,11,0.3);">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F59E0B; margin-bottom:16px;">直接引用原始元件</div>
@@ -1212,11 +1221,11 @@
         </div>
       </div>
     </div>
-    <div class="slide-counter">28 / 29</div>
+    <div class="slide-counter">27 / 28</div>
   </section>
 
-  <!-- ─── Slide 29 · 成果 ─── -->
-  <section class="slide slide--dark" data-index="28">
+  <!-- ─── Slide 28 · 成果 ─── -->
+  <section class="slide slide--dark" data-index="27">  <!-- intentional: index 27 = slide 28 of 28 -->
     <div style="max-width:1000px; width:100%;">
       <div class="slide-label">Outcomes</div>
       <h2 class="h1" style="margin-bottom:40px;">所見即所得 · 效率極大化 · 流程標準化</h2>
@@ -1243,7 +1252,7 @@
         <div class="body" style="color:#CBD5E1;">設計師從「繪圖執行者」進化為「AI 協作指揮者」，在 Vibe Coding 時代保持不可取代的核心競爭力</div>
       </div>
     </div>
-    <div class="slide-counter">29 / 29</div>
+    <div class="slide-counter">28 / 28</div>
   </section>
 
 </div><!-- /deck -->
