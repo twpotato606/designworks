@@ -95,7 +95,7 @@
     .body-lg {
       font-size: 1.125rem;
       line-height: 1.75;
-      color: #94A3B8;
+      color: #b0bbcb;
     }
 
     .body {
@@ -271,15 +271,13 @@
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       gap: 24px;
-      align-items: start;
+      align-items: center;
     }
     .vs-badge {
-      font-family: 'Archivo', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     /* ── Award row ── */
@@ -305,7 +303,7 @@
     }
     .metric-item {
       padding: 28px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 16px;
     }
@@ -313,6 +311,40 @@
     /* ── Light card text overrides ── */
     .slide--light .body-lg { color: var(--muted); }
     .slide--light .tag { background: rgba(3,105,161,0.1); color: var(--accent); border-color: rgba(3,105,161,0.25); }
+
+    /* ── Step reveal ── */
+    [data-step] {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .step-hidden {
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+    }
+
+    /* zoom-in pan animation for before/after images */
+    @keyframes zoomToModal {
+      0%   { transform: scale(1);    transform-origin: 50% 50%; }
+      30%  { transform: scale(1);    transform-origin: 50% 50%; }
+      80%  { transform: scale(2.4);  transform-origin: 50% 50%; }
+      100% { transform: scale(2.4);  transform-origin: 50% 50%; }
+    }
+    @keyframes zoomToModalAfter {
+      0%   { transform: scale(1);    transform-origin: 50% 42%; }
+      30%  { transform: scale(1);    transform-origin: 50% 42%; }
+      80%  { transform: scale(1.4);  transform-origin: 50% 42%; }
+      100% { transform: scale(1.4);  transform-origin: 50% 42%; }
+    }
+    .zoom-to-modal {
+      animation: zoomToModal 3.5s ease-in-out forwards;
+    }
+    .zoom-to-modal-after {
+      animation: zoomToModalAfter 3.5s ease-in-out forwards;
+    }
+    .step-hidden .zoom-to-modal,
+    .step-hidden .zoom-to-modal-after {
+      animation-play-state: paused;
+    }
 
     /* keyboard hint */
     .key-hint {
@@ -367,7 +399,7 @@
   </select>
   <svg class="slide-nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
 </div>
-<div class="key-hint">↑ ↓ to navigate &nbsp;·&nbsp; Space / Enter to advance</div>
+<div class="key-hint">↑ ↓ to navigate &nbsp;·&nbsp; ← → to reveal &nbsp;·&nbsp; Space / Enter to advance</div>
 
 <div class="deck" id="deck">
 
@@ -554,12 +586,12 @@
         </p>
       </div>
       <div style="display:flex; flex-direction:column; gap:20px;">
-        <div class="card">
+        <div class="card step-hidden" data-step="1">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-bottom:12px;">My Role</div>
           <div class="body" style="color:#F1F5F9; margin-bottom:8px;">Junior UX Designer</div>
           <div class="body" style="color:#94A3B8;">協同研究 · 設計執行 · 原型開發</div>
         </div>
-        <div class="card card--highlight">
+        <div class="card card--highlight step-hidden" data-step="2">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:12px;">Core Goal</div>
           <div class="body" style="color:#CBD5E1; line-height:1.7;">透過強而有力的產品設計，<br>在玩家社群建立品牌形象與口碑</div>
         </div>
@@ -611,18 +643,18 @@
         </h2>
         <div class="accent-bar"></div>
         <p class="body-lg">
-          製作電競知識簡報，解構超頻原理、散熱等技術概念，讓開發團隊與玩家站在同一語境，提升訪談效益。
+          製作電競知識簡報，解構超頻原理、散熱、Hotkey等與遊戲相關的概念，讓開發團隊與玩家站在同一語境，提升訪談效益。
         </p>
       </div>
-      <div class="card" style="padding:0; overflow:hidden;">
+      <div class="card step-hidden" data-step="1" style="padding:0; overflow:hidden;">
         <div style="overflow:hidden; border-radius:16px 16px 0 0; background:#0a0f1a; display:flex; align-items:center; justify-content:center; padding:28px 32px;">
           <img src="/images/pitch/cpu.png" alt="CPU chip diagram" style="width:100%; max-height:200px; object-fit:contain; display:block;" />
         </div>
         <div style="padding:24px 28px; border-top:1px solid rgba(255,255,255,0.07);">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:12px;">超頻原理</div>
           <p class="body" style="color:#CBD5E1; line-height:1.75;">
-            CPU 的運算速度 = <strong style="color:#F1F5F9;">基頻 × 倍頻</strong>。<br>
-            這兩個參數都可透過軟體設定來突破出廠預設值——這就是<strong style="color:#F1F5F9;">超頻（Overclocking）</strong>。
+            CPU 的運算速度 = <strong style="color:var(--gold);">基頻 × 倍頻</strong>。<br>
+            可透過軟體設定來突破出廠預設值——這就是<strong style="color:var(--gold);">超頻（Overclocking）</strong>。
           </p>
         </div>
       </div>
@@ -662,16 +694,22 @@
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:16px;">原本的假設</div>
           <h3 class="h2" style="color:#F1F5F9; margin-bottom:12px;">豐富完整的超頻控制</h3>
           <p class="body" style="color:#94A3B8; line-height:1.7;">
-            進階玩家渴望精細控制每一個超頻參數——介面應提供電壓、頻率、快取比等完整調校選項。
+            進階玩家渴望精細控制每一個超頻參數；介面應提供電壓、頻率、快取比等完整調校選項。
           </p>
         </div>
-        <div class="vs-badge" style="text-align:center;">VS</div>
-        <div class="card card--highlight">
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:16px;">實際發現</div>
-          <h3 class="h2" style="color:#F1F5F9; margin-bottom:12px;">簡易快速超頻</h3>
-          <p class="body" style="color:#CBD5E1; line-height:1.7;">
-            大多數玩家只需要在需要時，能快速完成超頻——不需要複雜的精細調校，一鍵切換模式才是真正需求。
-          </p>
+        <div class="vs-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="card card--highlight step-hidden" data-step="1" style="padding:28px 32px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:rgba(14,165,233,0.15); border:1.5px solid rgba(14,165,233,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt);">實際玩家心聲</div>
+          </div>
+          <blockquote style="margin:0; padding-left:16px; border-left:2px solid rgba(14,165,233,0.4);">
+            <p class="body" style="color:#CBD5E1; line-height:1.8; font-style:italic;">
+              超頻可以提升遊戲性能，但我不想要花費很多時間去設定超頻，只要在遊戲開始前，可以簡單的啟動超頻就好。
+            </p>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -684,18 +722,18 @@
       <div class="slide-label" style="margin-bottom:20px;">Overclocking · Before vs After</div>
       <div style="display:grid; grid-template-columns:1fr 48px 1fr; gap:0; align-items:center;">
         <div>
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:12px;">原始假設設計</div>
-          <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(220,38,38,0.25);">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:12px;">概念設計</div>
+          <div style="overflow:hidden;">
             <img src="/images/pitch/predatorsense_OC1.jpg" alt="Original OC design" style="width:100%; height:auto; display:block;" />
           </div>
         </div>
         <div style="display:flex; align-items:center; justify-content:center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
-        <div>
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:12px;">最終wireframe設計</div>
-          <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(14,165,233,0.25);">
-            <img src="/images/pitch/predatorsense_wireframe_oc.png" alt="Final OC wireframe" style="width:100%; height:auto; display:block;" />
+        <div class="step-hidden" data-step="1">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:12px;">最終設計</div>
+          <div style="overflow:hidden;">
+            <img src="/images/pitch/oc最終設計.png" alt="Final OC wireframe" style="width:100%; height:auto; display:block;" />
           </div>
         </div>
       </div>
@@ -713,16 +751,22 @@
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:16px;">原本的假設</div>
           <h3 class="h2" style="color:#F1F5F9; margin-bottom:12px;">分頁式詳細數據監控</h3>
           <p class="body" style="color:#94A3B8; line-height:1.7;">
-            玩家習慣透過各分頁逐一查閱 CPU、GPU、溫度等數據——介面應提供每項硬體的獨立詳細頁面。
+            玩家習慣透過各分頁逐一查閱 CPU、GPU、溫度等數據；介面應提供每項硬體的獨立詳細頁面。
           </p>
         </div>
-        <div class="vs-badge" style="text-align:center;">VS</div>
-        <div class="card card--highlight">
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:16px;">實際發現</div>
-          <h3 class="h2" style="color:#F1F5F9; margin-bottom:12px;">一眼掌握硬體狀態</h3>
-          <p class="body" style="color:#CBD5E1; line-height:1.7;">
-            玩家核心需求是即時掌握整體硬體狀態——提供儀錶板整合 CPU、GPU、溫度歷史紀錄，成為設計主軸。
-          </p>
+        <div class="vs-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="card card--highlight step-hidden" data-step="1" style="padding:28px 32px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:rgba(14,165,233,0.15); border:1.5px solid rgba(14,165,233,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt);">玩家心聲</div>
+          </div>
+          <blockquote style="margin:0; padding-left:16px; border-left:2px solid rgba(14,165,233,0.4);">
+            <p class="body" style="color:#CBD5E1; line-height:1.8; font-style:italic;">
+              我只有在玩遊戲時卡頓或過熱時，才想要開啟軟體查看電腦的狀況，最好是一眼讓我發現是哪個東西出問題。
+            </p>
+          </blockquote>
         </div>
       </div>
     </div>
@@ -735,18 +779,18 @@
       <div class="slide-label" style="margin-bottom:20px;">Dashboard · Before vs After</div>
       <div style="display:grid; grid-template-columns:1fr 48px 1fr; gap:0; align-items:center;">
         <div>
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:12px;">原始假設設計</div>
-          <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(220,38,38,0.25);">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:12px;">概念設計</div>
+          <div style="overflow:hidden;">
             <img src="/images/pitch/predatorsense_Smart%20Monitoring_OSDsetting.jpg" alt="Original monitoring design" style="width:100%; height:auto; display:block;" />
           </div>
         </div>
         <div style="display:flex; align-items:center; justify-content:center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
-        <div>
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:12px;">最終wireframe設計</div>
-          <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(14,165,233,0.25);">
-            <img src="/images/pitch/predatorsense_wireframe_home.png" alt="Final home wireframe" style="width:100%; height:auto; display:block;" />
+        <div class="step-hidden" data-step="1">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:12px;">最終設計</div>
+          <div style="overflow:hidden;">
+            <img src="/images/pitch/儀錶板設計.png" alt="Final home wireframe" style="width:100%; height:auto; display:block;" />
           </div>
         </div>
       </div>
@@ -755,23 +799,22 @@
   </section>
 
   <!-- ─── Slide 11 · 成果 ─── -->
-  <section class="slide slide--dark" data-index="10" style="background-image: linear-gradient(rgba(15,23,42,0.78), rgba(15,23,42,0.78)), url('/images/pitch/predatorsense%20if%20design.png'); background-size: cover; background-position: center;">
-    <div style="max-width:860px; width:100%;">
-      <div class="slide-label">Outcomes</div>
-      <h2 class="h1" style="margin-bottom:48px;">國際獲獎</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
-        <div class="metric-item" style="display:flex; align-items:flex-start; gap:20px; padding:28px 32px;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <div>
-            <div style="font-family:'Archivo',sans-serif; font-size:1.35rem; font-weight:700; color:var(--gold); margin-bottom:6px;">iF Design Award</div>
-            <div class="body" style="color:#94A3B8;">軟體設計領域國際獎項肯定</div>
+  <section class="slide slide--dark" data-index="10">
+    <div style="display:flex; gap:72px; align-items:center; width:100%;">
+      <div style="flex-shrink:0; width:360px;">
+        <img src="/images/pitch/if得獎.png" alt="iF Design Award" style="width:100%; height:auto; display:block; border-radius:16px;" />
+      </div>
+      <div style="flex:1;">
+        <div class="slide-label">Outcomes</div>
+        <h2 class="h1" style="margin-bottom:48px;">國際獲獎</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+          <div class="metric-item" style="padding:28px 32px;">
+            <div style="font-family:'Archivo',sans-serif; font-size:1.35rem; font-weight:700; color:var(--gold); margin-bottom:6px;">iF設計獎</div>
+            <div class="body" style="color:#94A3B8;">產品設計獲國際獎項肯定</div>
           </div>
-        </div>
-        <div class="metric-item" style="display:flex; align-items:flex-start; gap:20px; padding:28px 32px;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <div>
+          <div class="metric-item" style="padding:28px 32px;">
             <div style="font-family:'Archivo',sans-serif; font-size:1.35rem; font-weight:700; color:var(--accent-lt); margin-bottom:6px;">部門最優考績</div>
-            <div class="body" style="color:#94A3B8;">設計研究方法論獲組織正式認可</div>
+            <div class="body" style="color:#94A3B8;">設計貢獻獲組織認可</div>
           </div>
         </div>
       </div>
@@ -786,32 +829,35 @@
       <h2 class="h1" style="margin-bottom:40px;">媒體一致好評</h2>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
 
+        <!-- PCMag — always visible -->
         <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:20px;">
           <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.25; flex-shrink:0;">
             <path d="M0 20V12.8C0 9.6 0.8 6.93333 2.4 4.8C4 2.66667 6.4 1.06667 9.6 0L11.2 2.4C9.6 3.06667 8.26667 4 7.2 5.2C6.13333 6.4 5.6 7.73333 5.6 9.2H11.2V20H0ZM16.8 20V12.8C16.8 9.6 17.6 6.93333 19.2 4.8C20.8 2.66667 23.2 1.06667 26.4 0L28 2.4C26.4 3.06667 25.0667 4 24 5.2C22.9333 6.4 22.4 7.73333 22.4 9.2H28V20H16.8Z" fill="white"/>
           </svg>
           <p class="body" style="color:#CBD5E1; line-height:1.75; flex:1;">
-            PredatorSense 仍然是我們最喜歡的預載電競 App 之一，它提供了簡潔的深色介面，方便監控 CPU/GPU 的使用率與溫度。
+            PredatorSense 仍然是我們最喜歡的預載電競 App 之一，它提供了簡潔的深色介面，<strong style="color:var(--gold);">方便監控 CPU/GPU 的使用率與溫度</strong>。
           </p>
           <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-lt);">— PCMag</div>
         </div>
 
-        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:20px;">
+        <!-- Laptop Mag — step 1 -->
+        <div class="step-hidden" data-step="1" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:20px;">
           <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.25; flex-shrink:0;">
             <path d="M0 20V12.8C0 9.6 0.8 6.93333 2.4 4.8C4 2.66667 6.4 1.06667 9.6 0L11.2 2.4C9.6 3.06667 8.26667 4 7.2 5.2C6.13333 6.4 5.6 7.73333 5.6 9.2H11.2V20H0ZM16.8 20V12.8C16.8 9.6 17.6 6.93333 19.2 4.8C20.8 2.66667 23.2 1.06667 26.4 0L28 2.4C26.4 3.06667 25.0667 4 24 5.2C22.9333 6.4 22.4 7.73333 22.4 9.2H28V20H16.8Z" fill="white"/>
           </svg>
           <p class="body" style="color:#CBD5E1; line-height:1.75; flex:1;">
-            Acer 的 PredatorSense 軟體是電競需求的一站式商店。介面導覽非常容易，充滿未來感的字體與發光圖標完美契合電競美學。
+            Acer 的 PredatorSense 軟體是電競需求的一站式商店。<strong style="color:var(--gold);">介面導覽非常容易</strong>，充滿未來感的字體與發光圖標完美契合電競美學。
           </p>
           <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-lt);">— Laptop Mag</div>
         </div>
 
-        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:20px;">
+        <!-- Tom's Hardware — step 2 -->
+        <div class="step-hidden" data-step="2" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:20px;">
           <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.25; flex-shrink:0;">
             <path d="M0 20V12.8C0 9.6 0.8 6.93333 2.4 4.8C4 2.66667 6.4 1.06667 9.6 0L11.2 2.4C9.6 3.06667 8.26667 4 7.2 5.2C6.13333 6.4 5.6 7.73333 5.6 9.2H11.2V20H0ZM16.8 20V12.8C16.8 9.6 17.6 6.93333 19.2 4.8C20.8 2.66667 23.2 1.06667 26.4 0L28 2.4C26.4 3.06667 25.0667 4 24 5.2C22.9333 6.4 22.4 7.73333 22.4 9.2H28V20H16.8Z" fill="white"/>
           </svg>
           <p class="body" style="color:#CBD5E1; line-height:1.75; flex:1;">
-            PredatorSense 是視覺效果最棒且最實用的控制 App 之一⋯⋯它透過三種不同的設定檔（一般、快速、極速），讓超頻變得非常輕鬆。
+            PredatorSense 是視覺效果最棒且最實用的控制 App 之一⋯⋯它透過三種不同的設定檔（一般、快速、極速），<strong style="color:var(--gold);">讓超頻變得非常輕鬆</strong>。
           </p>
           <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-lt);">— Tom's Hardware</div>
         </div>
@@ -859,14 +905,14 @@
         </p>
       </div>
       <div style="display:flex; flex-direction:column; gap:20px;">
-        <div class="card">
+        <div class="card step-hidden" data-step="1">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-bottom:12px;">My Role</div>
-          <div class="h2" style="color:#F1F5F9; margin-bottom:8px;">Lead UX Designer</div>
+          <div class="body" style="color:#F1F5F9; margin-bottom:8px;">Lead UX Designer</div>
           <div class="body" style="color:#94A3B8;">產品救援 · 設計重構 · 教育訓練</div>
         </div>
-        <div class="card" style="border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
+        <div class="card step-hidden" data-step="2" style="border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:12px;">Current Status</div>
-          <div class="body" style="color:#CBD5E1; line-height:1.7;">系統表現超乎預期，現已進入推廣至全國長照機構與社區接種站的提案階段</div>
+          <div class="body" style="color:#CBD5E1; line-height:1.7;">系統表現<strong style="color:var(--gold);">超乎預期</strong>，現已進入推廣至全國長照機構與社區接種站的提案階段</div>
         </div>
       </div>
     </div>
@@ -877,9 +923,9 @@
   <section class="slide slide--dark" data-index="14" style="background-image: linear-gradient(rgba(15,23,42,0.82), rgba(15,23,42,0.82)), url('/images/pitch/%E5%B4%A9%E6%BD%B0.png'); background-size: cover; background-position: center;">
     <div style="max-width:980px; width:100%;">
       <div class="slide-label">Challenges</div>
-      <h2 class="h1" style="margin-bottom:40px;">但一開始接手後，就出現三個同時爆發的危機</h2>
+      <h2 class="h1" style="margin-bottom:40px;">開始接手後，就出現三個同時爆發的危機</h2>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
+        <div class="card step-hidden" data-step="1" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
           <div style="width:36px; height:36px; border-radius:10px; background:rgba(220,38,38,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
@@ -887,7 +933,7 @@
           <h3 class="h2" style="color:#F1F5F9; margin-bottom:10px;">反應時間極短</h3>
           <p class="body" style="color:#CBD5E1; line-height:1.7;">前任設計師離職，產品上線後客訴湧入，包含系統 Bug 與 UX 設計不良，需立即接手處理。</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
+        <div class="card step-hidden" data-step="2" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
           <div style="width:36px; height:36px; border-radius:10px; background:rgba(220,38,38,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           </div>
@@ -895,7 +941,7 @@
           <h3 class="h2" style="color:#F1F5F9; margin-bottom:10px;">規格文件嚴重缺失</h3>
           <p class="body" style="color:#CBD5E1; line-height:1.7;">原始設計文件缺乏業務邏輯與使用情境，接手團隊無法得知背後設計脈絡。</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
+        <div class="card step-hidden" data-step="3" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
           <div style="width:36px; height:36px; border-radius:10px; background:rgba(220,38,38,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
           </div>
@@ -909,7 +955,7 @@
   </section>
 
   <!-- ─── Slide 16 · 解法一 ─── -->
-  <section class="slide slide--mid" data-index="15">
+  <section class="slide slide--dark" data-index="15" style="background-image: linear-gradient(rgba(15,23,42,0.95), rgba(15,23,42,0.95)), url('/images/pitch/%E5%AD%B8%E6%A0%A1%E4%BF%9D%E5%81%A5%E5%AE%A4.jpg'); background-size: cover; background-position: center;">
     <div class="cols">
       <div>
         <div class="slide-label">Solution 01</div>
@@ -926,18 +972,30 @@
         </div>
       </div>
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <div class="card card--highlight" style="border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:14px;">Why it mattered</div>
-          <p class="body" style="color:#CBD5E1; line-height:1.7;">遠端無法感知「校護實際操作情境」——瀏覽器設定問題、網域不在白名單內...等，只有到現場才能看見真正的問題。</p>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div style="display:flex; align-items:center; gap:14px; padding:12px 18px; background:rgba(255,255,255,0.04); border-radius:12px; border:1px solid rgba(255,255,255,0.07);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="body" style="color:#CBD5E1;">深度參與客服工作，建立問題分類體系</span>
+        <div class="card step-hidden" data-step="1" style="border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:14px;">設計問題</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px; flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span class="body" style="color:#CBD5E1; line-height:1.6;">學生名冊匯入錯誤不知道怎麼處理</span>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px; flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span class="body" style="color:#CBD5E1; line-height:1.6;">無法跨頁選取學生...等</span>
+            </div>
           </div>
-          <div style="display:flex; align-items:center; gap:14px; padding:12px 18px; background:rgba(255,255,255,0.04); border-radius:12px; border:1px solid rgba(255,255,255,0.07);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="body" style="color:#CBD5E1;">親赴學校現場協助校護操作，蒐集第一手觀察</span>
+        </div>
+        <div class="card step-hidden" data-step="2" style="border-color:rgba(248,113,113,0.35); background:rgba(248,113,113,0.05);">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:14px;">系統 Bug</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px; flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span class="body" style="color:#CBD5E1; line-height:1.6;">無法連上系統</span>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px; flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span class="body" style="color:#CBD5E1; line-height:1.6;">介面文字亂碼...等</span>
+            </div>
           </div>
         </div>
       </div>
@@ -963,14 +1021,11 @@
         </div>
       </div>
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <div class="card" style="background:rgba(15,23,42,0.85); border-color:rgba(255,255,255,0.14);">
-          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-bottom:16px;">Before</div>
-          <p class="body" style="color:#94A3B8; line-height:1.7;">設計稿零散、缺乏業務邏輯標注，需頻繁詢問開發確認，維護成本極高</p>
+        <div class="card step-hidden" data-step="1" style="border-color:rgba(248,113,113,0.35); background:rgba(248,113,113,0.25);">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:16px;">Before</div>
+          <p class="body" style="color:#CBD5E1; line-height:1.7;">設計稿零散、缺乏業務邏輯標注，需頻繁詢問開發確認，維護成本極高</p>
         </div>
-        <div style="display:flex; align-items:center; justify-content:center;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(52,211,153,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-        </div>
-        <div class="card" style="border-color:rgba(52,211,153,0.5); background:rgba(15,23,42,0.85);">
+        <div class="card step-hidden" data-step="2" style="border-color:rgba(52,211,153,0.5); background:rgba(52,211,153,0.25);">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:16px;">After</div>
           <p class="body" style="color:#CBD5E1; line-height:1.7;">關鍵頁面索引 + 使用者權限對照表，開發與 QA 均可自助查閱，溝通成本大幅降低</p>
         </div>
@@ -980,7 +1035,7 @@
   </section>
 
   <!-- ─── Slide 18 · 解法三 ─── -->
-  <section class="slide slide--mid" data-index="17">
+  <section class="slide slide--dark" data-index="17" style="background-image: linear-gradient(rgba(15,23,42,0.82), rgba(15,23,42,0.82)), url('/images/pitch/%E6%BC%94%E8%AC%9B.png'); background-size: cover; background-position: center;">
     <div class="cols">
       <div>
         <div class="slide-label">Solution 03</div>
@@ -993,17 +1048,17 @@
         </p>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <div class="metric-item" style="text-align:center; padding:24px 16px;">
-          <div style="font-family:'Archivo',sans-serif; font-size:2.2rem; font-weight:700; color:#34D399; line-height:1; margin-bottom:8px;">3</div>
-          <div class="body" style="color:#94A3B8;">教材類型<br><span style="font-size:0.85rem;">講義 · 影片 · 手冊</span></div>
+        <div class="metric-item step-hidden" data-step="1" style="text-align:center; padding:24px 16px;">
+          <div style="font-family:'Archivo',sans-serif; font-size:2.2rem; font-weight:700; color:#34D399; line-height:1; margin-bottom:8px;">重新規劃教材</div>
+          <div class="body" style="color:#94A3B8;"><span style="font-size:0.85rem;">講義 · 影片 · 手冊</span></div>
         </div>
-        <div class="metric-item" style="text-align:center; padding:24px 16px;">
+        <div class="metric-item step-hidden" data-step="2" style="text-align:center; padding:24px 16px;">
           <div style="font-family:'Archivo',sans-serif; font-size:2.2rem; font-weight:700; color:#34D399; line-height:1; margin-bottom:8px;">全台</div>
           <div class="body" style="color:#94A3B8;">巡迴說明會<br><span style="font-size:0.85rem;">現場收集真實反饋</span></div>
         </div>
-        <div class="metric-item" style="grid-column:span 2; padding:20px 24px;">
+        <div class="metric-item step-hidden" data-step="3" style="grid-column:span 2; padding:20px 24px;">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:10px;">Core Insight</div>
-          <p class="body" style="color:#CBD5E1; line-height:1.7;">校護不是技術人員——教材必須以「接種流程順序」而非「系統功能模組」來組織，才能真正降低學習門檻。</p>
+          <p class="body" style="color:#CBD5E1; line-height:1.7;">校護不是技術人員——<strong style="color:var(--gold);">教材必須以「接種流程順序」而非「系統功能模組」來組織</strong>，才能真正降低學習門檻。</p>
         </div>
       </div>
     </div>
@@ -1018,30 +1073,37 @@
         <div class="slide-label">Design Refinement 01</div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:start;">
           <h2 class="h1">學生名冊<br>匯入管理</h2>
-          <div style="padding-left:28px; border-left:2px solid #34D399;">
-            <p class="body" style="color:#94A3B8; line-height:1.75; margin-bottom:16px;">與開發討論所有可能的匯入錯誤情境，設計明確提示畫面，讓校護能自行排解問題，減輕客服負擔。</p>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <span class="tag tag--green">Error State Design</span>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div class="card card--highlight" style="padding:20px 24px; border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(52,211,153,0.15); border:1.5px solid rgba(52,211,153,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399;">校護心聲</div>
+              </div>
+              <blockquote style="margin:0; padding-left:16px; border-left:2px solid rgba(52,211,153,0.4);">
+                <p class="body" style="color:#CBD5E1; line-height:1.8; font-style:italic;">「我下周就要幫學生接種了，今天都還沒辦法匯入學生資料，我後面的流程都不用跑了!」</p>
+              </blockquote>
             </div>
           </div>
         </div>
       </div>
       <!-- Bottom: Before / After images -->
       <div style="display:grid; grid-template-columns:1fr 32px 1fr; gap:0; align-items:stretch;">
-        <div>
+        <div class="step-hidden" data-step="1">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:10px;">Before</div>
           <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(248,113,113,0.4);">
-            <img src="/images/pitch/civs名冊before.jpg" alt="名冊匯入 Before" style="width:100%; display:block; object-fit:cover;" />
+            <img src="/images/pitch/civs名冊before.jpg" alt="名冊匯入 Before" class="zoom-to-modal" style="width:100%; display:block; object-fit:cover;" />
           </div>
           <p style="font-size:0.8rem; color:#F87171; margin-top:10px; line-height:1.6;">模糊錯誤訊息，校護無從判斷</p>
         </div>
-        <div style="display:flex; align-items:center; justify-content:center;">
+        <div class="step-hidden" data-step="2" style="display:flex; align-items:center; justify-content:center;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(52,211,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
-        <div>
+        <div class="step-hidden" data-step="2">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:10px;">After</div>
           <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(52,211,153,0.4);">
-            <img src="/images/pitch/civs名冊after.jpg" alt="名冊匯入 After" style="width:100%; display:block; object-fit:cover;" />
+            <img src="/images/pitch/civs名冊after.jpg" alt="名冊匯入 After" class="zoom-to-modal-after" style="width:100%; display:block; object-fit:cover;" />
           </div>
           <p style="font-size:0.8rem; color:#34D399; margin-top:10px; line-height:1.6;">情境化明確提示，校護自助排解</p>
         </div>
@@ -1394,6 +1456,7 @@
   const slides      = document.querySelectorAll('.slide');
   const total       = slides.length;
   let current       = 0;
+  let step          = 0;
 
   // Dynamically assign data-index and update slide counters based on DOM order
   slides.forEach((slide, i) => {
@@ -1402,11 +1465,44 @@
     if (counter) counter.textContent = `${String(i + 1).padStart(2, '0')} / ${total}`;
   });
 
-  function goTo(index) {
+  function getSteps(slideIndex) {
+    return [...slides[slideIndex].querySelectorAll('[data-step]')]
+      .sort((a, b) => Number(a.dataset.step) - Number(b.dataset.step));
+  }
+
+  function goTo(index, showAllSteps = false) {
     if (index < 0 || index >= total) return;
+    // Hide all steps on current slide before leaving
+    getSteps(current).forEach(el => el.classList.add('step-hidden'));
     current = index;
+    step = 0;
+    // When navigating backwards, reveal all steps so slide looks complete
+    if (showAllSteps) {
+      const destSteps = getSteps(current);
+      destSteps.forEach(el => el.classList.remove('step-hidden'));
+      step = destSteps.length;
+    }
     slides[index].scrollIntoView({ behavior: 'smooth' });
     slideSelect.value = String(index);
+  }
+
+  function nextStep() {
+    const steps = getSteps(current);
+    if (step < steps.length) {
+      steps[step].classList.remove('step-hidden');
+      step++;
+    } else {
+      goTo(current + 1);
+    }
+  }
+
+  function prevStep() {
+    if (step > 0) {
+      step--;
+      getSteps(current)[step].classList.add('step-hidden');
+    } else {
+      goTo(current - 1, true);
+    }
   }
 
   slideSelect.addEventListener('change', () => {
@@ -1418,14 +1514,18 @@
     if (document.activeElement === slideSelect) return;
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
-      goTo(current + 1);
+      nextStep();
     }
-    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+    if (e.key === 'ArrowUp') {
       e.preventDefault();
-      goTo(current - 1);
+      goTo(current - 1, true);
+    }
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevStep();
     }
     if (e.key === 'Home') goTo(0);
-    if (e.key === 'End')  goTo(total - 1);
+    if (e.key === 'End')  goTo(total - 1, true);
   });
 
   // Sync dropdown on scroll
