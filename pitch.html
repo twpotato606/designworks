@@ -346,6 +346,26 @@
       animation-play-state: paused;
     }
 
+    /* magnifier lens */
+    .mag-container {
+      position: relative;
+      cursor: crosshair;
+    }
+    .mag-lens {
+      display: none;
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 2px solid rgba(52,211,153,0.9);
+      box-shadow: 0 0 0 1px rgba(52,211,153,0.25), 0 8px 28px rgba(0,0,0,0.5);
+      pointer-events: none;
+      background-repeat: no-repeat;
+      z-index: 20;
+      transform: translate(-50%, -50%);
+    }
+    .mag-container:hover .mag-lens { display: block; }
+
     /* keyboard hint */
     .key-hint {
       position: fixed;
@@ -1102,8 +1122,11 @@
         </div>
         <div class="step-hidden" data-step="2">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:10px;">After</div>
-          <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(52,211,153,0.4);">
-            <img src="/images/pitch/civs名冊after.jpg" alt="名冊匯入 After" class="zoom-to-modal-after" style="width:100%; display:block; object-fit:cover;" />
+          <div class="mag-container" style="border-radius:10px; border:1px solid rgba(52,211,153,0.4);">
+            <div style="border-radius:10px; overflow:hidden;">
+              <img src="/images/pitch/civs名冊after.jpg" alt="名冊匯入 After" class="zoom-to-modal-after" style="width:100%; display:block; object-fit:cover;" />
+            </div>
+            <div class="mag-lens"></div>
           </div>
           <p style="font-size:0.8rem; color:#34D399; margin-top:10px; line-height:1.6;">情境化明確提示，校護自助排解</p>
         </div>
@@ -1119,28 +1142,35 @@
       <div>
         <div class="slide-label">Design Refinement 02</div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:start;">
-          <h2 class="h1">多個接種場次<br>彈性支援</h2>
-          <div style="padding-left:28px; border-left:2px solid #34D399;">
-            <p class="body" style="color:#94A3B8; line-height:1.75; margin-bottom:16px;">前版以小規模學校為基準，實地調研後發現大型學校需跨日多場次安排，重新設計排程架構。</p>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <span class="tag tag--green">Design Flexible</span>
+          <h2 class="h1">支援<br>多接種場次</h2>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div class="card card--highlight" style="padding:20px 24px; border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(52,211,153,0.15); border:1.5px solid rgba(52,211,153,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399;">校護心聲</div>
+              </div>
+              <blockquote style="margin:0; padding-left:16px; border-left:2px solid rgba(52,211,153,0.4);">
+                <p class="body" style="color:#CBD5E1; line-height:1.8; font-style:italic;">「我們學校因為學生比較多，所以會分成兩天接種，你們這樣設計，我就必須要手動先匯入第一天的學生，印製意願書後，再手動匯入第二天的學生，很麻煩！」</p>
+              </blockquote>
             </div>
           </div>
         </div>
       </div>
       <!-- Bottom: Before / After images -->
       <div style="display:grid; grid-template-columns:1fr 32px 1fr; gap:0; align-items:stretch;">
-        <div>
+        <div class="step-hidden" data-step="1">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:10px;">Before</div>
           <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(248,113,113,0.4);">
             <img src="/images/pitch/civs%20%E5%A0%B4%E6%AC%A1before.jpg" alt="場次管理 Before" style="width:100%; display:block; object-fit:cover;" />
           </div>
           <p style="font-size:0.8rem; color:#F87171; margin-top:10px; line-height:1.6;">僅支援單一接種場次</p>
         </div>
-        <div style="display:flex; align-items:center; justify-content:center;">
+        <div class="step-hidden" data-step="2" style="display:flex; align-items:center; justify-content:center;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(52,211,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
-        <div>
+        <div class="step-hidden" data-step="2">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:10px;">After</div>
           <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(52,211,153,0.4);">
             <img src="/images/pitch/civs%20%E5%A0%B4%E6%AC%A1after.jpg" alt="場次管理 After" style="width:100%; display:block; object-fit:cover;" />
@@ -1159,31 +1189,41 @@
       <div>
         <div class="slide-label">Design Refinement 03</div>
         <div style="display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:start;">
-          <h2 class="h1">學生資料<br>可復原刪除</h2>
-          <div style="padding-left:28px; border-left:2px solid #34D399;">
-            <p class="body" style="color:#94A3B8; line-height:1.75; margin-bottom:16px;">參考資源回收桶概念，刪除改為暫存狀態，校護可批次自助復原誤刪資料，無需客服介入。</p>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <span class="tag tag--green">Data Recovery</span>
+          <h2 class="h1">可復原<br>學生資料</h2>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div class="card card--highlight" style="padding:20px 24px; border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.05);">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:rgba(52,211,153,0.15); border:1.5px solid rgba(52,211,153,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399;">校護心聲</div>
+              </div>
+              <blockquote style="margin:0; padding-left:16px; border-left:2px solid rgba(52,211,153,0.4);">
+                <p class="body" style="color:#CBD5E1; line-height:1.8; font-style:italic;">「我今天早上打開系統，不知道為何學生資料全部都不見了，該怎麼辦？」</p>
+              </blockquote>
             </div>
           </div>
         </div>
       </div>
       <!-- Bottom: Before / After images -->
       <div style="display:grid; grid-template-columns:1fr 32px 1fr; gap:0; align-items:stretch;">
-        <div>
+        <div class="step-hidden" data-step="1">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F87171; margin-bottom:10px;">Before</div>
           <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(248,113,113,0.4);">
-            <img src="/images/pitch/civs%20%E7%A7%BB%E9%99%A4%E5%AD%B8%E7%94%9Fbefore.png" alt="移除學生 Before" style="width:100%; display:block; object-fit:cover;" />
+            <img src="/images/pitch/civs%20%E7%A7%BB%E9%99%A4%E5%AD%B8%E7%94%9Fbefore.png" alt="移除學生 Before" class="zoom-to-modal" style="width:100%; display:block; object-fit:cover;" />
           </div>
           <p style="font-size:0.8rem; color:#F87171; margin-top:10px; line-height:1.6;">誤刪須聯繫客服從資料庫手動回復</p>
         </div>
-        <div style="display:flex; align-items:center; justify-content:center;">
+        <div class="step-hidden" data-step="2" style="display:flex; align-items:center; justify-content:center;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(52,211,153,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
-        <div>
+        <div class="step-hidden" data-step="2">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#34D399; margin-bottom:10px;">After</div>
-          <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(52,211,153,0.4);">
-            <img src="/images/pitch/civs%20%E7%A7%BB%E9%99%A4%E5%AD%B8%E7%94%9Fafter.png" alt="移除學生 After" style="width:100%; display:block; object-fit:cover;" />
+          <div class="mag-container" style="border-radius:10px; border:1px solid rgba(52,211,153,0.4);">
+            <div style="border-radius:10px; overflow:hidden;">
+              <img src="/images/pitch/civs%20%E7%A7%BB%E9%99%A4%E5%AD%B8%E7%94%9Fafter.png" alt="移除學生 After" style="width:100%; display:block; object-fit:cover;" />
+            </div>
+            <div class="mag-lens"></div>
           </div>
           <p style="font-size:0.8rem; color:#34D399; margin-top:10px; line-height:1.6;">回收桶暫存，批次一鍵自助復原</p>
         </div>
@@ -1210,7 +1250,7 @@
           <div class="body" style="color:#64748B;">使用者（校護）滿意度大幅提升</div>
         </div>
 
-        <div class="metric-item" style="padding:28px 22px;">
+        <div class="metric-item step-hidden" data-step="1" style="padding:28px 22px;">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-bottom:16px;">Scale</div>
           <div style="display:flex; align-items:flex-end; gap:8px; margin-bottom:12px;">
             <div style="font-family:'Archivo',sans-serif; font-size:3rem; font-weight:700; color:#94A3B8; line-height:1; text-decoration:line-through;">10</div>
@@ -1220,7 +1260,7 @@
           <div class="body" style="color:#64748B;">學校導入數，覆蓋全國校園</div>
         </div>
 
-        <div class="metric-item" style="padding:28px 22px;">
+        <div class="metric-item step-hidden" data-step="2" style="padding:28px 22px;">
           <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; margin-bottom:16px;">Usage</div>
           <div style="display:flex; align-items:flex-end; gap:8px; margin-bottom:12px;">
             <div style="font-family:'Archivo',sans-serif; font-size:2.4rem; font-weight:700; color:#94A3B8; line-height:1; text-decoration:line-through;">10萬+</div>
@@ -1233,7 +1273,7 @@
       </div>
 
       <!-- Row 2: Business Impact 全寬橫幅 -->
-      <div class="metric-item" style="padding:24px 32px; display:flex; align-items:center; gap:32px; background:rgba(52,211,153,0.06); border-color:rgba(52,211,153,0.25);">
+      <div class="metric-item step-hidden" data-step="3" style="padding:24px 32px; display:flex; align-items:center; gap:32px; background:rgba(52,211,153,0.06); border-color:rgba(52,211,153,0.25);">
         <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#94A3B8; white-space:nowrap;">Business Impact</div>
         <div style="width:1px; height:32px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
         <div style="font-family:'Archivo',sans-serif; font-size:1.6rem; font-weight:700; color:#34D399; line-height:1; white-space:nowrap;">CDC 加碼續約</div>
@@ -1539,6 +1579,25 @@
   }, { threshold: 0.6 });
 
   slides.forEach(s => observer.observe(s));
+
+  // magnifier lens
+  document.querySelectorAll('.mag-container').forEach(container => {
+    const lens = container.querySelector('.mag-lens');
+    const img  = container.querySelector('img');
+    const zoom = 3;
+    container.addEventListener('mousemove', e => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      lens.style.left = x + 'px';
+      lens.style.top  = y + 'px';
+      const bgX = x * zoom - lens.offsetWidth  / 2;
+      const bgY = y * zoom - lens.offsetHeight / 2;
+      lens.style.backgroundImage    = `url(${img.src})`;
+      lens.style.backgroundSize     = `${container.offsetWidth * zoom}px auto`;
+      lens.style.backgroundPosition = `-${bgX}px -${bgY}px`;
+    });
+  });
 </script>
 </body>
 </html>
